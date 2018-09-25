@@ -1,4 +1,4 @@
 /composer.phar
-/asset/file/*
 !/asset/file/template_laporan.xls
 !/asset/file/template_laporan.xlsx
+/asset/file/*
