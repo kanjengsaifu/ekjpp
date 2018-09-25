@@ -1,4 +1,13 @@
-/composer.phar
-!/asset/file/template_laporan.xls
-!/asset/file/template_laporan.xlsx
-/asset/file/*
+composer.phar
+asset/file/*
+!asset/file/kertas_kerja/
+asset/file/kertas_kerja/*
+!asset/file/kertas_kerja/template_laporan.xls
+!asset/file/kertas_kerja/template_laporan.xlsx
+!asset/file/kertas_kerja/index.html
+!asset/file/legalitas_tanah/
+asset/file/legalitas_tanah/*
+!asset/file/legalitas_tanah/index.html
+!asset/file/index.html
+!asset/file/default.png
+!asset/file/default.jpg
