@@ -1302,9 +1302,30 @@ class ajaxpekerjaan extends CI_Controller
 		$data_txn["id_lembar_kendali"] 	= $id;
 		$data_txn["id_user"] 			= $user["id"];
 
-		if ($type == "lembar_kendali_2")
-		{
+		$invoice_list = array();
+
+		if ($type == "lembar_kendali_2") {
 			$total	=  $_POST["termin_pembayaran_1"] + $_POST["termin_pembayaran_2"] + $_POST["termin_pembayaran_3"] + $_POST["termin_pembayaran_4"] + $_POST["termin_pembayaran_5"];
+
+			if (false!=$_POST["termin_pembayaran_1"]){
+				$invoice_list[] = 1;
+			}
+
+			if (false!=$_POST["termin_pembayaran_2"]){
+				$invoice_list[] = 2;
+			}
+
+			if (false!=$_POST["termin_pembayaran_3"]){
+				$invoice_list[] = 3;
+			}
+
+			if (false!=$_POST["termin_pembayaran_4"]){
+				$invoice_list[] = 4;
+			}
+
+			if (false!=$_POST["termin_pembayaran_5"]){
+				$invoice_list[] = 5;
+			}
 
 			if ($total != 100)
 			$message .= "Total Termin Pembayaran harus 100%<br>";
@@ -1361,12 +1382,9 @@ class ajaxpekerjaan extends CI_Controller
 				$this->global_model->update($table_txn, 1, array("id_lembar_kendali"), array($id), $data_txn);
 			}
 
-
-
 			if ($pekerjaan->id_status == 2)
 			{
 				//simpan LKK1
-
 				if (!$is_update) {
 					$this->global_model->update("txn_pekerjaan_status", 2, array("id_pekerjaan", "id_status"), array($pekerjaan->id, 2), array("do" => 1, "id_user" => $user["id"]));
 
@@ -1377,9 +1395,25 @@ class ajaxpekerjaan extends CI_Controller
 			{
 				//simpan LKK2
 				if (!$is_update) {
+					$dokumen_gabung = array();
+					$dokumen_gabung["id_dokumen_master"] = 4;
+					$dokumen_gabung["created"] = date("Y-m-d");
+					$dokumen_gabung["updated"] = date("Y-m-d");
+					$dokumen_gabung["tanggal"] = date("Y-m-d");
+					$dokumen_gabung["id_pekerjaan"] = $id_pekerjaan;
+					foreach ($invoice_list as $ke) {
+						$dokumen_gabung["termin"] = $ke;
+						$this->global_model->save("mst_dokumen_gabung", $dokumen_gabung);
+					}
+					
 					$this->global_model->update("txn_pekerjaan_status", 2, array("id_pekerjaan", "id_status"), array($pekerjaan->id, 3), array("do" => 1, "id_user" => $user["id"]));
 
 					$this->global_model->save("txn_pekerjaan_status", array("id_pekerjaan" =>$pekerjaan->id, "id_user" => $user["id"], "id_status" => 4) );
+
+				}
+				else
+				{
+
 				}
 			}
 			else if ($pekerjaan->id_status == 5)

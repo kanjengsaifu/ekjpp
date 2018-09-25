@@ -471,7 +471,7 @@ class ajax extends CI_Controller
 		else if ($type == "dokumen_penawaran")
 		{
 			$table_name		= "mst_dokumen_penawaran";
-			$list_field		= array("id_pekerjaan","id_dokumen_master","no_penawaran","tanggal","kota","up","domisili","kontak","komunikasi_via","komunikasi_via_keterangan","tanggal_komunikasi","tujuan_penilaian","biaya","penanda_tangan");
+			$list_field		= array("id_pekerjaan","id_dokumen_master","no_penawaran","tanggal","kota","up","domisili","kontak","komunikasi_via","komunikasi_via_keterangan","tanggal_komunikasi","tujuan_penilaian","biaya","penanda_tangan","dokumen_final");
 			$required_field	= array("kota", "tanggal", "up", "domisili", "kontak", "komunikasi_via", "tanggal_komunikasi", "tujuan_penilaian","penanda_tangan");
 			$required_label	= array("Kota", "Tanggal Terbit Surat", "UP", "Domisili Pemberi Kerja", "Kontak Pemberi Kerja", "Komunikasi Via", "Tanggal Komunikasi", "Tujuan Penilaian","Penanda Tangan Laporan");
 			
@@ -548,8 +548,6 @@ class ajax extends CI_Controller
 					$get_label = !empty($key_field) ? $required_label[$key_field[0]] : "";
 					$message .= "".$get_label." tidak boleh kosongtidak boleh kosong.<br>";
 				}
-				
-				
 			}
 			
 			if($message != "")
@@ -717,8 +715,7 @@ class ajax extends CI_Controller
 				{
 					$data["id_user"]	= $user_login["id"];
 					$pekerjaan	= $this->global_model->get_data("view_pekerjaan", 1, array("id"), array($data["id_pekerjaan"]))->row();
-					if ($pekerjaan->id_status == 8)
-					{
+					if ($pekerjaan->id_status == 8) {
 						$this->global_model->update("txn_pekerjaan_status", 2, array("id_pekerjaan", "id_status"), array($pekerjaan->id, 8), array("id_pekerjaan" => $pekerjaan->id, "id_status" => 8, "id_user" => $data["id_user"], "do" => 1) );
 						// Next Step
 						$this->global_model->save("txn_pekerjaan_status", array("id_pekerjaan" => $pekerjaan->id, "id_status" => 9, "id_user" => $data["id_user"]) );
@@ -1821,22 +1818,47 @@ class ajax extends CI_Controller
 						$nama_user	= $user->nama;
 					}
 				}
-				
-				$data_table[$i]["dokumen"]		= $item_data->nama;
-				//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
-				$data_table[$i]["keterangan"]	= $keterangan;
-				$data_table[$i]["nama_group"]	= "<div class='text-center'>".$nama_group."</div>";
-				$data_table[$i]["nama_user"]	= $nama_user;
-				//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
-				$data_table[$i]["action"]	= "<div class='text-center'>";
-				if ($file !='#'){
-					$data_table[$i]["action"]	.="<a target='_blank' href='". $file ."' class='btn btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a target='_blank' href='". $file ."' class='btn btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
-				}else {
-					$data_table[$i]["action"]	.="<a href='". $file ."' class='btn btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a href='". $file ."' class='btn btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
+
+				if ($item_data->id == 4){
+					$invs = $this->global_model->get_list( 'mst_dokumen_gabung', 'id_dokumen_master=4 AND id_pekerjaan='.$id_pekerjaan, 'termin' );
+					$j = 1;
+					foreach ($invs as $inv) {
+						$id_dokumen_gabung = $inv->id;
+						$data_table[$i]["dokumen"]		= $item_data->nama." - ".$j;
+						//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
+						$data_table[$i]["keterangan"]	= $keterangan;
+						$data_table[$i]["nama_group"]	= "<div class='text-center'>".$nama_group."</div>";
+						$data_table[$i]["nama_user"]	= $nama_user;
+						//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
+						$data_table[$i]["action"]	= "<div class='text-center' data-id_dokumen_gabung=\"".base64_encode($id_dokumen_gabung)."\">";
+						if ($file !='#'){
+							$data_table[$i]["action"]	.="<a target='_blank' href='". $file ."' class='btn btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a target='_blank' href='". $file ."' class='btn btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
+						}else {
+							$data_table[$i]["action"]	.="<a href='". $file ."' class='btn btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a href='". $file ."' class='btn btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
+						}
+						$data_table[$i]["action"]	.="&nbsp;<button class='btn btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;<button class='btn btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Delete</button>";
+						$data_table[$i]["action"]	.= "</div>";
+						$j++;
+						$i++;
+					}
+				}else{
+					$data_table[$i]["dokumen"]		= $item_data->nama;
+					//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
+					$data_table[$i]["keterangan"]	= $keterangan;
+					$data_table[$i]["nama_group"]	= "<div class='text-center'>".$nama_group."</div>";
+					$data_table[$i]["nama_user"]	= $nama_user;
+					//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
+					$data_table[$i]["action"]	= "<div class='text-center'>";
+					if ($file !='#'){
+						$data_table[$i]["action"]	.="<a target='_blank' href='". $file ."' class='btn btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a target='_blank' href='". $file ."' class='btn btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
+					}else {
+						$data_table[$i]["action"]	.="<a href='". $file ."' class='btn btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a href='". $file ."' class='btn btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
+					}
+					$data_table[$i]["action"]	.="&nbsp;<button class='btn btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;<button class='btn btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Delete</button>";
+					$data_table[$i]["action"]	.= "</div>";
+					$i++;
 				}
-				$data_table[$i]["action"]	.="&nbsp;<button class='btn btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;<button class='btn btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Delete</button>";
-				$data_table[$i]["action"]	.= "</div>";
-				$i++;
+				
 			}
 		}
 		

@@ -890,9 +890,17 @@
 	});
 
 	$(document).on("click", ".btn-edit-dokumen", function() {
+		var id_dokumen_gabung = $(this).closest('[data-id_dokumen_gabung]').data("id_dokumen_gabung");
 		var id_dokumen_master	= $(this).attr("data");
 		//alert('');
-		location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/?url=" + current_url;
+
+		if (!id_dokumen_gabung){
+			location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/?url=" + current_url;
+		}
+		else
+		{
+			location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/" +id_dokumen_gabung+ "/?url=" + current_url;
+		}
 		return false;
 	});
 

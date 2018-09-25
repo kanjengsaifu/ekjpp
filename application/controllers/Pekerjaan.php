@@ -1793,7 +1793,7 @@ class Pekerjaan extends CI_Controller
 		}
 	}
 
-	function dokumen_edit($id_pekerjaan = "", $id_dokumen_master = "")
+	function dokumen_edit($id_pekerjaan = "", $id_dokumen_master = "", $id_dokumen_gabung = "")
 	{
 		$id_dokumen_master 	= base64_decode($id_dokumen_master);
 		$id_pekerjaan 		= base64_decode($id_pekerjaan);
@@ -1806,6 +1806,7 @@ class Pekerjaan extends CI_Controller
 
 			$data["title"] 	= "Tambah Dokumen Penawaran";
 
+			$dokumen_final = "";
 			if ($dokumen->num_rows() == 0)
 			{
 				$data["title"] 	= "Tambah Dokumen Penawaran";
@@ -1858,9 +1859,11 @@ class Pekerjaan extends CI_Controller
 				$tujuan_penilaian = $dokumen->row()->tujuan_penilaian;
 				$biaya = $dokumen->row()->biaya;
 				$penanda_tangan = $dokumen->row()->penanda_tangan;
+				$dokumen_final = $dokumen->row()->dokumen_final;
 
 			}
 
+			$data["dokumen_final"] = $dokumen_final;
 			$data["input"]["id_pekerjaan"]	= $this->formlib->_generate_input_text("id_pekerjaan", "id_pekerjaan", base64_encode($id_pekerjaan), FALSE, TRUE);
 			$data["input"]["id_dokumen_master"] = $this->formlib->_generate_input_text("id_dokumen_master", "id_dokumen_master", base64_encode($id_dokumen_master), FALSE, TRUE);
 			$data["input"]["id"] = $this->formlib->_generate_input_text("id", "id", base64_encode($id), FALSE, TRUE);
@@ -1906,6 +1909,7 @@ class Pekerjaan extends CI_Controller
 
 			$data["id_dokumen_master"]	= $id_dokumen_master;
 
+			$dokumen_final = "";
 			if ($dokumen->num_rows() == 0)
 			{
 				$data["title"] 	= "Tambah ".$mst_dokumen->nama;
@@ -1936,8 +1940,10 @@ class Pekerjaan extends CI_Controller
 				$tanggal = date("Y-m-d", strtotime($dokumen->row()->tanggal));
 				$dikirim = $dokumen->row()->dikirim;
 				$diterima = $dokumen->row()->diterima;
-
+				$dokumen_final = $dokumen->row()->dokumen_final;
 			}
+
+			$data["dokumen_final"] = $dokumen_final;
 
 			$user_login	= $this->auth->get_data_login();
 			$id_user	= $user_login["id"];
@@ -1969,10 +1975,20 @@ class Pekerjaan extends CI_Controller
 		else if ($id_dokumen_master == 4 || $id_dokumen_master == 5 || $id_dokumen_master == 6 || $id_dokumen_master == 7 || $id_dokumen_master == 8)
 		{
 			$mst_dokumen	= $this->global_model->get_data("mst_dokumen_master", 1, array("id"), array($id_dokumen_master))->row();
-			$dokumen		= $this->global_model->get_data("mst_dokumen_gabung", 2, array("id_pekerjaan", "id_dokumen_master"), array($id_pekerjaan, $id_dokumen_master));
+
+			if (!$id_dokumen_gabung) {
+				$dokumen		= $this->global_model->get_data("mst_dokumen_gabung", 2, array("id_pekerjaan", "id_dokumen_master"), array($id_pekerjaan, $id_dokumen_master));
+			}
+			else
+			{
+				$id_dokumen_gabung = base64_decode($id_dokumen_gabung);
+				$dokumen		= $this->global_model->get_data("mst_dokumen_gabung", 1, array(  "id"), array( $id_dokumen_gabung));
+				// echo $this->db->last_query();
+			}
 
 			$data["id_dokumen_master"]	= $id_dokumen_master;
 
+			$dokumen_final = "";
 			if ($dokumen->num_rows() == 0)
 			{
 				$data["title"] 	= "Tambah ".$mst_dokumen->nama;
@@ -2004,8 +2020,11 @@ class Pekerjaan extends CI_Controller
 
 				$file 		= $dokumen->row()->file;
 				$keterangan	= $dokumen->row()->keterangan;
+				$dokumen_final = $dokumen->row()->dokumen_final;
 			}
 
+			$data["dokumen"] = $dokumen->row();
+			$data["dokumen_final"] = $dokumen_final;
 			$user_login	= $this->auth->get_data_login();
 			$id_user	= $user_login["id"];
 

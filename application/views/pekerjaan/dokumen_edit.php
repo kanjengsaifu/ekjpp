@@ -47,8 +47,7 @@
 		
 	});
 
-	$(".btn-simpan").click(function()
-	{
+	$(".btn-simpan").click(function() {
 		if (window.confirm("Apakah Anda yakin?"))
 		{
 			var id 				= $("#id").val();
