@@ -7,6 +7,7 @@ Class Migrate_generate Extends CI_Controller{
 
     public function index(){
         $s  = $this->generate();
+
         $data = $this->controller_migrate($s);
         $this->save_file($data);
     }
@@ -35,7 +36,9 @@ Class Migrate_generate Extends CI_Controller{
         $i = 0;
         foreach ($result as $value) {
             // if ($i > 3) continue;
+
             foreach ($value as $table) {
+                if ("migrations"==$table) continue;
                 //if view skip
                 if (substr($table,0,5)=="view_" || substr($table,0,1)=="v_"){
 
@@ -43,7 +46,7 @@ Class Migrate_generate Extends CI_Controller{
                     $rTable = $query->result();
                     foreach (  $rTable[0] as $k => $val) {
                         if ($k == "Create View") {
-                            $s .= "\$this->db->query('".$val."');\n\n";
+                            $s .= "\$this->db->query(\"".$val."\");\n\n";
                         }
                     }
                     continue;
@@ -54,7 +57,8 @@ Class Migrate_generate Extends CI_Controller{
                 $key_field = "";
                 // var_dump($rTable); echo "\n\n";
 
-                $s .= "\$this->dbforge->add_field(array(\n";
+                $i = 0;
+                $s .= "\$this->dbforge->add_field(array(";
                 foreach ($rTable as $d) {
                     $Field = $d->Field;
                     $Type = $d->Type;
@@ -62,36 +66,78 @@ Class Migrate_generate Extends CI_Controller{
                     $Key = $d->Key;
                     $Default = $d->Default;
                     $Extra = $d->Extra;
-                    $IsUnsigned = preg_match("/unsigned/i", $Type) ? "TRUE" : "FALSE";
+                    $IsUnsigned = preg_match("/unsigned/i", $Type) ? TRUE : FALSE;
                     preg_match('#\((.*?)\)#', $Type, $match);
-                    $constraint = count($match) == 0 ? 0 : $match[1];
-                    $IsAutoIncrement = $Extra=="auto_increment" ? "TRUE" : "FALSE";
+                    $constraint = count($match) == 0 ? 0 : (int)$match[1];
+                    $IsAutoIncrement = $Extra=="auto_increment" ? TRUE : FALSE;
                     $dataType = $this->detectType($Type);
 
                     if ($Key=="PRI"){
                         $key_field = $Field;
                     }
 
-                    $s .= "\t'".$Field."' => array( 'type' => '".$dataType."', 'constraint' => ".$constraint.", 'unsigned' => ".$IsUnsigned.", 'auto_increment' => ".$IsAutoIncrement." ),\n";
+                    if ($dataType=="enum"){
+                        $dataType = $Type;
+                        $constraint = "";
+                    }
+
+                    $arr_stuc = array();
+                    $arr_stuc["type"] = $dataType;
+                    $arr_stuc["constraint"] = $constraint;
+                    $arr_stuc["unsigned"] = $IsUnsigned;
+                    $arr_stuc["auto_increment"] = $IsAutoIncrement;
+
+                    $a2s = $this->array_to_str($arr_stuc);
+
+                    $s .= $i>0 ? ",":"";
+                    $s .= "\n\t\"".$Field."\" => ".$a2s;
+                    //array( 'type' => '".$dataType."', 'constraint' => ".$constraint.", 'unsigned' => ".$IsUnsigned.", 'auto_increment' => ".$IsAutoIncrement." ),\n";
                     // \"blog_title\" => array( \"type\" => \"VARCHAR\", \"constraint\" =>\ \"100\" ),
                     // \"blog_description\" => array( \"type\" => \"TEXT\", \"null\" => TRUE )
-                    
+                    $i++;
                 }
-                $s .= ")); \n";
+                $s .= "\n));\n";
 
                 if ($key_field){
                     $s .= "\$this->dbforge->add_key(\"".$key_field."\", TRUE);\n";
                 }
                 
-                $s .= "\$this->dbforge->create_table(\"".$table."\"); \n \n";
+                $s .= "\$this->dbforge->create_table(\"".$table."\");\n\n";
             }
             $i++;
         }
         return $s;
     }
 
+    private function enum_opt($file){
+        // $file = "enum('F','T')";
+        preg_match('/\((.*?)\)/', $file, $match);
+        $enum_opt = $match[1];
+        return $enum_opt;
+    }
+
     private function is_key(){
 
+    }
+
+    private function array_to_str($array){
+        $r = "array(\n";
+        $i = 0;
+        foreach ($array as $key => $value) {
+            if (is_bool($value)){
+                $vals = ($value===TRUE) ? "TRUE" : "FALSE" ;
+            }elseif (is_numeric($value)){
+                $vals = (int)$value ;
+            }else{
+                $vals = '"'.$value.'"' ;
+            }
+
+            $r .= $i>0 ? ",\n" : "";
+            $r .= "\t\t\"".$key."\" => ".$vals."";
+            $i++;
+        }
+        $r .= "\n\t)";
+        return $r;
     }
 
     private function detectType($string){
@@ -100,7 +146,7 @@ Class Migrate_generate Extends CI_Controller{
         $type = "";
         foreach ($types as $value) {
             // var_dump(strpos($string, $value));
-            if (false!==strpos($string, $value)){
+            if (substr($string,0,strlen($value))==$value){
                 $type = $value;
             }
         }

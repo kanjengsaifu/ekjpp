@@ -3572,7 +3572,8 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             <td>
                                                 <table border="0" cellpadding="0" cellspacing="0" class="table_border_4">
                                                     <tbody>
-                                                        <                                                            <td class="td-with-percent">
+                                                        <tr>
+                                                            <td class="td-with-percent">
                                                                 <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-0" value="<?php echo $txn_data_banding_1["lokasi_0"] ?>" data-id-field="277" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
