@@ -94,63 +94,63 @@ class ajaxkertaskerja extends CI_Controller
 									<td></td>
 									<td width='50'>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 									<td><span>Obyek Penilaian</span></td>
-									<td><?=$input['entry_2']?></td>
+									<td>".$input['entry_2']."</td>
 								</tr>
 								<tr>
 									<td><span>Nama Penilai</span></td>
-									<td><?=$input['entry_3']?></td>
+									<td>".$input['entry_3']."</td>
 									<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 									<td><span>Highest and Best Use</span></td>
-									<td><?=$input['entry_4']?></td>
+									<td>".$input['entry_4']."</td>
 								</tr>
 								<tr>
 									<td><span>Nama Surveyor</span></td>
-									<td><?=$input['entry_5']?></td>
+									<td>".$input['entry_5']."</td>
 									<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-									<td><?=$input['entry_6']?></td>
-									<td><?=$input['entry_7']?></td>
+									<td>".$input['entry_6']."</td>
+									<td>".$input['entry_7']."</td>
 								</tr>
 								<tr>
 									<td style=' background-color:#eee;'>&nbsp;</td>
 									<td style=' background-color:#eee;'>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td><span>Telepon / HP.</span></td>
-									<td><?=$input['entry_8']?></td>
+									<td>".$input['entry_8']."</td>
 								</tr>
 								<tr>
 									<td><span>Tanggal Inspeksi & Penilaian</span></td>
-									<td><?=$input['entry_9']?></td>
+									<td>".$input['entry_9']."</td>
 									<td>&nbsp;</td>
 									<td><span>Status Obyek</span></td>
-									<td><?=$input['entry_10']?></td>
+									<td>".$input['entry_10']."</td>
 								</tr>
 								<tr>
 									<td style=' background-color:#eee;'>&nbsp;</td>
 									<td style=' background-color:#eee;'>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td><span>Yang dijumpai</span></td>
-									<td><?=$input['entry_11']?></td>
+									<td>".$input['entry_11']."</td>
 								</tr>
 								<tr>
 									<td><span>Tanggal Laporan</span></td>
-									<td><?=$input['entry_12']?></td>
+									<td>".$input['entry_12']."</td>
 									<td>&nbsp;</td>
 									<td><span>Selaku</span></td>
-									<td><?=$input['entry_13']?></td>
+									<td>".$input['entry_13']."</td>
 								</tr>
 								<tr>
 									<td style=' background-color:#eee;'>&nbsp;</td>
 									<td style=' background-color:#eee;'>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td><span>Obyek ditempati oleh</span></td>
-									<td><?=$input['entry_14']?></td>
+									<td>".$input['entry_14']."</td>
 								</tr>
 								<tr>
 									<td><span>Nomor Laporan</span></td>
-									<td><?=$input['entry_15']?></td>
+									<td>".$input['entry_15']."</td>
 									<td>&nbsp;</td>
 									<td><span>Penggunaan Obyek</span></td>
-									<td><?=$input['entry_16']?></td>
+									<td>".$input['entry_16']."</td>
 								</tr>
 								<tr bgcolor='#ccc'>
 									<td colspan='2' style='color:#ffffff; padding-left: 10px'>
@@ -163,49 +163,49 @@ class ajaxkertaskerja extends CI_Controller
 								</tr>
 								<tr>
 									<td><span>Nama Instansi / Perorangan</span></td>
-									<td><?=$input['entry_17']?></td>
+									<td>".$input['entry_17']."</td>
 									<td>&nbsp;</td>
 									<td><span>Alamat Properti</span></td>
-									<td rowspan='2'><?=$input['entry_18']?></td>
+									<td rowspan='2'>".$input['entry_18']."</td>
 								</tr>
 								<tr>
 									<td><span>Nama Cabang</span></td>
-									<td><?=$input['entry_19']?></td>
+									<td>".$input['entry_19']."</td>
 									<td>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td>&nbsp;</td>
 								</tr>
 								<tr>
 									<td><span>Nama Staff</span></td>
-									<td><?=$input['entry_20']?></td>
+									<td>".$input['entry_20']."</td>
 									<td>&nbsp;</td>
 									<td><span>Nama Provinsi</span></td>
-									<td><?=$input['entry_21']?></td>
+									<td>".$input['entry_21']."</td>
 								</tr>
 								<tr>
 									<td><span>Jabatan</span></td>
-									<td><?=$input['entry_22']?></td>
+									<td>".$input['entry_22']."</td>
 									<td>&nbsp;</td>
 									<td><span>Nama Kota / Kabupaten</span></td>
-									<td><?=$input['entry_23']?></td>
+									<td>".$input['entry_23']."</td>
 								</tr>
 								<tr>
 									<td><span>Nomor Penugasan</span></td>
-									<td><?=$input['entry_24']?></td>
+									<td>".$input['entry_24']."</td>
 									<td>&nbsp;</td>
 									<td><span>Kecamatan</span></td>
-									<td><?=$input['entry_25']?></td>
+									<td>".$input['entry_25']."</td>
 								</tr>
 								<tr>
 									<td><span>Tanggal Penugasan</span></td>
-									<td><?=$input['entry_26']?></td>
+									<td>".$input['entry_26']."</td>
 									<td>&nbsp;</td>
 									<td><span>Kelurahan / Desa</span></td>
-									<td><?=$input['entry_27']?></td>
+									<td>".$input['entry_27']."</td>
 								</tr>
 								<tr>
 									<td><span>Tujuan Penilaian</span></td>
-									<td><?=$input['entry_28']?></td>
+									<td>".$input['entry_28']."</td>
 									<td>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td>&nbsp;</td>

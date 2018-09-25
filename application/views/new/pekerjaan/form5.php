@@ -2607,14 +2607,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-0 1-0" value="<?php echo $txn_data_banding_1["lokasi_0"] ?>" data-id-field="277" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-0" value="<?php echo $txn_data_banding_1["lokasi_0"] ?>" data-id-field="277" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-2 1-2" value="<?php echo $txn_data_banding_1["lokasi_1"] ?>" data-id-field="277" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-2" value="<?php echo $txn_data_banding_1["lokasi_1"] ?>" data-id-field="277" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-3 1-3" value="<?php echo $txn_data_banding_1["lokasi_2"] ?>" data-id-field="277" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_1-3" value="<?php echo $txn_data_banding_1["lokasi_2"] ?>" data-id-field="277" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2625,14 +2625,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_2-0 2-0" value="<?php echo $txn_data_banding_2["lokasi_0"] ?>" data-id-field="277" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_2-0" value="<?php echo $txn_data_banding_2["lokasi_0"] ?>" data-id-field="277" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_2-2 2-2" value="<?php echo $txn_data_banding_2["lokasi_1"] ?>" data-id-field="277" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_2-2" value="<?php echo $txn_data_banding_2["lokasi_1"] ?>" data-id-field="277" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_2-3 2-3" value="<?php echo $txn_data_banding_2["lokasi_2"] ?>" data-id-field="277" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_2-3" value="<?php echo $txn_data_banding_2["lokasi_2"] ?>" data-id-field="277" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2643,11 +2643,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_3-0 3-0" value="<?php echo $txn_data_banding_3["lokasi_0"] ?>" data-id-field="277" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_3-0" value="<?php echo $txn_data_banding_3["lokasi_0"] ?>" data-id-field="277" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_3-2 3-2" value="<?php echo $txn_data_banding_3["lokasi_1"] ?>" data-id-field="277" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_3-3 3-3" value="<?php echo $txn_data_banding_3["lokasi_2"] ?>" data-id-field="277" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_3-2" value="<?php echo $txn_data_banding_3["lokasi_1"] ?>" data-id-field="277" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_31" name="update[pembanding_31]" class="form-control table_input input_277_3-3" value="<?php echo $txn_data_banding_3["lokasi_2"] ?>" data-id-field="277" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2715,13 +2715,13 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_1-0 1-0" value="<?php echo $txn_data_banding_1["dokumen_legalitas_0"] ?>" data-id-field="278" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_1-0" value="<?php echo $txn_data_banding_1["dokumen_legalitas_0"] ?>" data-id-field="278" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_1-2 1-2" value="<?php echo $txn_data_banding_1["dokumen_legalitas_1"] ?>" data-id-field="278" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_1-2" value="<?php echo $txn_data_banding_1["dokumen_legalitas_1"] ?>" data-id-field="278" data-keterangan="1-2">
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_1-3 1-3" value="<?php echo $txn_data_banding_1["dokumen_legalitas_2"] ?>" data-id-field="278" data-keterangan="1-3">
+                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_1-3" value="<?php echo $txn_data_banding_1["dokumen_legalitas_2"] ?>" data-id-field="278" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2732,13 +2732,13 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_2-0 2-0" value="<?php echo $txn_data_banding_2["dokumen_legalitas_0"] ?>" data-id-field="278" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_2-0" value="<?php echo $txn_data_banding_2["dokumen_legalitas_0"] ?>" data-id-field="278" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_2-2 2-2" value="<?php echo $txn_data_banding_2["dokumen_legalitas_1"] ?>" data-id-field="278" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_2-2" value="<?php echo $txn_data_banding_2["dokumen_legalitas_1"] ?>" data-id-field="278" data-keterangan="2-2">
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_2-3 2-3" value="<?php echo $txn_data_banding_2["dokumen_legalitas_2"] ?>" data-id-field="278" data-keterangan="2-3">
+                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_2-3" value="<?php echo $txn_data_banding_2["dokumen_legalitas_2"] ?>" data-id-field="278" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2749,14 +2749,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_3-0 3-0" value="<?php echo $txn_data_banding_3["dokumen_legalitas_0"] ?>" data-id-field="278" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_3-0" value="<?php echo $txn_data_banding_3["dokumen_legalitas_0"] ?>" data-id-field="278" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_3-2 3-2" value="<?php echo $txn_data_banding_3["dokumen_legalitas_1"] ?>" data-id-field="278" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_3-2" value="<?php echo $txn_data_banding_3["dokumen_legalitas_1"] ?>" data-id-field="278" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_3-3 3-3" value="<?php echo $txn_data_banding_3["dokumen_legalitas_2"] ?>" data-id-field="278" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_278_3-3" value="<?php echo $txn_data_banding_3["dokumen_legalitas_2"] ?>" data-id-field="278" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2825,11 +2825,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_1-0 1-0" value="<?php echo $txn_data_banding_1["luas_bangunan_0"] ?>" data-id-field="279" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_1-0" value="<?php echo $txn_data_banding_1["luas_bangunan_0"] ?>" data-id-field="279" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_1-2 1-2" value="<?php echo $txn_data_banding_1["luas_bangunan_1"] ?>" data-id-field="279" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_1-3 1-3" value="<?php echo $txn_data_banding_1["luas_bangunan_2"] ?>" data-id-field="279" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_1-2" value="<?php echo $txn_data_banding_1["luas_bangunan_1"] ?>" data-id-field="279" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_1-3" value="<?php echo $txn_data_banding_1["luas_bangunan_2"] ?>" data-id-field="279" data-keterangan="1-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2839,11 +2839,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_2-0 2-0" value="<?php echo $txn_data_banding_2["luas_bangunan_0"] ?>" data-id-field="279" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_2-0" value="<?php echo $txn_data_banding_2["luas_bangunan_0"] ?>" data-id-field="279" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_2-2 2-2" value="<?php echo $txn_data_banding_2["luas_bangunan_1"] ?>" data-id-field="279" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_2-3 2-3" value="<?php echo $txn_data_banding_2["luas_bangunan_2"] ?>" data-id-field="279" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_2-2" value="<?php echo $txn_data_banding_2["luas_bangunan_1"] ?>" data-id-field="279" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_2-3" value="<?php echo $txn_data_banding_2["luas_bangunan_2"] ?>" data-id-field="279" data-keterangan="2-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2853,11 +2853,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_3-0 3-0" value="<?php echo $txn_data_banding_3["luas_bangunan_0"] ?>" data-id-field="279" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_3-0" value="<?php echo $txn_data_banding_3["luas_bangunan_0"] ?>" data-id-field="279" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_3-2 3-2" value="<?php echo $txn_data_banding_3["luas_bangunan_1"] ?>" data-id-field="279" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_3-3 3-3" value="<?php echo $txn_data_banding_3["luas_bangunan_2"] ?>" data-id-field="279" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_3-2" value="<?php echo $txn_data_banding_3["luas_bangunan_1"] ?>" data-id-field="279" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_33" name="update[pembanding_33]" class="form-control table_input input_279_3-3" value="<?php echo $txn_data_banding_3["luas_bangunan_2"] ?>" data-id-field="279" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2925,11 +2925,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_1-0 1-0" value="<?php echo $txn_data_banding_1["lebar_kondisi_jalan_0"] ?>" data-id-field="280" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_1-0" value="<?php echo $txn_data_banding_1["lebar_kondisi_jalan_0"] ?>" data-id-field="280" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_1-2 1-2" value="<?php echo $txn_data_banding_1["lebar_kondisi_jalan_1"] ?>" data-id-field="280" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_1-3 1-3" value="<?php echo $txn_data_banding_1["lebar_kondisi_jalan_2"] ?>" data-id-field="280" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_1-2" value="<?php echo $txn_data_banding_1["lebar_kondisi_jalan_1"] ?>" data-id-field="280" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_1-3" value="<?php echo $txn_data_banding_1["lebar_kondisi_jalan_2"] ?>" data-id-field="280" data-keterangan="1-3"></td>
                                                     </tbody>
                                                 </table>
                                             </td>
@@ -2938,11 +2938,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_2-0 2-0" value="<?php echo $txn_data_banding_2["lebar_kondisi_jalan_0"] ?>" data-id-field="280" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_2-0" value="<?php echo $txn_data_banding_2["lebar_kondisi_jalan_0"] ?>" data-id-field="280" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_2-2 2-2" value="<?php echo $txn_data_banding_2["lebar_kondisi_jalan_1"] ?>" data-id-field="280" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_2-3 2-3" value="<?php echo $txn_data_banding_2["lebar_kondisi_jalan_2"] ?>" data-id-field="280" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_2-2" value="<?php echo $txn_data_banding_2["lebar_kondisi_jalan_1"] ?>" data-id-field="280" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_2-3" value="<?php echo $txn_data_banding_2["lebar_kondisi_jalan_2"] ?>" data-id-field="280" data-keterangan="2-3"></td>
                                                     </tbody>
                                                 </table>
                                             </td>
@@ -2951,11 +2951,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_3-0 3-0" value="<?php echo $txn_data_banding_3["lebar_kondisi_jalan_0"] ?>" data-id-field="280" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_3-0" value="<?php echo $txn_data_banding_3["lebar_kondisi_jalan_0"] ?>" data-id-field="280" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_3-2 3-2" value="<?php echo $txn_data_banding_3["lebar_kondisi_jalan_1"] ?>" data-id-field="280" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_3-3 3-3" value="<?php echo $txn_data_banding_3["lebar_kondisi_jalan_2"] ?>" data-id-field="280" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_3-2" value="<?php echo $txn_data_banding_3["lebar_kondisi_jalan_1"] ?>" data-id-field="280" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_34" name="update[pembanding_34]" class="form-control table_input input_280_3-3" value="<?php echo $txn_data_banding_3["lebar_kondisi_jalan_2"] ?>" data-id-field="280" data-keterangan="3-3"></td>
                                                     </tbody>
                                                 </table>
                                             </td>
@@ -3022,11 +3022,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_1-0 1-0" value="<?php echo $txn_data_banding_1["lebar_depan_0"] ?>" data-id-field="283" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_1-0" value="<?php echo $txn_data_banding_1["lebar_depan_0"] ?>" data-id-field="283" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_1-1 1-1" value="<?php echo $txn_data_banding_1["lebar_depan_1"] ?>" data-id-field="283" data-keterangan="1-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_1-2 1-2" value="<?php echo $txn_data_banding_1["lebar_depan_2"] ?>" data-id-field="283" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_1-1" value="<?php echo $txn_data_banding_1["lebar_depan_1"] ?>" data-id-field="283" data-keterangan="1-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_1-2" value="<?php echo $txn_data_banding_1["lebar_depan_2"] ?>" data-id-field="283" data-keterangan="1-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3036,11 +3036,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_2-0 2-0" value="<?php echo $txn_data_banding_2["lebar_depan_0"] ?>" data-id-field="283" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_2-0" value="<?php echo $txn_data_banding_2["lebar_depan_0"] ?>" data-id-field="283" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_2-1 2-1" value="<?php echo $txn_data_banding_2["lebar_depan_1"] ?>" data-id-field="283" data-keterangan="2-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_2-2 2-2" value="<?php echo $txn_data_banding_2["lebar_depan_2"] ?>" data-id-field="283" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_2-1" value="<?php echo $txn_data_banding_2["lebar_depan_1"] ?>" data-id-field="283" data-keterangan="2-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_2-2" value="<?php echo $txn_data_banding_2["lebar_depan_2"] ?>" data-id-field="283" data-keterangan="2-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3050,11 +3050,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_3-0 3-0" value="<?php echo $txn_data_banding_3["lebar_depan_0"] ?>" data-id-field="283" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_3-0" value="<?php echo $txn_data_banding_3["lebar_depan_0"] ?>" data-id-field="283" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_3-1 3-1" value="<?php echo $txn_data_banding_3["lebar_depan_1"] ?>" data-id-field="283" data-keterangan="3-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_3-2 3-2" value="<?php echo $txn_data_banding_3["lebar_depan_2"] ?>" data-id-field="283" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_3-1" value="<?php echo $txn_data_banding_3["lebar_depan_1"] ?>" data-id-field="283" data-keterangan="3-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_37" name="update[pembanding_37]" class="form-control table_input input_283_3-2" value="<?php echo $txn_data_banding_3["lebar_depan_2"] ?>" data-id-field="283" data-keterangan="3-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3122,11 +3122,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_1-0 1-0" value="<?php echo $txn_data_banding_1["panjang_bangunan_0"] ?>" data-id-field="284" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_1-0" value="<?php echo $txn_data_banding_1["panjang_bangunan_0"] ?>" data-id-field="284" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_1-1 1-1" value="<?php echo $txn_data_banding_1["panjang_bangunan_1"] ?>" data-id-field="284" data-keterangan="1-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_1-2 1-2" value="<?php echo $txn_data_banding_1["panjang_bangunan_2"] ?>" data-id-field="284" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_1-1" value="<?php echo $txn_data_banding_1["panjang_bangunan_1"] ?>" data-id-field="284" data-keterangan="1-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_1-2" value="<?php echo $txn_data_banding_1["panjang_bangunan_2"] ?>" data-id-field="284" data-keterangan="1-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3136,11 +3136,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_2-0 2-0" value="<?php echo $txn_data_banding_2["panjang_bangunan_0"] ?>" data-id-field="284" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_2-0" value="<?php echo $txn_data_banding_2["panjang_bangunan_0"] ?>" data-id-field="284" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_2-1 2-1" value="<?php echo $txn_data_banding_2["panjang_bangunan_1"] ?>" data-id-field="284" data-keterangan="2-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_2-2 2-2" value="<?php echo $txn_data_banding_2["panjang_bangunan_2"] ?>" data-id-field="284" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_2-1" value="<?php echo $txn_data_banding_2["panjang_bangunan_1"] ?>" data-id-field="284" data-keterangan="2-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_2-2" value="<?php echo $txn_data_banding_2["panjang_bangunan_2"] ?>" data-id-field="284" data-keterangan="2-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3150,11 +3150,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_3-0 3-0" value="<?php echo $txn_data_banding_3["panjang_bangunan_0"] ?>" data-id-field="284" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_3-0" value="<?php echo $txn_data_banding_3["panjang_bangunan_0"] ?>" data-id-field="284" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_3-1 3-1" value="<?php echo $txn_data_banding_3["panjang_bangunan_1"] ?>" data-id-field="284" data-keterangan="3-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_3-2 3-2" value="<?php echo $txn_data_banding_3["panjang_bangunan_2"] ?>" data-id-field="284" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_3-1" value="<?php echo $txn_data_banding_3["panjang_bangunan_1"] ?>" data-id-field="284" data-keterangan="3-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_38" name="update[pembanding_38]" class="form-control table_input input_284_3-2" value="<?php echo $txn_data_banding_3["panjang_bangunan_2"] ?>" data-id-field="284" data-keterangan="3-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3222,11 +3222,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_1-0 1-0" value="<?php echo $txn_data_banding_1["kondisi_eksterior_interior_0"] ?>" data-id-field="281" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_1-0" value="<?php echo $txn_data_banding_1["kondisi_eksterior_interior_0"] ?>" data-id-field="281" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_1-2 1-2" value="<?php echo $txn_data_banding_1["kondisi_eksterior_interior_1"] ?>" data-id-field="281" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_1-3 1-3" value="<?php echo $txn_data_banding_1["kondisi_eksterior_interior_2"] ?>" data-id-field="281" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_1-2" value="<?php echo $txn_data_banding_1["kondisi_eksterior_interior_1"] ?>" data-id-field="281" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_1-3" value="<?php echo $txn_data_banding_1["kondisi_eksterior_interior_2"] ?>" data-id-field="281" data-keterangan="1-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3236,11 +3236,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_2-0 2-0" value="<?php echo $txn_data_banding_2["kondisi_eksterior_interior_0"] ?>" data-id-field="281" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_2-0" value="<?php echo $txn_data_banding_2["kondisi_eksterior_interior_0"] ?>" data-id-field="281" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_2-2 2-2" value="<?php echo $txn_data_banding_2["kondisi_eksterior_interior_1"] ?>" data-id-field="281" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_2-3 2-3" value="<?php echo $txn_data_banding_2["kondisi_eksterior_interior_2"] ?>" data-id-field="281" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_2-2" value="<?php echo $txn_data_banding_2["kondisi_eksterior_interior_1"] ?>" data-id-field="281" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_2-3" value="<?php echo $txn_data_banding_2["kondisi_eksterior_interior_2"] ?>" data-id-field="281" data-keterangan="2-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3250,11 +3250,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_3-0 3-0" value="<?php echo $txn_data_banding_3["kondisi_eksterior_interior_0"] ?>" data-id-field="281" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_3-0" value="<?php echo $txn_data_banding_3["kondisi_eksterior_interior_0"] ?>" data-id-field="281" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_3-2 3-2" value="<?php echo $txn_data_banding_3["kondisi_eksterior_interior_1"] ?>" data-id-field="281" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_3-3 3-3" value="<?php echo $txn_data_banding_3["kondisi_eksterior_interior_2"] ?>" data-id-field="281" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_3-2" value="<?php echo $txn_data_banding_3["kondisi_eksterior_interior_1"] ?>" data-id-field="281" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_35" name="update[pembanding_35]" class="form-control table_input input_281_3-3" value="<?php echo $txn_data_banding_3["kondisi_eksterior_interior_2"] ?>" data-id-field="281" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3322,11 +3322,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_1-0 1-0" value="<?php echo $txn_data_banding_1["fasilitas_lingkungan_0"] ?>" data-id-field="286" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_1-0" value="<?php echo $txn_data_banding_1["fasilitas_lingkungan_0"] ?>" data-id-field="286" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_1-2 1-2" value="<?php echo $txn_data_banding_1["fasilitas_lingkungan_1"] ?>" data-id-field="286" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_1-3 1-3" value="<?php echo $txn_data_banding_1["fasilitas_lingkungan_2"] ?>" data-id-field="286" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_1-2" value="<?php echo $txn_data_banding_1["fasilitas_lingkungan_1"] ?>" data-id-field="286" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_1-3" value="<?php echo $txn_data_banding_1["fasilitas_lingkungan_2"] ?>" data-id-field="286" data-keterangan="1-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3336,11 +3336,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_2-0 2-0" value="<?php echo $txn_data_banding_2["fasilitas_lingkungan_0"] ?>" data-id-field="286" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_2-0" value="<?php echo $txn_data_banding_2["fasilitas_lingkungan_0"] ?>" data-id-field="286" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_2-2 2-2" value="<?php echo $txn_data_banding_2["fasilitas_lingkungan_1"] ?>" data-id-field="286" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_2-3 2-3" value="<?php echo $txn_data_banding_2["fasilitas_lingkungan_2"] ?>" data-id-field="286" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_2-2" value="<?php echo $txn_data_banding_2["fasilitas_lingkungan_1"] ?>" data-id-field="286" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_2-3" value="<?php echo $txn_data_banding_2["fasilitas_lingkungan_2"] ?>" data-id-field="286" data-keterangan="2-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3350,11 +3350,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_3-0 3-0" value="<?php echo $txn_data_banding_3["fasilitas_lingkungan_0"] ?>" data-id-field="286" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_3-0" value="<?php echo $txn_data_banding_3["fasilitas_lingkungan_0"] ?>" data-id-field="286" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_3-2 3-2" value="<?php echo $txn_data_banding_3["fasilitas_lingkungan_1"] ?>1" data-id-field="286" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_3-3 3-3" value="<?php echo $txn_data_banding_3["fasilitas_lingkungan_2"] ?>" data-id-field="286" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_3-2" value="<?php echo $txn_data_banding_3["fasilitas_lingkungan_1"] ?>1" data-id-field="286" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_40" name="update[pembanding_40]" class="form-control table_input input_286_3-3" value="<?php echo $txn_data_banding_3["fasilitas_lingkungan_2"] ?>" data-id-field="286" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3422,14 +3422,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_1-0 1-0" value="<?php echo $txn_data_banding_1["sarana_parkir_0"] ?>" data-id-field="975" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_1-0" value="<?php echo $txn_data_banding_1["sarana_parkir_0"] ?>" data-id-field="975" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_1-2 1-2" value="<?php echo $txn_data_banding_1["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_1-2" value="<?php echo $txn_data_banding_1["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_1-3 1-3" value="<?php echo $txn_data_banding_1["sarana_parkir_2"] ?>" data-id-field="975" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_1-3" value="<?php echo $txn_data_banding_1["sarana_parkir_2"] ?>" data-id-field="975" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3440,14 +3440,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_2-0 2-0" value="<?php echo $txn_data_banding_2["sarana_parkir_0"] ?>" data-id-field="975" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_2-0" value="<?php echo $txn_data_banding_2["sarana_parkir_0"] ?>" data-id-field="975" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_2-2 2-2" value="<?php echo $txn_data_banding_2["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_2-2" value="<?php echo $txn_data_banding_2["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_2-3 2-3" value="<?php echo $txn_data_banding_2["sarana_parkir_2"] ?>" data-id-field="975" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_2-3" value="<?php echo $txn_data_banding_2["sarana_parkir_2"] ?>" data-id-field="975" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3458,14 +3458,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_3-0 3-0" value="<?php echo $txn_data_banding_3["sarana_parkir_0"] ?>" data-id-field="975" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_3-0" value="<?php echo $txn_data_banding_3["sarana_parkir_0"] ?>" data-id-field="975" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_3-2 3-2" value="<?php echo $txn_data_banding_3["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_3-2" value="<?php echo $txn_data_banding_3["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_3-3 3-3" value="<?php echo $txn_data_banding_3["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_pembanding_104" name="update[pembanding_104]" class="form-control table_input input_975_3-3" value="<?php echo $txn_data_banding_3["sarana_parkir_1"] ?>" data-id-field="975" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3534,14 +3534,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_1-0 1-0" value="<?php echo $txn_data_banding_1["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_1-0" value="<?php echo $txn_data_banding_1["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_1-2 1-2" value="<?php echo $txn_data_banding_1["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_1-2" value="<?php echo $txn_data_banding_1["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_1-3 1-3" value="<?php echo $txn_data_banding_1["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_1-3" value="<?php echo $txn_data_banding_1["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3552,14 +3552,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_2-0 2-0" value="<?php echo $txn_data_banding_2["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_2-0" value="<?php echo $txn_data_banding_2["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_2-2 2-2" value="<?php echo $txn_data_banding_2["letak_posisi_bangunan_1"] ?>" data-id-field="976" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_2-2" value="<?php echo $txn_data_banding_2["letak_posisi_bangunan_1"] ?>" data-id-field="976" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_2-3 2-3" value="<?php echo $txn_data_banding_2["letak_posisi_bangunan_2"] ?>" data-id-field="976" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_2-3" value="<?php echo $txn_data_banding_2["letak_posisi_bangunan_2"] ?>" data-id-field="976" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3570,14 +3570,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_3-0 3-0" value="<?php echo $txn_data_banding_3["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_3-0" value="<?php echo $txn_data_banding_3["letak_posisi_bangunan_0"] ?>" data-id-field="976" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_3-2 3-2" value="<?php echo $txn_data_banding_3["letak_posisi_bangunan_1"] ?>" data-id-field="976" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_3-2" value="<?php echo $txn_data_banding_3["letak_posisi_bangunan_1"] ?>" data-id-field="976" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_3-3 3-3" value="<?php echo $txn_data_banding_3["letak_posisi_bangunan_2"] ?>" data-id-field="976" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_pembanding_105" name="update[pembanding_105]" class="form-control table_input input_976_3-3" value="<?php echo $txn_data_banding_3["letak_posisi_bangunan_2"] ?>" data-id-field="976" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3646,11 +3646,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_1-0 1-0" value="<?php echo $txn_data_banding_1["peruntukan_0"] ?>" data-id-field="285" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_1-0" value="<?php echo $txn_data_banding_1["peruntukan_0"] ?>" data-id-field="285" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_1-2 1-2" value="<?php echo $txn_data_banding_1["peruntukan_1"] ?>" data-id-field="285" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_1-3 1-3" value="<?php echo $txn_data_banding_1["peruntukan_2"] ?>" data-id-field="285" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_1-2" value="<?php echo $txn_data_banding_1["peruntukan_1"] ?>" data-id-field="285" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_1-3" value="<?php echo $txn_data_banding_1["peruntukan_2"] ?>" data-id-field="285" data-keterangan="1-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3660,11 +3660,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_2-0 2-0" value="<?php echo $txn_data_banding_2["peruntukan_0"] ?>" data-id-field="285" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_2-0" value="<?php echo $txn_data_banding_2["peruntukan_0"] ?>" data-id-field="285" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_2-2 2-2" value="<?php echo $txn_data_banding_2["peruntukan_1"] ?>" data-id-field="285" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_2-3 2-3" value="<?php echo $txn_data_banding_2["peruntukan_2"] ?>" data-id-field="285" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_2-2" value="<?php echo $txn_data_banding_2["peruntukan_1"] ?>" data-id-field="285" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_2-3" value="<?php echo $txn_data_banding_2["peruntukan_2"] ?>" data-id-field="285" data-keterangan="2-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3674,11 +3674,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_3-0 3-0" value="<?php echo $txn_data_banding_3["peruntukan_0"] ?>" data-id-field="285" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_3-0" value="<?php echo $txn_data_banding_3["peruntukan_0"] ?>" data-id-field="285" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_3-2 3-2" value="<?php echo $txn_data_banding_3["peruntukan_1"] ?>" data-id-field="285" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_3-3 3-3" value="<?php echo $txn_data_banding_3["peruntukan_2"] ?>" data-id-field="285" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_3-2" value="<?php echo $txn_data_banding_3["peruntukan_1"] ?>" data-id-field="285" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_39" name="update[pembanding_39]" class="form-control table_input input_285_3-3" value="<?php echo $txn_data_banding_3["peruntukan_2"] ?>" data-id-field="285" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3746,11 +3746,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_1-0 1-0" value="<?php echo $txn_data_banding_1["waktu_penawaran_0"] ?>" data-id-field="287" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_1-0" value="<?php echo $txn_data_banding_1["waktu_penawaran_0"] ?>" data-id-field="287" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_1-2 1-2" value="<?php echo $txn_data_banding_1["waktu_penawaran_1"] ?>" data-id-field="287" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_1-3 1-3" value="<?php echo $txn_data_banding_1["waktu_penawaran_2"] ?>" data-id-field="287" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_1-2" value="<?php echo $txn_data_banding_1["waktu_penawaran_1"] ?>" data-id-field="287" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_1-3" value="<?php echo $txn_data_banding_1["waktu_penawaran_2"] ?>" data-id-field="287" data-keterangan="1-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3760,11 +3760,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_2-0 2-0" value="<?php echo $txn_data_banding_2["waktu_penawaran_0"] ?>" data-id-field="287" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_2-0" value="<?php echo $txn_data_banding_2["waktu_penawaran_0"] ?>" data-id-field="287" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_2-2 2-2" value="<?php echo $txn_data_banding_2["waktu_penawaran_1"] ?>" data-id-field="287" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_2-3 2-3" value="<?php echo $txn_data_banding_2["waktu_penawaran_2"] ?>" data-id-field="287" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_2-2" value="<?php echo $txn_data_banding_2["waktu_penawaran_1"] ?>" data-id-field="287" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_2-3" value="<?php echo $txn_data_banding_2["waktu_penawaran_2"] ?>" data-id-field="287" data-keterangan="2-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3774,11 +3774,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_3-0 3-0" value="<?php echo $txn_data_banding_3["waktu_penawaran_0"] ?>" data-id-field="287" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_3-0" value="<?php echo $txn_data_banding_3["waktu_penawaran_0"] ?>" data-id-field="287" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_3-2 3-2" value="<?php echo $txn_data_banding_3["waktu_penawaran_1"] ?>" data-id-field="287" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_3-3 3-3" value="<?php echo $txn_data_banding_3["waktu_penawaran_2"] ?>" data-id-field="287" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_3-2" value="<?php echo $txn_data_banding_3["waktu_penawaran_1"] ?>" data-id-field="287" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_287_3-3" value="<?php echo $txn_data_banding_3["waktu_penawaran_2"] ?>" data-id-field="287" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3792,11 +3792,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_1-0 1-0" value="<?php echo $txn_data_banding_1["lain_lain_0"] ?>" data-id-field="288" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_1-0" value="<?php echo $txn_data_banding_1["lain_lain_0"] ?>" data-id-field="288" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_1-1 1-1" value="<?php echo $txn_data_banding_1["lain_lain_1"] ?>" data-id-field="288" data-keterangan="1-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_1-2 1-2" value="<?php echo $txn_data_banding_1["lain_lain_2"] ?>" data-id-field="288" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_1-1" value="<?php echo $txn_data_banding_1["lain_lain_1"] ?>" data-id-field="288" data-keterangan="1-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_1-2" value="<?php echo $txn_data_banding_1["lain_lain_2"] ?>" data-id-field="288" data-keterangan="1-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3806,11 +3806,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_2-0 2-0" value="<?php echo $txn_data_banding_2["lain_lain_0"] ?>" data-id-field="288" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_2-0" value="<?php echo $txn_data_banding_2["lain_lain_0"] ?>" data-id-field="288" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_2-1 2-1" value="<?php echo $txn_data_banding_2["lain_lain_1"] ?>" data-id-field="288" data-keterangan="2-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_2-2 2-2" value="<?php echo $txn_data_banding_2["lain_lain_2"] ?>" data-id-field="288" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_2-1" value="<?php echo $txn_data_banding_2["lain_lain_1"] ?>" data-id-field="288" data-keterangan="2-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_2-2" value="<?php echo $txn_data_banding_2["lain_lain_2"] ?>" data-id-field="288" data-keterangan="2-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3820,11 +3820,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_3-0 3-0" value="<?php echo $txn_data_banding_3["lain_lain_0"] ?>" data-id-field="288" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_3-0" value="<?php echo $txn_data_banding_3["lain_lain_0"] ?>" data-id-field="288" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_3-1 3-1" value="<?php echo $txn_data_banding_3["lain_lain_1"] ?>" data-id-field="288" data-keterangan="3-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_3-2 3-2" value="<?php echo $txn_data_banding_3["lain_lain_2"] ?>" data-id-field="288" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_3-1" value="<?php echo $txn_data_banding_3["lain_lain_1"] ?>" data-id-field="288" data-keterangan="3-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_42" name="update[pembanding_42]" class="form-control table_input input_288_3-2" value="<?php echo $txn_data_banding_3["lain_lain_2"] ?>" data-id-field="288" data-keterangan="3-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3839,14 +3839,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_1-0 1-0" value="<?php echo $txn_data_banding_1["total_0"] ?>" data-id-field="289" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_1-0" value="<?php echo $txn_data_banding_1["total_0"] ?>" data-id-field="289" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_1-1 1-1" value="<?php echo $txn_data_banding_1["total_1"] ?>" data-id-field="289" data-keterangan="1-1">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_1-1" value="<?php echo $txn_data_banding_1["total_1"] ?>" data-id-field="289" data-keterangan="1-1">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_1-2 1-2" value="<?php echo $txn_data_banding_1["total_2"] ?>" data-id-field="289" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_1-2" value="<?php echo $txn_data_banding_1["total_2"] ?>" data-id-field="289" data-keterangan="1-2">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -3857,11 +3857,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_2-0 2-0" value="<?php echo $txn_data_banding_2["total_0"] ?>" data-id-field="289" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_2-0" value="<?php echo $txn_data_banding_2["total_0"] ?>" data-id-field="289" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_2-1 2-1" value="<?php echo $txn_data_banding_2["total_1"] ?>" data-id-field="289" data-keterangan="2-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_2-2 2-2" value="<?php echo $txn_data_banding_2["total_2"] ?>" data-id-field="289" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_2-1" value="<?php echo $txn_data_banding_2["total_1"] ?>" data-id-field="289" data-keterangan="2-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_2-2" value="<?php echo $txn_data_banding_2["total_2"] ?>" data-id-field="289" data-keterangan="2-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -3871,11 +3871,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_3-0 3-0" value="<?php echo $txn_data_banding_3["total_0"] ?>" data-id-field="289" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_3-0" value="<?php echo $txn_data_banding_3["total_0"] ?>" data-id-field="289" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_3-1 3-1" value="<?php echo $txn_data_banding_3["total_1"] ?>" data-id-field="289" data-keterangan="3-1"></td>
-                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_3-2 3-2" value="<?php echo $txn_data_banding_3["total_2"] ?>" data-id-field="289" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_3-1" value="<?php echo $txn_data_banding_3["total_1"] ?>" data-id-field="289" data-keterangan="3-1"></td>
+                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_289_3-2" value="<?php echo $txn_data_banding_3["total_2"] ?>" data-id-field="289" data-keterangan="3-2"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

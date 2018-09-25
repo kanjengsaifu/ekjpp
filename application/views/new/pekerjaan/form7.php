@@ -1662,13 +1662,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_1-0 1-0" value="<?php echo $txn_data_banding_1["dokumen_legalitas_0"] ?>" data-id-field="1103" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_1-0" value="<?php echo $txn_data_banding_1["dokumen_legalitas_0"] ?>" data-id-field="1103" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_1-2 1-2" value="<?php echo $txn_data_banding_1["dokumen_legalitas_1"] ?>" data-id-field="1103" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_1-2" value="<?php echo $txn_data_banding_1["dokumen_legalitas_1"] ?>" data-id-field="1103" data-keterangan="1-2">
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_1-3 1-3" value="<?php echo $txn_data_banding_1["dokumen_legalitas_2"] ?>" data-id-field="1103" data-keterangan="1-3">
+                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_1-3" value="<?php echo $txn_data_banding_1["dokumen_legalitas_2"] ?>" data-id-field="1103" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1679,13 +1679,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_2-0 2-0" value="<?php echo $txn_data_banding_2["dokumen_legalitas_0"] ?>" data-id-field="1103" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_2-0" value="<?php echo $txn_data_banding_2["dokumen_legalitas_0"] ?>" data-id-field="1103" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_2-2 2-2" value="<?php echo $txn_data_banding_2["dokumen_legalitas_1"] ?>" data-id-field="1103" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_2-2" value="<?php echo $txn_data_banding_2["dokumen_legalitas_1"] ?>" data-id-field="1103" data-keterangan="2-2">
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_2-3 2-3" value="<?php echo $txn_data_banding_2["dokumen_legalitas_2"] ?>" data-id-field="1103" data-keterangan="2-3">
+                                                            <td><input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_2-3" value="<?php echo $txn_data_banding_2["dokumen_legalitas_2"] ?>" data-id-field="1103" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1696,14 +1696,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_3-0 3-0" value="<?php echo $txn_data_banding_3["dokumen_legalitas_0"] ?>" data-id-field="1103" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_3-0" value="<?php echo $txn_data_banding_3["dokumen_legalitas_0"] ?>" data-id-field="1103" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_3-2 3-2" value="<?php echo $txn_data_banding_3["dokumen_legalitas_1"] ?>" data-id-field="1103" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_3-2" value="<?php echo $txn_data_banding_3["dokumen_legalitas_1"] ?>" data-id-field="1103" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_3-3 3-3" value="<?php echo $txn_data_banding_3["dokumen_legalitas_2"] ?>" data-id-field="1103" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_pembanding_32" name="update[pembanding_32]" class="form-control table_input input_1103_3-3" value="<?php echo $txn_data_banding_3["dokumen_legalitas_2"] ?>" data-id-field="1103" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1772,14 +1772,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_1-0 1-0" value="<?php echo $txn_data_banding_1['lantai_ruang_apartment_0'] ?>" data-id-field="1104" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_1-0" value="<?php echo $txn_data_banding_1['lantai_ruang_apartment_0'] ?>" data-id-field="1104" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_1-2 1-2" value="<?php echo $txn_data_banding_1['lantai_ruang_apartment_1'] ?>" data-id-field="1104" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_1-2" value="<?php echo $txn_data_banding_1['lantai_ruang_apartment_1'] ?>" data-id-field="1104" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_1-3 1-3" value="<?php echo $txn_data_banding_1['lantai_ruang_apartment_2'] ?>" data-id-field="1104" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_1-3" value="<?php echo $txn_data_banding_1['lantai_ruang_apartment_2'] ?>" data-id-field="1104" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1790,14 +1790,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_2-0 2-0 " value="<?php echo $txn_data_banding_2['lantai_ruang_apartment_0'] ?>" data-id-field="1104" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_2-0 " value="<?php echo $txn_data_banding_2['lantai_ruang_apartment_0'] ?>" data-id-field="1104" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_2-2 2-2" value="<?php echo $txn_data_banding_2['lantai_ruang_apartment_1'] ?>" data-id-field="1104" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_2-2" value="<?php echo $txn_data_banding_2['lantai_ruang_apartment_1'] ?>" data-id-field="1104" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_2-3 2-3" value="<?php echo $txn_data_banding_2['lantai_ruang_apartment_2'] ?>" data-id-field="1104" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_2-3" value="<?php echo $txn_data_banding_2['lantai_ruang_apartment_2'] ?>" data-id-field="1104" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1808,14 +1808,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_3-0 3-0 " value="<?php echo $txn_data_banding_3['lantai_ruang_apartment_0'] ?>" data-id-field="1104" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_3-0 " value="<?php echo $txn_data_banding_3['lantai_ruang_apartment_0'] ?>" data-id-field="1104" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_3-2 3-2" value="<?php echo $txn_data_banding_3['lantai_ruang_apartment_1'] ?>" data-id-field="1104" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_3-2" value="<?php echo $txn_data_banding_3['lantai_ruang_apartment_1'] ?>" data-id-field="1104" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_3-3 3-3" value="<?php echo $txn_data_banding_3['lantai_ruang_apartment_2'] ?>" data-id-field="1104" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1104_3-3" value="<?php echo $txn_data_banding_3['lantai_ruang_apartment_2'] ?>" data-id-field="1104" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1884,13 +1884,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_1-0 1-0 " value="<?php echo $txn_data_banding_1['luas_ruangan_apartment_0'] ?>" data-id-field="1105" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_1-0 " value="<?php echo $txn_data_banding_1['luas_ruangan_apartment_0'] ?>" data-id-field="1105" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_1-2 1-2" value="<?php echo $txn_data_banding_1['luas_ruangan_apartment_1'] ?>" data-id-field="1105" data-keterangan="1-2"></td>
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_1-2" value="<?php echo $txn_data_banding_1['luas_ruangan_apartment_1'] ?>" data-id-field="1105" data-keterangan="1-2"></td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_1-3 1-3" value="<?php echo $txn_data_banding_1['luas_ruangan_apartment_2'] ?>" data-id-field="1105" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_1-3" value="<?php echo $txn_data_banding_1['luas_ruangan_apartment_2'] ?>" data-id-field="1105" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1901,14 +1901,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_2-0 2-0" value="<?php echo $txn_data_banding_2['luas_ruangan_apartment_0'] ?>" data-id-field="1105" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_2-0" value="<?php echo $txn_data_banding_2['luas_ruangan_apartment_0'] ?>" data-id-field="1105" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_2-2 2-2" value="<?php echo $txn_data_banding_2['luas_ruangan_apartment_1'] ?>" data-id-field="1105" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_2-2" value="<?php echo $txn_data_banding_2['luas_ruangan_apartment_1'] ?>" data-id-field="1105" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_2-3 2-3" value="<?php echo $txn_data_banding_2['luas_ruangan_apartment_2'] ?>" data-id-field="1105" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_2-3" value="<?php echo $txn_data_banding_2['luas_ruangan_apartment_2'] ?>" data-id-field="1105" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1919,14 +1919,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_3-0 3-0" value="<?php echo $txn_data_banding_3['luas_ruangan_apartment_0'] ?>" data-id-field="1105" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_3-0" value="<?php echo $txn_data_banding_3['luas_ruangan_apartment_0'] ?>" data-id-field="1105" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_3-2 3-2" value="<?php echo $txn_data_banding_3['luas_ruangan_apartment_1'] ?>" data-id-field="1105" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_3-2" value="<?php echo $txn_data_banding_3['luas_ruangan_apartment_1'] ?>" data-id-field="1105" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_3-3 3-3" value="<?php echo $txn_data_banding_3['luas_ruangan_apartment_2'] ?>" data-id-field="1105" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1105_3-3" value="<?php echo $txn_data_banding_3['luas_ruangan_apartment_2'] ?>" data-id-field="1105" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1995,14 +1995,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_1-0 1-0" value="<?php echo $txn_data_banding_1['view_menghadap_ke_0'] ?>" data-id-field="1106" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_1-0" value="<?php echo $txn_data_banding_1['view_menghadap_ke_0'] ?>" data-id-field="1106" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_1-2 1-2" value="<?php echo $txn_data_banding_1['view_menghadap_ke_1'] ?>" data-id-field="1106" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_1-2" value="<?php echo $txn_data_banding_1['view_menghadap_ke_1'] ?>" data-id-field="1106" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_1-3 1-3" value="<?php echo $txn_data_banding_1['view_menghadap_ke_2'] ?>" data-id-field="1106" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_1-3" value="<?php echo $txn_data_banding_1['view_menghadap_ke_2'] ?>" data-id-field="1106" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2013,14 +2013,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_2-0 2-0 " value="<?php echo $txn_data_banding_2['view_menghadap_ke_0'] ?>" data-id-field="1106" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_2-0 " value="<?php echo $txn_data_banding_2['view_menghadap_ke_0'] ?>" data-id-field="1106" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_2-2 2-2" value="<?php echo $txn_data_banding_2['view_menghadap_ke_1'] ?>" data-id-field="1106" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_2-2" value="<?php echo $txn_data_banding_2['view_menghadap_ke_1'] ?>" data-id-field="1106" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_2-3 2-3" value="<?php echo $txn_data_banding_2['view_menghadap_ke_2'] ?>" data-id-field="1106" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_2-3" value="<?php echo $txn_data_banding_2['view_menghadap_ke_2'] ?>" data-id-field="1106" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2031,14 +2031,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_3-0 3-0" value="<?php echo $txn_data_banding_3['view_menghadap_ke_0'] ?>" data-id-field="1106" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_3-0" value="<?php echo $txn_data_banding_3['view_menghadap_ke_0'] ?>" data-id-field="1106" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_3-2 3-2" value="<?php echo $txn_data_banding_3['view_menghadap_ke_1'] ?>" data-id-field="1106" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_3-2" value="<?php echo $txn_data_banding_3['view_menghadap_ke_1'] ?>" data-id-field="1106" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_3-3 3-3" value="<?php echo $txn_data_banding_3['view_menghadap_ke_2'] ?>" data-id-field="1106" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1106_3-3" value="<?php echo $txn_data_banding_3['view_menghadap_ke_2'] ?>" data-id-field="1106" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2107,14 +2107,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_1-0 1-0" value="<?php echo $txn_data_banding_1['posisi_ruang_apartment_0'] ?>" data-id-field="1107" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_1-0" value="<?php echo $txn_data_banding_1['posisi_ruang_apartment_0'] ?>" data-id-field="1107" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_1-2 1-2" value="<?php echo $txn_data_banding_1['posisi_ruang_apartment_1'] ?>" data-id-field="1107" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_1-2" value="<?php echo $txn_data_banding_1['posisi_ruang_apartment_1'] ?>" data-id-field="1107" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_1-3 1-3" value="<?php echo $txn_data_banding_1['posisi_ruang_apartment_2'] ?>" data-id-field="1107" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_1-3" value="<?php echo $txn_data_banding_1['posisi_ruang_apartment_2'] ?>" data-id-field="1107" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2125,14 +2125,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_2-0 2-0" value="<?php echo $txn_data_banding_2['posisi_ruang_apartment_0'] ?>" data-id-field="1107" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_2-0" value="<?php echo $txn_data_banding_2['posisi_ruang_apartment_0'] ?>" data-id-field="1107" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_2-2 2-2" value="<?php echo $txn_data_banding_2['posisi_ruang_apartment_1'] ?>" data-id-field="1107" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_2-2"  value="<?php echo $txn_data_banding_2['posisi_ruang_apartment_1'] ?>" data-id-field="1107" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_2-3 2-3" value="<?php echo $txn_data_banding_2['posisi_ruang_apartment_2'] ?>" data-id-field="1107" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_2-3" value="<?php echo $txn_data_banding_2['posisi_ruang_apartment_2'] ?>" data-id-field="1107" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2143,14 +2143,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_3-0 3-0" value="<?php echo $txn_data_banding_3['posisi_ruang_apartment_0'] ?>" data-id-field="1107" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_3-0" value="<?php echo $txn_data_banding_3['posisi_ruang_apartment_0'] ?>" data-id-field="1107" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_3-2 3-2" value="<?php echo $txn_data_banding_3['posisi_ruang_apartment_1'] ?>" data-id-field="1107" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_3-2" value="<?php echo $txn_data_banding_3['posisi_ruang_apartment_1'] ?>" data-id-field="1107" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_3-3 3-3" value="<?php echo $txn_data_banding_3['posisi_ruang_apartment_2'] ?>" data-id-field="1107" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1107_3-3" value="<?php echo $txn_data_banding_3['posisi_ruang_apartment_2'] ?>" data-id-field="1107" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2219,14 +2219,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_1-0 1-0" value="<?php echo $txn_data_banding_1['furnished_0'] ?>" data-id-field="1108" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_1-0" value="<?php echo $txn_data_banding_1['furnished_0'] ?>" data-id-field="1108" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_1-2 1-2" value="<?php echo $txn_data_banding_1['furnished_1'] ?>" data-id-field="1108" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_1-2" value="<?php echo $txn_data_banding_1['furnished_1'] ?>" data-id-field="1108" data-keterangan="1-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_1-3 1-3" value="<?php echo $txn_data_banding_1['furnished_2'] ?>" data-id-field="1108" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_1-3" value="<?php echo $txn_data_banding_1['furnished_2'] ?>" data-id-field="1108" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2237,14 +2237,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_2-0 2-0" value="<?php echo $txn_data_banding_2['furnished_0'] ?>" data-id-field="1108" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_2-0" value="<?php echo $txn_data_banding_2['furnished_0'] ?>" data-id-field="1108" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_2-2 2-2" value="<?php echo $txn_data_banding_2['furnished_1'] ?>" data-id-field="1108" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_2-2" value="<?php echo $txn_data_banding_2['furnished_1'] ?>" data-id-field="1108" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_2-3 2-3" value="<?php echo $txn_data_banding_2['furnished_2'] ?>" data-id-field="1108" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_2-3" value="<?php echo $txn_data_banding_2['furnished_2'] ?>" data-id-field="1108" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2255,14 +2255,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_3-0 3-0" value="<?php echo $txn_data_banding_3['furnished_0'] ?>" data-id-field="1108" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_3-0" value="<?php echo $txn_data_banding_3['furnished_0'] ?>" data-id-field="1108" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_3-2 3-2" value="<?php echo $txn_data_banding_3['furnished_1'] ?>" data-id-field="1108" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_3-2" value="<?php echo $txn_data_banding_3['furnished_1'] ?>" data-id-field="1108" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_3-3 3-3" value="<?php echo $txn_data_banding_3['furnished_2'] ?>" data-id-field="1108" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1108_3-3" value="<?php echo $txn_data_banding_3['furnished_2'] ?>" data-id-field="1108" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2393,14 +2393,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_1-0 1-0" value="<?php echo $txn_data_banding_1['fasilitas_ruang_apartment_0'] ?>" data-id-field="1110" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_1-0" value="<?php echo $txn_data_banding_1['fasilitas_ruang_apartment_0'] ?>" data-id-field="1110" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_1-2 1-2" value="<?php echo $txn_data_banding_1['fasilitas_ruang_apartment_1'] ?>" data-id-field="1110" data-keterangan="1-1">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_1-2" value="<?php echo $txn_data_banding_1['fasilitas_ruang_apartment_1'] ?>" data-id-field="1110" data-keterangan="1-1">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_1-3 1-3" value="<?php echo $txn_data_banding_1['fasilitas_ruang_apartment_2'] ?>" data-id-field="1110" data-keterangan="1-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_1-3" value="<?php echo $txn_data_banding_1['fasilitas_ruang_apartment_2'] ?>" data-id-field="1110" data-keterangan="1-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2411,14 +2411,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_2-0 2-0" value="<?php echo $txn_data_banding_2['fasilitas_ruang_apartment_0'] ?>" data-id-field="1110" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_2-0" value="<?php echo $txn_data_banding_2['fasilitas_ruang_apartment_0'] ?>" data-id-field="1110" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_2-2 2-2" value="<?php echo $txn_data_banding_2['fasilitas_ruang_apartment_1'] ?>" data-id-field="1110" data-keterangan="2-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_2-2" value="<?php echo $txn_data_banding_2['fasilitas_ruang_apartment_1'] ?>" data-id-field="1110" data-keterangan="2-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_2-3 2-3" value="<?php echo $txn_data_banding_2['fasilitas_ruang_apartment_2'] ?>" data-id-field="1110" data-keterangan="2-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_2-3" value="<?php echo $txn_data_banding_2['fasilitas_ruang_apartment_2'] ?>" data-id-field="1110" data-keterangan="2-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2429,14 +2429,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_3-0 3-0" value="<?php echo $txn_data_banding_3['fasilitas_ruang_apartment_0'] ?>" data-id-field="1110" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_3-0" value="<?php echo $txn_data_banding_3['fasilitas_ruang_apartment_0'] ?>" data-id-field="1110" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_3-2 3-2" value="<?php echo $txn_data_banding_3['fasilitas_ruang_apartment_1'] ?>" data-id-field="1110" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_3-2" value="<?php echo $txn_data_banding_3['fasilitas_ruang_apartment_1'] ?>" data-id-field="1110" data-keterangan="3-2">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_3-3 3-3" value="<?php echo $txn_data_banding_3['fasilitas_ruang_apartment_2'] ?>" data-id-field="1110" data-keterangan="3-3">
+                                                                <input type="text" id="textbox_tanah_920" name="update[tanah_1]" class="form-control table_input input_1110_3-3" value="<?php echo $txn_data_banding_3['fasilitas_ruang_apartment_2'] ?>" data-id-field="1110" data-keterangan="3-3">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2505,11 +2505,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_1-0 1-0" value="<?php echo $txn_data_banding_1["waktu_penawaran_0"] ?>" data-id-field="1111" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_1-0" value="<?php echo $txn_data_banding_1["waktu_penawaran_0"] ?>" data-id-field="1111" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_1-2 1-2" value="<?php echo $txn_data_banding_1["waktu_penawaran_1"] ?>" data-id-field="1111" data-keterangan="1-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_1-3 1-3" value="<?php echo $txn_data_banding_1["waktu_penawaran_2"] ?>" data-id-field="1111" data-keterangan="1-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_1-2" value="<?php echo $txn_data_banding_1["waktu_penawaran_1"] ?>" data-id-field="1111" data-keterangan="1-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_1-3" value="<?php echo $txn_data_banding_1["waktu_penawaran_2"] ?>" data-id-field="1111" data-keterangan="1-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2519,11 +2519,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_2-0 2-0" value="<?php echo $txn_data_banding_2["waktu_penawaran_0"] ?>" data-id-field="1111" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_2-0" value="<?php echo $txn_data_banding_2["waktu_penawaran_0"] ?>" data-id-field="1111" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_2-2 2-2" value="<?php echo $txn_data_banding_2["waktu_penawaran_1"] ?>" data-id-field="1111" data-keterangan="2-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_2-3 2-3" value="<?php echo $txn_data_banding_2["waktu_penawaran_2"] ?>" data-id-field="1111" data-keterangan="2-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_2-2" value="<?php echo $txn_data_banding_2["waktu_penawaran_1"] ?>" data-id-field="1111" data-keterangan="2-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_2-3" value="<?php echo $txn_data_banding_2["waktu_penawaran_2"] ?>" data-id-field="1111" data-keterangan="2-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2533,11 +2533,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_3-0 3-0" value="<?php echo $txn_data_banding_3["waktu_penawaran_0"] ?>" data-id-field="1111" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_3-0" value="<?php echo $txn_data_banding_3["waktu_penawaran_0"] ?>" data-id-field="1111" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_3-2 3-2" value="<?php echo $txn_data_banding_3["waktu_penawaran_1"] ?>" data-id-field="1111" data-keterangan="3-2"></td>
-                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_3-3 3-3" value="<?php echo $txn_data_banding_3["waktu_penawaran_2"] ?>" data-id-field="1111" data-keterangan="3-3"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_3-2" value="<?php echo $txn_data_banding_3["waktu_penawaran_1"] ?>" data-id-field="1111" data-keterangan="3-2"></td>
+                                                            <td><input type="text" id="textbox_pembanding_41" name="update[pembanding_41]" class="form-control table_input input_1111_3-3" value="<?php echo $txn_data_banding_3["waktu_penawaran_2"] ?>" data-id-field="1111" data-keterangan="3-3"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -2550,14 +2550,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_1-0 1-0" value="<?php echo $txn_data_banding_1["total_0"] ?>" data-id-field="1112" data-keterangan="1-0">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_1-0" value="<?php echo $txn_data_banding_1["total_0"] ?>" data-id-field="1112" data-keterangan="1-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_1-1 1-1" value="<?php echo $txn_data_banding_1["total_1"] ?>" data-id-field="1112" data-keterangan="1-1">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_1-1" value="<?php echo $txn_data_banding_1["total_1"] ?>" data-id-field="1112" data-keterangan="1-1">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_1-2 1-2" value="<?php echo $txn_data_banding_1["total_2"] ?>" data-id-field="1112" data-keterangan="1-2">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_1-2" value="<?php echo $txn_data_banding_1["total_2"] ?>" data-id-field="1112" data-keterangan="1-2">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2568,13 +2568,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_2-0 2-0" value="<?php echo $txn_data_banding_2["total_0"] ?>" data-id-field="1112" data-keterangan="2-0">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_2-0" value="<?php echo $txn_data_banding_2["total_0"] ?>" data-id-field="1112" data-keterangan="2-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_2-1 2-1" value="<?php echo $txn_data_banding_2["total_1"] ?>" data-id-field="1112" data-keterangan="2-1">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_2-1" value="<?php echo $txn_data_banding_2["total_1"] ?>" data-id-field="1112" data-keterangan="2-1">
                                                             </td>
-                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_2-2 2-2" value="<?php echo $txn_data_banding_2["total_2"] ?>" data-id-field="1112" data-keterangan="2-2">
+                                                            <td><input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_2-2" value="<?php echo $txn_data_banding_2["total_2"] ?>" data-id-field="1112" data-keterangan="2-2">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -2585,14 +2585,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_3-0 3-0" value="<?php echo $txn_data_banding_3["total_0"] ?>" data-id-field="1112" data-keterangan="3-0">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_3-0" value="<?php echo $txn_data_banding_3["total_0"] ?>" data-id-field="1112" data-keterangan="3-0">
                                                                 <span class="percent-sign">%</span>
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_3-1 3-1" value="<?php echo $txn_data_banding_3["total_1"] ?>" data-id-field="1112" data-keterangan="3-1">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_3-1" value="<?php echo $txn_data_banding_3["total_1"] ?>" data-id-field="1112" data-keterangan="3-1">
                                                             </td>
                                                             <td>
-                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_3-2 3-2" value="<?php echo $txn_data_banding_3["total_2"] ?>" data-id-field="1112" data-keterangan="3-2">
+                                                                <input type="text" id="textbox_pembanding_43" name="update[pembanding_43]" class="form-control table_input input_1112_3-2" value="<?php echo $txn_data_banding_3["total_2"] ?>" data-id-field="1112" data-keterangan="3-2">
                                                             </td>
                                                         </tr>
                                                     </tbody>

@@ -1356,7 +1356,7 @@
                                                 <td><a href="#fakelink">email@email.com</a></td>
                                                 <td><a class="btn btn-sm btn-success">Option</a></td>
                                             </tr>
-                                            <tr class="success class="active"">
+                                            <tr class="success" class="active">
                                                 <td>2</td>
                                                 <td>John Doe</td>
                                                 <td><a href="#fakelink">email@email.com</a></td>
@@ -1416,7 +1416,7 @@
                                                 <td><a href="#fakelink">email@email.com</a></td>
                                                 <td><a class="btn btn-sm btn-success">Option</a></td>
                                             </tr>
-                                            <tr class="success class="active"">
+                                            <tr class="success" class="active">
                                                 <td>2</td>
                                                 <td>John Doe</td>
                                                 <td><a href="#fakelink">email@email.com</a></td>
