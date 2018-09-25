@@ -65,9 +65,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'ekjpp',
-	'password' => 'ZWtqcHBjb3JlXzE=',
-	'database' => 'asus',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'asus_adam',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
