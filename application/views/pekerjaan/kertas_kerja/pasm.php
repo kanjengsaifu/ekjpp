@@ -1,0 +1,4 @@
+ ASUMSI DAN BATASAN
+<?php
+
+?>

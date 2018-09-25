@@ -1,0 +1,217 @@
+.table-legalitas{
+    border-collapse: collapse;
+    /*border: 1px solid #d2d6de;*/
+    width: 100%;
+}
+.table-legalitas tr{
+
+}
+.table-legalitas td,.table-legalitas th{
+    border: 1px solid #d2d6de;
+}
+.table-legalitas thead th{
+    background: #2397dc;
+    color: white;
+}
+.table-legalitas td span,.table-legalitas th span{
+    padding: 10px;
+    display: block;
+}
+.table-legalitas td .form-control,.table-legalitas th .form-control{
+    border: 0
+}
+.width8rem{
+    width: 8rem
+}
+.tab-pane{
+    padding-top: 1rem;
+}
+.table-movefield {
+    font-size: 13px;
+    border: 1px solid #dddddd;
+}
+.table-movefield .form-control{
+    font-size: 13px;
+    border: 0;
+}
+.table-movefield .form-control:focus{
+    outline: 2px solid skyblue
+}
+.table-movefield .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: transparent;
+    opacity: 1;
+}
+
+.table-movefield table {
+    width: 100%;
+    border: 0;
+}
+.table-movefield thead tr th {
+    text-align: center;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.table-movefield td span{
+    margin-left: 8px;
+    display: block;
+}
+
+.table-movefield tbody tr td {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-family: calibri;
+    font-size: 12px;
+    padding: 0px;
+}
+
+
+.table-movefield tbody tr td.colspan-2 {
+    border-right: 0;
+}
+.table-movefield table td:first-child{
+    border: 0
+}
+.table-movefield table td:nth-child(2) {
+    border-left: 1px solid #dddddd;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+.table-movefield table td:nth-child(3){
+    border-left: 1px solid #dddddd;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+.table-movefield table td:first-child .form-control{
+    width: 42px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.table-movefield table td:nth-child(2) .form-control{
+    width: 80px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.table-movefield table td:nth-child(3) .form-control{
+    width: 80px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.table-movefield table td, .table-movefield .td-with-percent {
+    position: relative;
+}
+.table-movefield table td .form-control, .table-movefield .td-with-percent .form-control{
+    z-index: 3;
+    background: transparent;
+}
+.table-movefield table td .percent-sign, .table-movefield .td-with-percent .percent-sign{
+    position: absolute;
+    right: 7px;
+    top: 0;
+    transform: translate(50%,50%);
+    vertical-align: middle;
+    z-index: 2;
+}
+
+h4{
+    color: #1196ee;
+}
+.panel .panel-heading{
+    background-color: #2397dc;
+    color: #fff;
+    font-weight: bold;
+}
+.panel .panel-heading h3{
+    font-weight: bold;
+}
+.input_879_,.input_880_,.input_881_,.input_882_,.input_883_,.input_884_
+{
+    border: 1px solid #eee;
+}
+.sub-label{
+    background:#2862bb;
+    color:#ffffff;
+    padding:5px
+}
+#analisaUlang{
+    color: red;
+    border: 1px solid;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+#div_biaya_langsung table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#div_biaya_langsung table *{
+    font-size: 13px;
+}
+#div_biaya_langsung table > thead{}
+#div_biaya_langsung table > tbody{}
+#div_biaya_langsung table > tfoot{}
+#div_biaya_langsung table > thead > tr{}
+#div_biaya_langsung table > thead > tr > th{
+    border: 1px solid #d2d6de;
+    padding: 0;
+}
+#div_biaya_langsung table > tbody > tr{}
+#div_biaya_langsung table > tbody > tr > td{
+    border: 1px solid #d2d6de;
+    padding: 0;
+}
+#div_biaya_langsung table > thead > tr > th > span{
+    padding: 0 4px;
+    display: block; 
+}
+#div_biaya_langsung table > thead > tr > th > .form-control{
+    border: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+     background: transparent;
+}
+#div_biaya_langsung table > tbody > tr > td > span{
+    padding: 0 4px;
+    display: block;
+}
+#div_biaya_langsung table > tbody > tr > td > .form-control{
+    border: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+     background: transparent;
+}
+#div_biaya_langsung table > tfoot > tr{}
+#div_biaya_langsung table > tfoot > tr > td{
+    border: 1px solid #d2d6de;
+    padding: 0;
+}
+#div_biaya_langsung table > tfoot > tr> th{
+    border: 1px solid #d2d6de;
+    padding: 0;
+}
+#div_biaya_langsung table > tfoot > tr > td > span{
+    padding: 0 4px;
+    display: block;
+}
+#div_biaya_langsung table > tfoot > tr > th > span{
+    padding: 0 4px;
+    display: block;
+}
+#div_biaya_langsung table > tfoot > tr > td > .form-control{
+    border: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+     background: transparent;
+}
+
+#div_biaya_langsung table > tfoot > tr > th > .form-control{
+    border: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+     background: transparent;
+}

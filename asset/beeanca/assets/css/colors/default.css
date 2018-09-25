@@ -1,0 +1,226 @@
+a,
+a:hover,
+a:active,
+a:focus{
+	color: #50514f;
+}
+a{
+	color: #f5bb00;
+}
+
+.btn-main-primary{
+	background-color: #f5bb00;
+	border-color: #f5bb00;
+}
+.btn-main-primary.focus,
+.btn-main-primary.active,
+.btn-main-primary:active,
+.btn-main-primary:focus,
+.btn-main-primary:hover{
+	background-color: #f5bb00 !important;
+}
+.sk-folding-cube .sk-cube:before {
+  background-color: #f5bb00;
+}
+.owl-carousel .owl-controls .owl-buttons div:hover,
+.owl-carousel .owl-controls.clickable .owl-buttons div:hover{
+	background: #f5bb00;
+}
+.post-meta a:hover{
+	color: #f5bb00;
+}
+.category a{
+	color: #f5bb00;
+}
+.category a:hover{
+	color: #f5bb00;
+}
+header.header-01 .social-icons a:hover{
+	color: #f5bb00;
+}
+header.header-02 .social-icons a:hover{
+	color: #f5bb00;
+}
+.close-nav {
+	color: #f5bb00;
+}
+.nav-menu .main-nav li:focus a,
+.nav-menu .main-nav li:hover a{
+	color: #f5bb00;
+}
+.nav-menu .main-nav li.active:focus a,
+.nav-menu .main-nav li.active:hover a,
+.nav-menu .main-nav li.active a{
+	background: #f5bb00;
+}
+.nav-menu .main-nav li.has-children:hover:after{
+	color: #f5bb00;
+}
+.nav-menu .main-nav .sub-nav{
+	background: #f5bb00;
+}
+.nav-menu .main-nav .sub-nav li a{
+	color: #fff; /** Dont change this hex **/
+}
+.nav-menu .main-nav .sub-nav li .sub-nav li:hover .sub-nav li a,
+.nav-menu .main-nav .sub-nav li:hover .sub-nav li a{
+	background: #f5bb00;
+}
+.nav-menu .main-nav .sub-nav li.has-children.active:after{
+	color: #fff; /** Dont change this hex **/
+}
+.nav-menu .main-nav .sub-nav li.has-children:after{
+	color: #fff; /** Dont change this hex **/
+}
+.widget-heading:after{
+	background: #f5bb00;
+}
+.widget-post-list.list-numbering li:hover:before,
+.widget-post-list.list-numbering li:hover:after{
+	color: #f5bb00;
+}
+.widget-text-list li span {
+	background: #f5bb00;
+}
+.tag a:active,
+.tag a:focus,
+.tag a:hover{
+	background: #f5bb00;
+}
+.about-me.horizontal .social-icons a:hover .fa{
+	color: #f5bb00;
+}
+.about-me .subtitle{
+	color: #f5bb00;
+}
+.widget-comment-list li .mini-meta{
+	color: #f5bb00;
+}
+.social-widget .item a:active,
+.social-widget .item a:focus,
+.social-widget .item a:hover{
+	color: #f5bb00;
+}
+.widget-twitter-list li:hover:before,
+.widget-twitter-list li:hover:after{
+	color: #f5bb00;
+}
+.tiled-featured .item:hover.format-post .featured-img:before{
+	background: #f5bb00;
+}
+.slideshow-featured #owl-bar{
+  background: #f5bb00;
+}
+.slideshow-featured .item:hover.format-post:before{
+	background: #f5bb00;
+}
+.split-slideshow-wrapper{
+	-webkit-box-shadow: 0px 4px 0px 0px #f5bb00;
+	-moz-box-shadow: 0px 4px 0px 0px #f5bb00;
+	box-shadow: 0px 4px 0px 0px #f5bb00;
+}
+.split-slideshow-pagination .item .caption .category a:hover,
+.split-slideshow-pagination .item .caption .post-meta a:hover{
+	color: #f5bb00;
+}
+#owl-post-nav-content .synced .item .caption .btn-primary {
+	background-color: #f5bb00;
+}
+#owl-post-nav-content .synced .item .caption .btn-primary:active,
+#owl-post-nav-content .synced .item .caption .btn-primary:focus,
+#owl-post-nav-content .synced .item .caption .btn-primary:hover {
+	background-color: #f5bb00 !important;
+}
+#owl-post-nav-content .synced .item .caption .category a{
+	color: #f5bb00;
+}
+.archive-list .item:hover.format-post .featured-img:before{
+	background: #f5bb00;
+}
+.cover-image .text-content .top-meta .post-meta span a:hover{
+	color: #f5bb00;
+}
+.cover-image .text-content .format-post-content:before{
+	background: #f5bb00;
+}
+.cover-image .text-content .format-post-content .content-subtitle{
+	color: #f5bb00;
+}
+.share-icons a:hover .fa{
+	color: #f5bb00;
+}
+.post-footer .prev-next-post .next-post:before ,
+.post-footer .prev-next-post .prev-post:before {
+	background: #f5bb00;
+}
+.archive-heading .subheading{
+	color: #f5bb00;
+}
+.archive-heading.bold-bordered{
+	-webkit-box-shadow: inset 0px -10px 0px 0px #f5bb00;
+	-moz-box-shadow: inset 0px -10px 0px 0px #f5bb00;
+	box-shadow: inset 0px -10px 0px 0px #f5bb00;
+}
+.page-heading:before {
+	background: #f5bb00;
+}
+.prev-next ul.pager li:hover a,
+.centered-numbering-pagination .pagination li:hover a {
+	color: #f5bb00;
+}
+.prev-next ul.pager li.active a,
+.centered-numbering-pagination .pagination li.active a {
+	background: #f5bb00;
+}
+.related-post-grid .item .item-inner .post-meta a:hover{
+	color: #f5bb00;
+}
+.comments .comment-item .heading .reply-btn:active,
+.comments .comment-item .heading .reply-btn:focus,
+.comments .comment-item .heading .reply-btn:hover{
+	background: #f5bb00;
+	border-color: #f5bb00;
+}
+.comments .comment-item .heading .reply-btn.cancel{
+	background: #f5bb00;
+}
+.comments .comment-item .heading .reply-btn.cancel:active,
+.comments .comment-item .heading .reply-btn.cancel:focus,
+.comments .comment-item .heading .reply-btn.cancel:hover{
+	background: #f5bb00;
+}
+footer .social-icons a:hover{
+	color: #f5bb00;
+}
+.footer-copy {
+	background: #f5bb00;
+}
+.back-to-top {
+    background: #f5bb00;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.footer-copyright,
+	.footer-menu {
+		background: #f5bb00;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.archive-heading.bold-bordered{
+		-webkit-box-shadow: inset 0px -4px 0px 0px #f5bb00;
+		-moz-box-shadow: inset 0px -4px 0px 0px #f5bb00;
+		box-shadow: inset 0px -4px 0px 0px #f5bb00;
+	}
+	
+}
+
+@media only screen and (max-width: 480px) {
+	.archive-heading.bold-bordered{
+		-webkit-box-shadow: inset 0px -2px 0px 0px #f5bb00;
+		-moz-box-shadow: inset 0px -2px 0px 0px #f5bb00;
+		box-shadow: inset 0px -2px 0px 0px #f5bb00;
+	}
+	
+}

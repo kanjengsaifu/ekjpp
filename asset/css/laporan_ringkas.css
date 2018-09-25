@@ -1,0 +1,281 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 8pt;
+	 background: #bfbfbf;
+	 font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+p{
+    font-size: 8pt;
+}
+
+/*.page-container{
+    width: 8.27in;
+    max-width: 8.27in;
+    padding: 30mm 20mm 30mm 30mm;
+    margin: 0 auto;
+    background: white;
+}*/
+.page-container{
+    width: 8.27in;
+    margin: 0 auto;
+    background: white;
+    /*padding: 30mm 20mm 0 30mm;*/
+}
+.page {
+    /*width: 8.27in;
+    max-width: 8.27in;
+    max-height: 11.69in;
+    padding: 30mm 20mm 30mm 30mm;
+    margin: 0 auto;
+    background: white;*/
+    min-height: 11.69in;
+    padding: 30mm 20mm 0 30mm;
+    border: 1px solid #bfbfbf;
+    position: relative;
+}
+
+.title-memo
+{
+	font-size: 11px;
+	font-style: italic;
+	margin: 5px;
+}
+
+.content
+{
+	margin-top: 20px;
+	/*font-size: 12pt;*/
+}
+
+.bank
+{
+	font-size: 16pt;
+	color: #1602d0;
+	text-decoration: underline;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.panel
+{
+	border: 1px dotted #ccc;
+	padding: 0px;
+	/*font-size: 10pt;*/
+}
+
+.panel-heading
+{
+	background: #eee;
+	padding: 0;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+.panel-heading-blue
+{
+	background-color: #010961;
+	padding: 10px;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+}
+
+.panel-content
+{
+	padding: 5px;
+}
+
+.table {
+	font-size: 8pt;
+	width: 100%;
+	border-right: 1px dotted #777; 
+	border-bottom: 1px dotted #777;
+}
+.table thead th, .table tfoot td
+{
+	font-size: 8pt;
+	border-left: 1px dotted ;
+	border-top: 1px dotted ;
+	background-color: #010961; color: #ffffff;
+	padding: 2px 10px;
+}
+
+.table thead th, .table tfoot td
+{
+	font-size: 8pt;
+	border-left: 1px dotted ;
+	border-top: 1px dotted ;
+	background-color: #010961; color: #ffffff;
+	padding: 2px 10px;
+}
+
+.table-1 td
+{
+	font-size: 8pt;
+	vertical-align: top;
+	border-left: 1px dotted ;
+	border-top: 1px dotted ;
+	padding: 2px 10px;
+}
+
+
+.table-1
+{
+	font-size: 8pt;
+	/*width: 100%;*/
+	width: 720px;
+	border-right: 1px dotted ;
+	border-bottom: 1px dotted ;
+
+}
+.table-1 thead th
+{
+	font-size: 8pt;
+	border-left: 1px dotted ;
+	border-top: 1px dotted ;
+	background-color: #666;
+	color: #ffffff;
+	padding: 2px 10px;
+}
+.table-1 tfoot td
+{
+	font-size: 9pt;
+	border-left: 1px dotted ;
+	border-top: 1px dotted ;
+	background-color: #ccc;
+	color: #333;
+	padding: 2px 10px;
+}
+
+.table tbody td
+{
+	font-size: 8pt;
+	vertical-align: top;
+	border-left: 1px dotted ;
+	border-top: 1px dotted ;
+	padding: 0;
+}
+.padding-td-3 tbody td{
+	padding: 3px;
+}
+.table.no-border{
+	border: 0;
+}
+.table.no-border-all,.table.no-border-all   td{
+	border: 0!important;
+}
+.table.no-border-left   td{
+	border-left: 0;
+}
+.table.no-border-top   td{
+	border-top: 0;
+}
+.table.no-border-right   td{
+	border-right: 0;
+}
+.table-kawasan tbody tr td:first-child{
+	border-left: 0;
+}
+
+td { vertical-align: top; font-size: 8pt; }
+li{
+	margin-left: 0px;
+}
+.box_title {
+	width: 60%;
+	padding: 5px 10px 5px 10px;
+	border: 4px double #000000;
+}
+.title {
+	font-size: 14pt ;	
+	font-weight: bold;
+}
+.subtitle {
+	font-size: 12pt;
+	font-weight: bold;
+	color: darkblue;
+	font-family: Arial Black;
+}
+
+.panel-content-0{
+	padding: 0;
+}
+.span-bordered{
+	border: 1px dotted #808080; 
+	text-align:center; 
+	width: 18px; 
+	height: 18px;
+	display: inline-block;
+	margin:auto;
+}
+
+@media print {
+    html, body {
+    	margin: 0;
+	    width: 8.27in;
+	    max-width: 8.27in;
+	    height: 11.69in;
+	    max-height: 11.69in;    
+        page-break-after: avoid;
+        page-break-before: avoid;
+		counter-reset: pageNumber;
+    }
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+	}
+
+	/*.page:after {
+	    counter-increment: pageNumber;
+	    content: "Hal - " counter(pageNumber);
+	    display: block;
+	    white-space: nowrap;
+	    right: 20mm;
+	    bottom: 10mm;
+	    z-index: 20;
+	    position: absolute;
+	    font-style: italic;
+	    color: gray;
+	}*/
+
+	.table thead th, .table tfoot td {
+	    -webkit-print-color-adjust: exact;
+	}
+	.table tbody th, .table tbody td {
+	    -webkit-print-color-adjust: exact;
+	}
+	.panel-heading{
+	    -webkit-print-color-adjust: exact;
+	}
+	.title{
+	    -webkit-print-color-adjust: exact;
+	}
+	.title span{
+	    -webkit-print-color-adjust: exact;
+	}
+	.panel-heading-blue{
+	    -webkit-print-color-adjust: exact;
+	}
+
+
+	@page {
+	    size: A4;
+	    margin: 0;
+	}
+}
