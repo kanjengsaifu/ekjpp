@@ -1,4 +1,5 @@
 composer.phar
+adminer.php
 application/config/database.php
 asset/file/*
 !asset/file/kertas_kerja/
@@ -12,5 +13,4 @@ asset/file/legalitas_tanah/*
 !asset/file/index.html
 !asset/file/default.png
 !asset/file/default.jpg
-/nbproject/private/
-/adminer.php
+nbproject/private/*
