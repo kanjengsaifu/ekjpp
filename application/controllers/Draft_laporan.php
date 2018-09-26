@@ -9,12 +9,13 @@ class Draft_laporan extends CI_Controller
 
 	function index() 
 	{
+        echo "<pre>";var_dump (get_defined_constants());echo "</pre>";
+        return;
 		redirect(base_url());
-		$this->do_download();
 	}
 
 	function download($id_pekerjaan) {
-		require_once APPPATH."/third_party/PHPWord/vendor/autoload.php";
+		require_once FCPATH."/vendor/autoload.php";
 
 	    $phpWord = new \PhpOffice\PhpWord\PhpWord();
 	    $template = $phpWord->loadTemplate("./asset/template/laporan.docx");
