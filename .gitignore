@@ -12,5 +12,4 @@ asset/file/legalitas_tanah/*
 !asset/file/default.png
 !asset/file/default.jpg
 /nbproject/private/
-/application/config/database.php
 /adminer.php
