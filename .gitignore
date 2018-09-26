@@ -1,5 +1,7 @@
 composer.phar
 adminer.php
+composer.lock
+vendor/*
 application/config/database.php
 asset/file/*
 !asset/file/kertas_kerja/
