@@ -131,89 +131,97 @@
 		}
 	});
 
+	$('input[name="jawab_1a"], input[name="jawab_2a"], input[name="jawab_3a"], input[name="jawab_4a"], input[name="jawab_5a"], input[name="jawab_6a"], input[name="jawab_7a"], input[name="jawab_8a"], input[name="jawab_9a"]').prop("checked", false);
+	
 	$(".btn-simpan, .btn-approve").click(function()
 	{
-		if (window.confirm("Apakah Anda yakin?"))
-		{
-			var id 				= $("#id").val();
-			var id_pekerjaan	= $("#id_pekerjaan").val();
-			var step			= $("#step").val();
-			var id_status		= $("#id_status").val();
-			
-			var jawab_1a = $('input[name="jawab_1a"]:checked').val();
-			var jawab_2a = $('input[name="jawab_2a"]:checked').val();
-			var jawab_3a = $('input[name="jawab_3a"]:checked').val();
-			var jawab_4a = $('input[name="jawab_4a"]:checked').val();
-			var jawab_5a = $('input[name="jawab_5a"]:checked').val();
-			var jawab_6a = $('input[name="jawab_6a"]:checked').val();
-			var jawab_7a = $('input[name="jawab_7a"]:checked').val();
-			var jawab_8a = $('input[name="jawab_8a"]:checked').val();
-			var jawab_9a = $('input[name="jawab_9a"]:checked').val();
-			
-			var jawab_1b = $("#jawab_1b").val();
-			var jawab_2b = $("#jawab_2b").val();
-			var jawab_3b = $("#jawab_3b").val();
-			var jawab_4b = $("#jawab_4b").val();
-			var jawab_5b = $("#jawab_5b").val();
-			var jawab_6b = $("#jawab_6b").val();
-			var jawab_7b = $("#jawab_7b").val();
-			var jawab_8b = $("#jawab_8b").val();
-			var jawab_9b = $("#jawab_9b").val();
-			
-			$.ajax({
-	    		type	: "POST",
-				url 	: base_url + "AjaxPekerjaan/update_lembar_kendali/",
-				data	: {
-					type : "lembar_kendali_4",
-					id : id,
-					id_pekerjaan : id_pekerjaan,
-					step : step,
-					id_status : id_status,
-					jawab_1a : jawab_1a,
-					jawab_1b : jawab_1b,
-					jawab_2a : jawab_2a,
-					jawab_2b : jawab_2b,
-					jawab_3a : jawab_3a,
-					jawab_3b : jawab_3b,
-					jawab_4a : jawab_4a,
-					jawab_4b : jawab_4b,
-					jawab_5a : jawab_5a,
-					jawab_5b : jawab_5b,
-					jawab_6a : jawab_6a,
-					jawab_6b : jawab_6b,
-					jawab_7a : jawab_7a,
-					jawab_7b : jawab_7b,
-					jawab_8a : jawab_8a,
-					jawab_8b : jawab_8b,
-					jawab_9a : jawab_9a,
-					jawab_9b : jawab_9b,
-					is_update : is_update
+		var jawab_1a = $('input[name="jawab_1a"]:checked').val();
+		var jawab_2a = $('input[name="jawab_2a"]:checked').val();
+		var jawab_3a = $('input[name="jawab_3a"]:checked').val();
+		var jawab_4a = $('input[name="jawab_4a"]:checked').val();
+		var jawab_5a = $('input[name="jawab_5a"]:checked').val();
+		var jawab_6a = $('input[name="jawab_6a"]:checked').val();
+		var jawab_7a = $('input[name="jawab_7a"]:checked').val();
+		var jawab_8a = $('input[name="jawab_8a"]:checked').val();
+		var jawab_9a = $('input[name="jawab_9a"]:checked').val();
 
-				},
-				beforeSend: function(){
-		            $(".btn-simpan").html("Loading...");
-		            $(".btn-simpan").prop("disabled", true);
-		        },
-				dataType	: "JSON",
-				success	: function (data) {
-					generate_notification(data.result.trim(), data.message.trim(), "topCenter");
-					
-		            $(".btn-simpan").html("SIMPAN");
-		            $(".btn-simpan").prop("disabled", false);
-		            
-		            if (data.result.trim() == "success")
-		            {
-		            	if (redirect_url){
-							location = redirect_url;
-						}else{
-							location = "<?=base_url()?>pekerjaan/lokasi/";
-						}
-						
-					}
-				}
-	    	});
-
+		if (typeof(jawab_1a)=="undefined" || typeof(jawab_2a)=="undefined" || typeof(jawab_3a)=="undefined" || typeof(jawab_4a)=="undefined" || typeof(jawab_5a)=="undefined" || typeof(jawab_6a)=="undefined" || typeof(jawab_7a)=="undefined" || typeof(jawab_8a)=="undefined" || typeof(jawab_9a)=="undefined"){
+			window.alert("Semua pertanyaan wajib diisi!");
 		}
+		else
+		{
+			if (window.confirm("Apakah Anda yakin?")) {
+				var id 				= $("#id").val();
+				var id_pekerjaan	= $("#id_pekerjaan").val();
+				var step			= $("#step").val();
+				var id_status		= $("#id_status").val();
+				
+				var jawab_1b = $("#jawab_1b").val();
+				var jawab_2b = $("#jawab_2b").val();
+				var jawab_3b = $("#jawab_3b").val();
+				var jawab_4b = $("#jawab_4b").val();
+				var jawab_5b = $("#jawab_5b").val();
+				var jawab_6b = $("#jawab_6b").val();
+				var jawab_7b = $("#jawab_7b").val();
+				var jawab_8b = $("#jawab_8b").val();
+				var jawab_9b = $("#jawab_9b").val();
+				
+				$.ajax({
+		    		type	: "POST",
+					url 	: base_url + "AjaxPekerjaan/update_lembar_kendali/",
+					data	: {
+						type : "lembar_kendali_4",
+						id : id,
+						id_pekerjaan : id_pekerjaan,
+						step : step,
+						id_status : id_status,
+						jawab_1a : jawab_1a,
+						jawab_1b : jawab_1b,
+						jawab_2a : jawab_2a,
+						jawab_2b : jawab_2b,
+						jawab_3a : jawab_3a,
+						jawab_3b : jawab_3b,
+						jawab_4a : jawab_4a,
+						jawab_4b : jawab_4b,
+						jawab_5a : jawab_5a,
+						jawab_5b : jawab_5b,
+						jawab_6a : jawab_6a,
+						jawab_6b : jawab_6b,
+						jawab_7a : jawab_7a,
+						jawab_7b : jawab_7b,
+						jawab_8a : jawab_8a,
+						jawab_8b : jawab_8b,
+						jawab_9a : jawab_9a,
+						jawab_9b : jawab_9b,
+						is_update : is_update
+
+					},
+					beforeSend: function(){
+			            $(".btn-simpan").html("Loading...");
+			            $(".btn-simpan").prop("disabled", true);
+			        },
+					dataType	: "JSON",
+					success	: function (data) {
+						generate_notification(data.result.trim(), data.message.trim(), "topCenter");
+						
+			            $(".btn-simpan").html("SIMPAN");
+			            $(".btn-simpan").prop("disabled", false);
+			            
+			            if (data.result.trim() == "success")
+			            {
+			            	if (redirect_url){
+								location = redirect_url;
+							}else{
+								location = "<?=base_url()?>pekerjaan/lokasi/";
+							}
+							
+						}
+					}
+		    	});
+
+			}
+		}
+		
 	});
 
 	$(".btn-batal").click(function()
