@@ -1,0 +1,1 @@
+SELECT count(id) as jml, replace(replace(replace(npwp,' ',''),'.',''),'-','') as npwp_clear, name FROM `bpom_company` group by npwp_clear, name order by jml  desc
