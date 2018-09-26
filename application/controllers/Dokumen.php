@@ -16,6 +16,7 @@ class Dokumen extends CI_Controller {
     function __construct(){
         parent::__construct();
         $module = $this->folder.'/'.$this->router->fetch_class();
+        $module = trim($module,"/");
         // var_dump($this->folder.'/'.'master_deviasi_model'); exit();
         $this->load->model($this->folder.'/'.'Dokumen_model', 'app_model');
         $this->app_model->initialize($module);
@@ -24,7 +25,7 @@ class Dokumen extends CI_Controller {
     
     public function index()
     {
-        $module =$this->module; 
+        $module =$this->module;
         $script = '
             var active_id = \'\';
             $(function () {

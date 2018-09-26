@@ -16,6 +16,7 @@ class Laporan extends CI_Controller {
     function __construct(){
         parent::__construct();
         $module = $this->folder.'/'.$this->router->fetch_class();
+        $module = trim($module,"/");
         // var_dump($this->folder.'/'.'master_deviasi_model'); exit();
         $this->load->model($this->folder.'/'.'Laporan_model', 'app_model');
         $this->app_model->initialize($module);
