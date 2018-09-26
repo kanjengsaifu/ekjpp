@@ -129,10 +129,13 @@
 		{
 			$(".btn-approve").hide();
 		}
+
+		if (!is_update){
+			$('input[name="jawab_1a"], input[name="jawab_2a"], input[name="jawab_3a"], input[name="jawab_4a"], input[name="jawab_5a"], input[name="jawab_6a"], input[name="jawab_7a"], input[name="jawab_8a"], input[name="jawab_9a"]').prop("checked", false);
+		}
 	});
 
-	$('input[name="jawab_1a"], input[name="jawab_2a"], input[name="jawab_3a"], input[name="jawab_4a"], input[name="jawab_5a"], input[name="jawab_6a"], input[name="jawab_7a"], input[name="jawab_8a"], input[name="jawab_9a"]').prop("checked", false);
-	
+
 	$(".btn-simpan, .btn-approve").click(function()
 	{
 		var jawab_1a = $('input[name="jawab_1a"]:checked').val();
