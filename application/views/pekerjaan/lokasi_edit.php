@@ -568,6 +568,7 @@ function getKodePos(id){
 
 var current_step = 1;
 var finishing=false;
+var luas_tanah=0;
 $(".btn-simpan").click(function() {
 	var id 				= $("#id").val();
 	var id_pekerjaan	= $("#id_pekerjaan").val();
@@ -585,7 +586,7 @@ $(".btn-simpan").click(function() {
 	var kepemilikan = $("#kepemilikan").val();
 	var jenis_sertifikat = $("#jenis_sertifikat").val();
 	var no_sertifikat = $("#no_sertifikat").val();
-	var luas_tanah = $("#luas_tanah").val();
+	luas_tanah = $("#luas_tanah").val();
 	var luas_bangunan = $("#luas_bangunan").val();
 
 	var gang 			= $("#gang").val();
@@ -899,6 +900,7 @@ function get_data_legalitas(target) {
 			$(terget_tab_tbody).html("");
 			var row = "";
 			var a = 0;
+			var total_luas=0;
 			$.each(data.data_table, function(i, item) {
 				row	= "<tr>";
 				var item_file = data.data_table[i]['tanah_98'];
@@ -933,9 +935,16 @@ function get_data_legalitas(target) {
 				});
 				
 				row	+= "</tr>";
-				$(terget_tab_tbody).append(row);
+				var $row = $(row);
+				luas_tanah = parseFloat(luas_tanah);
+				$row.find("#textbox_tanah_60").val(luas_tanah);
+				total_luas+=luas_tanah;
+
+				$row.appendTo(terget_tab_tbody);
+				// $(terget_tab_tbody).append(row);
 				a++;
 			});
+			$("#textbox_tanah_61").val(total_luas);
 		}
 	})
 }
