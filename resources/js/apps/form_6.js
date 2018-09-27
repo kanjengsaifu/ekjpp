@@ -938,66 +938,6 @@ $(function()
 
 	});
 	
-	$(document).on("click", '#btn_upload_multi', function(event)
-	{
-		if (window.confirm("Apakah Anda yakin?"))
-		{
-			var multi_file	= "";
-			var data 		= new FormData();
-			jQuery.each(jQuery('#multi_image')[0].files, function(i, file) {
-			    data.append('file-'+i, file);
-			});
-			
-			if ($("#multi_urut").val() == "" || $("#multi_keterangan").val() == "" || !data)
-			{
-				generate_notification("error", "File, No. Urut dan Keterangan tidak boleh kosong.", "topCenter");
-			}
-			else
-			{
-				$.ajax({
-		            url: base_url + "Ajax/do_upload_multi/?files",
-		            type: 'POST',
-		            data: data,
-		            cache: false,
-		            processData: false,
-		            contentType: false,
-		            success: function(data)
-		            {
-		            	
-		            	$.ajax({
-							type		: "POST",
-							url 		: base_url + "Ajax/do_upload_multi_table/",
-							data		: {
-								id_lokasi 			: $("#id_lokasi").val(),
-								multi_file 			: data,
-								multi_urut 			: $("#multi_urut").val(),
-								multi_keterangan 	: $("#multi_keterangan").val()
-							},
-							success		: function (data) {
-								$("#image_lampiran").append(data);
-								$("#multi_image").val("");
-								$("#multi_urut").val("");
-								$("#multi_keterangan").val("");
-							}
-						});
-
-						
-						var dataLampiran = {
-							"id_lokasi" : $("#id_lokasi").val(),
-							"jenis_lampiran" : "Foto Properti",
-							"lampiran" : data,
-							"no_urut" : $("#multi_urut").val(),
-							"keterangan" : $("#multi_keterangan").val()
-						};
-
-						$.post(base_url+"new/pekerjaan/ajax_update_lampiran", dataLampiran).done(function() {
-						});
-		            }
-		        });
-		    }
-		}
-	});
-
 	$(document).on("click", '.btn-delete-image-multi', function()
 	{
 		if (window.confirm("Apakah Anda yakin?"))
