@@ -32,59 +32,64 @@
 						<div class="alert alert-danger"><?php echo $error_msg ?></div>
 					<?php } ?>
 					<table class="table table-condensed">
-						<tr>
-							<td>User Role</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><small class="label bg-green"><?=$pekerjaan->nama_group?></small></td>
-						</tr>
-						<tr>
-							<td>Klien</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=$pekerjaan->nama_klien?></label></td>
-						</tr>
-						<tr>
-							<td>Nama Pekerjaan</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=$pekerjaan->nama?></label></td>
-						</tr>
-						<tr>
-							<td>Deskripsi</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=$pekerjaan->deskripsi?></label></td>
-						</tr>
-						<tr>
-							<td>Tanggal Penerimaan</td>
-							<td style="width: 30px; text-align: center;">:</td>
-                            <td><label><?php echo format_tanggal($pekerjaan->tanggal_penerimaan); ?></label></td>
-						</tr>
-						<tr>
-							<td>Jenis Laporan</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?php
-							$jenis_laporan_array = array("Ringkas"=>"Short Report","Lengkap"=>"Narrative Report");
-							echo $jenis_laporan_array[$pekerjaan->jenis_laporan];
-							?></label></td>
-						</tr>
-						<tr>
-							<td>Keterangan</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=$pekerjaan->keterangan?></label></td>
-						</tr>
-	                                                            <tr>
-							<td>Fee Penilaian</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=number_format($lembar_kendali_2->harga,0)?></label></td>
-						</tr>
-	                                                        <tr>
-							<td>Estimasi Waktu Pekerjaan</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=$lembar_kendali_2->jangka_waktu?></label></td>
-						</tr>
-	                                                                <tr>
-							<td>Jumlah Personil</td>
-							<td style="width: 30px; text-align: center;">:</td>
-							<td><label><?=$lembar_kendali_2->jumlah_orang?></label></td>
-						</tr>
+						<colgroup>
+							<col style=" width:  30%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>User Role</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><small class="label bg-green"><?=$pekerjaan->nama_group?></small></td>
+							</tr>
+							<tr>
+								<td>Klien</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=$pekerjaan->nama_klien?></label></td>
+							</tr>
+							<tr>
+								<td>Nama Pekerjaan</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=$pekerjaan->nama?></label></td>
+							</tr>
+							<tr>
+								<td>Deskripsi</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=$pekerjaan->deskripsi?></label></td>
+							</tr>
+							<tr>
+								<td>Tanggal Penerimaan</td>
+								<td style="width: 30px; text-align: center;">:</td>
+	                            <td><label><?php echo format_tanggal($pekerjaan->tanggal_penerimaan); ?></label></td>
+							</tr>
+							<tr>
+								<td>Jenis Laporan</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?php
+								$jenis_laporan_array = array("Ringkas"=>"Short Report","Lengkap"=>"Narrative Report");
+								echo $jenis_laporan_array[$pekerjaan->jenis_laporan];
+								?></label></td>
+							</tr>
+							<tr>
+								<td>Keterangan</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=$pekerjaan->keterangan?></label></td>
+							</tr>
+		                                                            <tr>
+								<td>Fee Penilaian</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=number_format($lembar_kendali_2->harga,0)?></label></td>
+							</tr>
+		                                                        <tr>
+								<td>Estimasi Waktu Pekerjaan</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=$lembar_kendali_2->jangka_waktu?></label></td>
+							</tr>
+		                                                                <tr>
+								<td>Jumlah Personil</td>
+								<td style="width: 30px; text-align: center;">:</td>
+								<td><label><?=$lembar_kendali_2->jumlah_orang?></label></td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -286,12 +291,12 @@
 									<tr>
 										<td valign="top">Nomor PO</td>
 										<td valign="top" align="center" width="20">:</td>
-										<td><?=$po->no?></td>
+										<td><?=($po->no)?></td>
 									</tr>
 									<tr>
 										<td valign="top">Tanggal</td>
 										<td valign="top" align="center" width="20">:</td>
-										<td><?=date("d-m-Y", strtotime($po->tanggal))?></td>
+										<td><?=format_tanggal( $po->tanggal )?></td>
 									</tr>
 									<tr>
 										<td valign="top">File Scan</td>

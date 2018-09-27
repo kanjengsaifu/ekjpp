@@ -1537,6 +1537,8 @@ class ajax extends CI_Controller
 					$data_table[$i][$item_field_view]	= "<a href='".base_url("asset/file/".$item_data->$item_field_view)."' target='_blank'><img src='".base_url("asset/file/".$item_data->$item_field_view)."' style='height: 50px; margin: 5px;'></a>";
 				}elseif ($type == "history" && ($item_field_view == "tanggal_laporan" || $item_field_view == "tanggal_penilaian")){
 					$data_table[$i][$item_field_view]	= format_tanggal($item_data->$item_field_view);
+				}elseif ( $item_field_view == "created" || $item_field_view == "updated" ){
+					$data_table[$i][$item_field_view]	= format_tanggal($item_data->$item_field_view);
 				}else{
 					$data_table[$i][$item_field_view]	= !empty($item_data->$item_field_view) ? $item_data->$item_field_view : "-";
 				}

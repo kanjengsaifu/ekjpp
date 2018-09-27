@@ -1634,7 +1634,7 @@ class ajaxpekerjaan extends CI_Controller
 
 					if ($pekerjaan->id_status == 16 || $pekerjaan->id_status == 17)
 					{
-						$data_table[$i]["surat_tugas"]	= "<div class='text-center'><a href='".base_url()."printpdf/surat_tugas/".base64_encode($item_lokasi->id)."' target='_blank' class='btn btn-primary btn-sm btn-print-tugas download'>DOWNLOAD SURAT TUGAS</a></div>";
+						$data_table[$i]["surat_tugas"]	= "<div class='text-center'><a href='".base_url()."printpdf/surat_tugas/".base64_encode($item_lokasi->id)."' target='_blank' class='btn btn-primary btn-sm btn-print-tugas download'><i class=\"fa fa-download\"></i></a></div>";
 					}
 
 					if ($pekerjaan->id_status == 17)
@@ -1741,7 +1741,7 @@ class ajaxpekerjaan extends CI_Controller
 
 				if ($pekerjaan->id_status == 16 || $pekerjaan->id_status == 17)
 				{
-					$data_table[$i]["surat_tugas"]	= "<div class='text-center'><a href='".base_url()."printpdf/surat_tugas/".base64_encode($item_lokasi->id)."' target='_blank' class='btn btn-primary btn-sm btn-print-tugas download'>DOWNLOAD SURAT TUGAS</a></div>";
+					$data_table[$i]["surat_tugas"]	= "<div class='text-center'><a href='".base_url()."printpdf/surat_tugas/".base64_encode($item_lokasi->id)."' target='_blank' class='btn btn-primary btn-sm btn-print-tugas download'><i class=\"fa fa-download\"></i></a></div>";
 				}
 
 				if ($pekerjaan->id_status == 17)
