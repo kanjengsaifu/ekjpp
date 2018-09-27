@@ -190,6 +190,15 @@ $(document).on("click", '#btn_upload_multi', function(event){
                             var $imgCol = $(data);
                             $imgCol.find('img').attr('class', 'img-responsive').removeAttr('style');
                             $imgCol.toggleClass('col-lg-6 col-sm-2');
+                            $imgCol.find("img").each(function(){
+
+                                var arrData = $(this).attr("src").split("."); 
+                                var ext = arrData.splice(-1,1);
+                                var thumb = arrData.join(".");
+                                thumb +=  "-thumb";
+                                thumb += "."+ext;
+                                $(this).attr("src", thumb);
+                            })
                             $imgCol.appendTo("#image_lampiran");
                             $("#multi_image").val("");
                             $("#multi_urut").val("");
@@ -281,7 +290,7 @@ $(function(){
         files = event.target.files;
         uploadFiles(event, data_name_field, data_id_field, data_keterangan);
     }
-    
+
     function uploadFiles(event, data_name_field, data_id_field, data_keterangan)
     {
         event.stopPropagation();
@@ -303,11 +312,16 @@ $(function(){
             {
                 if (data != "")
                 {
-                    if (data_keterangan == "")
-                    {
+                    var arrData = data.split("."); 
+                    var ext = arrData.splice(-1,1);
+                    var thumb = arrData.join(".");
+                    thumb +=  "-thumb";
+                    thumb += "."+ext;
+
+                    if (data_keterangan == "") {
                         $("#textbox_" + data_name_field).val(data).updateTextbox();
                         $("#img_" + data_name_field)
-                            .attr("src",  base_url + "asset/file/" + data)
+                            .attr("src",  base_url + "asset/file/" + thumb)
                             .attr("class",  "img-responsive")
                         ;
                     }
@@ -315,7 +329,7 @@ $(function(){
                     {
                         $(".textbox-" + data_id_field + "-" + data_keterangan).val(data).updateTextbox();
                         $(".img-" + data_id_field + "-" + data_keterangan)
-                            .attr("src", base_url + "asset/file/" + data)
+                            .attr("src", base_url + "asset/file/" + thumb)
                             .attr("class",  "img-responsive")
                         ;
                     }

@@ -1321,8 +1321,9 @@ class ajax extends CI_Controller
 	
 	function do_upload_multi()
 	{
+		$this->load->helper('pic');
 		$data = array();
-
+		$newfilename = base_url()."asset/file/default.jpg";
 		if(isset($_GET['files']))
 		{	
 			$error = false;
@@ -1345,6 +1346,10 @@ class ajax extends CI_Controller
 				    $error = true;
 				}
 			}
+
+			resize_image($uploaddir .$newfilename);
+			make_thumb($uploaddir .$newfilename);
+			
 			$data = ($error) ? array('error' => 'There was an error uploading your files') : array('files' => $files);
 		}
 		else

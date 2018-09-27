@@ -2473,10 +2473,17 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div id="image_lampiran">
-                                            <?php foreach ($txn_lampiran as $key => $value) { ?>
+                                            <?php 
+                                            foreach ($txn_lampiran as $key => $value) {
+                                                $lamp = explode(".", $value["lampiran"]);
+                                                $ext = array_pop( $lamp );
+                                                $file_name = implode(".", $lamp);
+                                                $file_thumb = $file_name."-thumb.".$ext;
+
+                                                ?>
                                             <?php if ($value["jenis_lampiran"] != "Foto Properti") continue; ?>
                                             <div class="col-sm-2 list_multi_image list_1523349146-20180410png">
-                                                <img src="<?php echo base_url() ?>asset/file/<?php echo $value["lampiran"] ?>" class="img-responsive">
+                                                <img src="<?php echo base_url() ?>asset/file/<?php echo $file_thumb ?>" class="img-responsive">
                                                 <table style="margin-bottom: 10px;">
                                                     <tbody>
                                                         <tr>
@@ -2523,20 +2530,37 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                             </div>
                             <div role="tabpanel" class="tab-pane" id="lampiran_layout">
                                 <h4>Layout Properti</h4>
-                                <!-- <pre><?php var_dump($lampiran_layout_properti); ?></pre> -->
-                                <img id="img_entry_29" src="<?php echo base_url() ?>asset/file/<?php echo (!$lampiran_layout_properti) ? "default.jpg" : $lampiran_layout_properti["lampiran"] ?>" data-id-field="891"  data-name-field="entry_29" data-keterangan="" class="img-responsive btn-upload-image img-891-"  />
+                                <?php
+                                    $lamp = explode(".", $lampiran_layout_properti["lampiran"]);
+                                    $ext = array_pop( $lamp );
+                                    $file_name = implode(".", $lamp);
+                                    $file_thumb = $file_name."-thumb.".$ext;
+                                    ?>
+                                <img id="img_entry_29" src="<?php echo base_url() ?>asset/file/<?php echo (!$lampiran_layout_properti) ? "default.jpg" : $file_thumb ?>" data-id-field="891"  data-name-field="entry_29" data-keterangan="" class="img-responsive btn-upload-image img-891-"  />
                                 <input type="file" id="file-891" class="tmp_file file-891-" data-id-field="891" data-name-field="entry_29" style="display: none;" data-keterangan="">
                                 <input type="hidden" id="textbox_entry_29" name="update[entry_29]" class="table_input textbox-891-" value="default.jpg" data-id-field="891" data-name-field="entry_29" data-keterangan="Layout Properti">
                             </div>
                             <div role="tabpanel" class="tab-pane" id="lampiran_peta">
                                 <h4>Peta Lokasi Properti</h4>
-                                <img id="img_entry_30" src="<?php echo base_url() ?>asset/file/<?php echo (!$lampiran_peta_lokasi) ? "default.jpg" : $lampiran_peta_lokasi["lampiran"] ?>" data-id-field="892"  data-name-field="entry_30" data-keterangan="" class="img-responsive btn-upload-image img-892-"  />
+                                <?php
+                                    $lamp = explode(".", $lampiran_peta_lokasi["lampiran"]);
+                                    $ext = array_pop( $lamp );
+                                    $file_name = implode(".", $lamp);
+                                    $file_thumb = $file_name."-thumb.".$ext;
+                                    ?>
+                                <img id="img_entry_30" src="<?php echo base_url() ?>asset/file/<?php echo (!$lampiran_peta_lokasi) ? "default.jpg" : $file_thumb ?>" data-id-field="892"  data-name-field="entry_30" data-keterangan="" class="img-responsive btn-upload-image img-892-"  />
                                 <input type="file" id="file-892" class="tmp_file file-892-" data-id-field="892" data-name-field="entry_30" style="display: none;" data-keterangan="">
                                 <input type="hidden" id="textbox_entry_30" name="update[entry_30]" class="table_input textbox-892-" value="default.jpg" data-id-field="892" data-name-field="entry_30" data-keterangan="Peta Lokasi Properti">
                             </div>
                             <div role="tabpanel" class="tab-pane" id="lampiran_kota">
                                 <h4>Keterangan Tata Kota</h4>
-                                <img id="img_entry_31" src="<?php echo base_url() ?>asset/file/<?php echo (!$lampiran_tata_kota) ? "default.jpg" : $lampiran_tata_kota["lampiran"] ?>" data-id-field="893"  data-name-field="entry_31" data-keterangan="" class="img-responsive btn-upload-image img-893-"  />
+                                <?php
+                                    $lamp = explode(".", $lampiran_tata_kota["lampiran"]);
+                                    $ext = array_pop( $lamp );
+                                    $file_name = implode(".", $lamp);
+                                    $file_thumb = $file_name."-thumb.".$ext;
+                                    ?>
+                                <img id="img_entry_31" src="<?php echo base_url() ?>asset/file/<?php echo (!$lampiran_tata_kota) ? "default.jpg" : $file_thumb ?>" data-id-field="893"  data-name-field="entry_31" data-keterangan="" class="img-responsive btn-upload-image img-893-"  />
                                 <input type="file" id="file-893" class="tmp_file file-893-" data-id-field="893" data-name-field="entry_31" style="display: none;" data-keterangan="">
                                 <input type="hidden" id="textbox_entry_31" name="update[entry_31]" class="table_input textbox-893-" value="default.jpg" data-id-field="893" data-name-field="entry_31" data-keterangan="Keterangan Tata Kota">
                             </div>
