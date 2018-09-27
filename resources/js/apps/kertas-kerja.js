@@ -189,8 +189,8 @@ $(document).on("click", '#btn_upload_multi', function(event){
                         success     : function (data) {
                             var $imgCol = $(data);
                             $imgCol.find('img').attr('class', 'img-responsive').removeAttr('style');
-                            $imgCol.find('.col-lg-6').attr('class', 'col-sm-6')
-                            $("#image_lampiran").append($imgCol);
+                            $imgCol.toggleClass('col-lg-6 col-sm-2');
+                            $imgCol.appendTo("#image_lampiran");
                             $("#multi_image").val("");
                             $("#multi_urut").val("");
                             $("#multi_keterangan").val("");
@@ -211,5 +211,116 @@ $(document).on("click", '#btn_upload_multi', function(event){
                 }
             });
         }
+    }
+});
+
+$(document).on("click", '.btn-delete-image-multi', function() {
+    if (window.confirm("Apakah Anda yakin?"))
+    {
+        var id_field_multi  = $(this).attr("data-id");
+        var multifile       = $(this).attr("data-file");
+        var elt = $('#image_lampiran').find('.list_' + multifile);
+        
+        $.ajax({
+            type        : "POST",
+            url         : base_url + "ajax/delete_data/multi_image",
+            dataType    : "JSON",
+            data        : {
+                id  : id_field_multi
+            },
+            success     : function (data) {
+                generate_notification(data.result.trim(), data.message.trim(), "topCenter");
+                if (data.result.trim() == "success"){
+                    elt.remove();
+                }
+            },
+        });
+    }
+});
+
+// For Upload file
+$(function(){
+    // Variable to store your files
+    var files;
+
+    // Add events
+    $(document).on("change", '.tmp_file', function(event){
+        var $input = $(this);
+        var file = this.files[0];
+        var img = new Image();
+        var _URL = window.URL || window.webkitURL;
+        if ((file = this.files[0])) {
+            img.onload = function () {
+                var data_name_field = $input.attr("data-name-field");
+                var data_id_field   = $input.attr("data-id-field");
+                var data_keterangan = $input.attr("data-keterangan");
+                prepareUpload(event, data_name_field, data_id_field, data_keterangan);
+            };
+            img.src = _URL.createObjectURL(file);
+        }
+    });
+    
+    $(document).on("change", '.tmp_file', function(event){
+        var $input = $(this);
+        var file = this.files[0];
+        var img = new Image();
+        var _URL = window.URL || window.webkitURL;
+        if ((file = this.files[0])) {
+            img.onload = function () {
+                var data_name_field = $input.attr("data-name-field");
+                var data_id_field   = $input.attr("data-id-field");
+                var data_keterangan = $input.attr("data-keterangan");
+                prepareUpload(event, data_name_field, data_id_field, data_keterangan);
+            };
+            img.src = _URL.createObjectURL(file);
+        }
+    });
+    
+    function prepareUpload(event, data_name_field, data_id_field, data_keterangan)
+    {
+        files = event.target.files;
+        uploadFiles(event, data_name_field, data_id_field, data_keterangan);
+    }
+    
+    function uploadFiles(event, data_name_field, data_id_field, data_keterangan)
+    {
+        event.stopPropagation();
+        event.preventDefault();
+        var data = new FormData();
+        $.each(files, function(key, value)
+        {
+            data.append(key, value);
+        });
+        
+        $.ajax({
+            url: base_url + "Ajax/do_upload_data/?files",
+            type: 'POST',
+            data: data,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(data)
+            {
+                if (data != "")
+                {
+                    if (data_keterangan == "")
+                    {
+                        $("#textbox_" + data_name_field).val(data).updateTextbox();
+                        $("#img_" + data_name_field)
+                            .attr("src",  base_url + "asset/file/" + data)
+                            .attr("class",  "img-responsive")
+                        ;
+                    }
+                    else
+                    {
+                        $(".textbox-" + data_id_field + "-" + data_keterangan).val(data).updateTextbox();
+                        $(".img-" + data_id_field + "-" + data_keterangan)
+                            .attr("src", base_url + "asset/file/" + data)
+                            .attr("class",  "img-responsive")
+                        ;
+                    }
+                }
+            }
+        });
     }
 });
