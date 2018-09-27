@@ -2,6 +2,7 @@ composer.phar
 adminer.php
 composer.lock
 vendor/*
+stats/*
 application/config/database.php
 application/third_party/PHPWord/*
 asset/file/*
