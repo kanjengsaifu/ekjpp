@@ -1819,10 +1819,12 @@ class ajax extends CI_Controller
 					}
 				}
 
+				//if invoice
 				if ($item_data->id == 4){
 					$invs = $this->global_model->get_list( 'mst_dokumen_gabung', 'id_dokumen_master=4 AND id_pekerjaan='.$id_pekerjaan, 'termin' );
 					$j = 1;
 					foreach ($invs as $inv) {
+						$file = !$inv->file ? "#" : base_url()."asset/file/".$inv->file;
 						$id_dokumen_gabung = $inv->id;
 						$data_table[$i]["dokumen"]		= $item_data->nama." - ".$j;
 						//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
