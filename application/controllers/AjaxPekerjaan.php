@@ -1625,9 +1625,9 @@ class ajaxpekerjaan extends CI_Controller
 					$data_table[$i]["kode"] 				= !empty($item_lokasi->kode) ? $item_lokasi->kode : "-";
 					$data_table[$i]["alamat"] 				= $item_lokasi->alamat." ".(!empty($item_lokasi->gang) ? "Gang ".$item_lokasi->gang : "")." No. ".$item_lokasi->nomor.", RT. ".$item_lokasi->rt." RW. ".$item_lokasi->rw."<br> Kel. ".$item_lokasi->nama_desa." ".(!empty($item_lokasi->dh_desa) ? "(d/h ".$item_lokasi->dh_desa.")" : "")." Kec. ".$item_lokasi->nama_kecamatan." ".(!empty($item_lokasi->dh_kecamatan) ? "(d/h ".$item_lokasi->dh_kecamatan.")" : "")." ".$item_lokasi->nama_kota." ".(!empty($item_lokasi->dh_kota) ? "(d/h ".$item_lokasi->dh_kota.")" : "");
 					$data_table[$i]["nama_provinsi"] 		= !empty($item_lokasi->nama_provinsi) ? $item_lokasi->nama_provinsi : "-";
-					$data_table[$i]["tanggal_mulai"] 		= $item_lokasi->tanggal_mulai;
+					$data_table[$i]["tanggal_mulai"] 		= format_tanggal($item_lokasi->tanggal_mulai);
 					$data_table[$i]["jam"] 					= $item_lokasi->jam;
-					$data_table[$i]["tanggal_selesai"] 		= $item_lokasi->tanggal_selesai;
+					$data_table[$i]["tanggal_selesai"] 		= format_tanggal($item_lokasi->tanggal_selesai);
 					$data_table[$i]["biaya"] 				= number_format($item_lokasi->biaya);
 					$data_table[$i]["petugas"] 				= "<div class='text-center'>".$user["nama"]."</div>";
 
@@ -1704,9 +1704,9 @@ class ajaxpekerjaan extends CI_Controller
 				}
 				else
 				{
-					$data_table[$i]["tanggal_mulai"] 		= $item_lokasi->tanggal_mulai;
+					$data_table[$i]["tanggal_mulai"] 		= format_tanggal($item_lokasi->tanggal_mulai);
 					$data_table[$i]["jam"] 					= $item_lokasi->jam;
-					$data_table[$i]["tanggal_selesai"] 		= $item_lokasi->tanggal_selesai;
+					$data_table[$i]["tanggal_selesai"] 		= format_tanggal($item_lokasi->tanggal_selesai);
 					$data_table[$i]["biaya"] 				= number_format($item_lokasi->biaya);
 				}
 
