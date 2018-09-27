@@ -660,3 +660,8 @@ function number_only(e)
 
 
 
+$(document).on("click", ".noty_message", function(event){
+	event.preventDefault();
+	console.log(1);
+	$(this).closest("ul").remove();
+})
