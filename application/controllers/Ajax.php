@@ -1307,6 +1307,7 @@ class ajax extends CI_Controller
 
 			// compress_image($uploaddir .$newfilename, 20);
 			resize_image($uploaddir .$newfilename);
+			make_thumb($uploaddir .$newfilename);
 
 			$data = ($error) ? array('error' => 'There was an error uploading your files') : array('files' => $files);
 		}

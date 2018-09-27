@@ -21,7 +21,7 @@ function make_thumb($src)
 	$dir = implode("/", $dir)."/";
 	$thumb = explode(".", $file);
 	$ext = array_pop($thumb);
-	$suffix = "-compressed";
+	$suffix = "-thumb";
 	$thumb = $dir.implode(".", $thumb).$suffix.".".$ext;
 
 	$thumb_height = 300;
