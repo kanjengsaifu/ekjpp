@@ -64,10 +64,10 @@
 							</div>
 		                    <div class="form-group">
 								<label>Attachment NPWP</label>
-								<input type="file" id="tmp_file" value="" readonly="" />
-								<input type="hidden" id="npwp_file" name="npwp_file" value="" readonly="" />
-								<div id="npwp_file_box"></div>
 
+								<input type="file" id="tmp_file" value="" readonly="" />
+								<input type="hidden" id="npwp_file" name="npwp_file" value="<?php echo (false!=$objek_edit->npwp_file) ? $objek_edit->npwp_file:"" ?>" readonly="" />
+								<div id="npwp_file_box"><?php echo (false!=$objek_edit->npwp_file) ? "<a href=\"".base_url()."asset/file/".$objek_edit->npwp_file."\">Download</a>":"" ?></div>
 							</div>
 						</div>
 
