@@ -1143,7 +1143,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                                 <tr>
                                                                     <td><span>NJOP Tanggal</span></td>
                                                                     <td>
-                                                                        
+
                                                                     <?php
                                                                     $date_name = "update[tanah_63]";
                                                                     $date_label = "NJOP Tanggal";
@@ -1155,12 +1155,6 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                                     echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
                                                                     ?>
 
-                                                                        <!-- <input type="text" id="textbox_tanah_63" name="update[tanah_63]" class="form-control table_input" value="<?php echo format_ymd($txn_tanah["tanggal_njop"]) ?>" data-id-field="242" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
-                                                                        <script>
-                                                                        $(function(){
-                                                                            $("#textbox_tanah_63").datepicker({ dateFormat: "yyyy-mm-dd" });
-                                                                        });
-                                                                        </script> -->
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -4789,6 +4783,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                         <div id="image_lampiran">
                                             <?php 
                                             foreach ($txn_lampiran as $key => $value) {
+                                                $lampiran_alpn = preg_replace("/[^a-zA-Z0-9]+/", "", $value["lampiran"]);
                                                 $lamp = explode(".", $value["lampiran"]);
                                                 $ext = array_pop( $lamp );
                                                 $file_name = implode(".", $lamp);
@@ -4796,7 +4791,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
 
                                                 ?>
                                             <?php if ($value["jenis_lampiran"] != "Foto Properti") continue; ?>
-                                            <div class="col-sm-2 list_multi_image list_1523349146-20180410png">
+                                            <div class="col-sm-2 list_multi_image list_<?php echo $lampiran_alpn ?>">
                                                 <img src="<?php echo base_url() ?>asset/file/<?php echo $file_thumb ?>" class="img-responsive">
                                                 <table style="margin-bottom: 10px;">
                                                     <tbody>
@@ -4812,7 +4807,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                                <button type="button" class="btn btn-warning btn-sm btn-delete-image-multi" data-file="1523349146-20180410png" data-id="NTM0MA==">Delete</button>
+                                                <button type="button" class="btn btn-warning btn-sm btn-delete-image-multi" data-file="<?php echo $lampiran_alpn ?>" data-id="NTM0MA==" data-idlampiran="<?php echo $value["id_lampiran"] ?>">Delete</button>
                                             </div>
                                             <?php } ?>
                                         </div>

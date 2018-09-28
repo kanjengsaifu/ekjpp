@@ -226,6 +226,7 @@ $(document).on("click", '#btn_upload_multi', function(event){
 $(document).on("click", '.btn-delete-image-multi', function() {
     if (window.confirm("Apakah Anda yakin?"))
     {
+        var id_lampiran  = $(this).attr("data-idlampiran");
         var id_field_multi  = $(this).attr("data-id");
         var multifile       = $(this).attr("data-file");
         var elt = $('#image_lampiran').find('.list_' + multifile);
@@ -235,7 +236,8 @@ $(document).on("click", '.btn-delete-image-multi', function() {
             url         : base_url + "ajax/delete_data/multi_image",
             dataType    : "JSON",
             data        : {
-                id  : id_field_multi
+                id  : id_field_multi,
+                id_lampiran  : id_lampiran
             },
             success     : function (data) {
                 generate_notification(data.result.trim(), data.message.trim(), "topCenter");

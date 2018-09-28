@@ -1979,6 +1979,10 @@ class ajax extends CI_Controller
 		}else if ($type == "multi_image"){
 			$table_name		= "txn_lokasi_data";
 			$primary_key	= "id";
+
+			$id_lampiran = $_POST["id_lampiran"];
+			$this->global_model->delete("txn_lampiran", 1, array("id_lampiran"), array($id_lampiran));
+		
 		}else if ($type == "kategori_berita"){
 			$table_name		= "mst_kategori";
 			$primary_key	= "id";
