@@ -118,8 +118,18 @@ class formlib
 		$content	= "
 			<input type='text' id='".$name."' name='".$name."' class='form-control input-sm tanggal' value='".(empty($value) ? date($format_php) : date($format_php, strtotime($value)))."' required data-date-format='".$format."' data-date-autoclose='true'>
 			<script>
+			var options={
+    format: 'dd-mm-yyyy',
+    // container: container,
+    todayHighlight: true,
+    autoclose: true, 
+    daysOfWeekDisabled: '0',
+    daysOfWeekHighlighted: '0',
+    language: 'id',
+    locale: 'id',
+  };
 			$(function(){
-			   $('#".$name."').datepicker();
+			   $('#".$name."').datepicker(options);
 			});
 			</script>
 		";
