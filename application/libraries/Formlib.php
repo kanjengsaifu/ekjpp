@@ -108,30 +108,27 @@ class formlib
 		return $data_dropdown;
 	}
 
-	function _generate_input_date($name = "", $placeholder = "", $value = "", $visible = true, $required = false, $format = "dd-mm-yyyy")
+	function _generate_input_date($name = "", $placeholder = "", $value = "", $visible = true, $required = false, $format = "dd-mm-yyyy", $id = "", $class='', $addattr='')
 	{
+		$attr_id = (!$id) ? ' id="'.$name.'" ' : ' id="'.$id.'" ';
+		$format_datepicker = "dd MM yyyy";
+		$format_datepicker_php = "d M Y";
+		$value_formated = "";
+		if (false!=$value){
+			$value_formated = format_datetime( $value );
+			// var_dump($value_formated);
+		}
+
 		if ($format == "dd-mm-yyyy"){
 			$format_php = "d-m-Y";
 		}else{
 			$format_php = "Y-m-d";
 		}
 		$content	= "
-			<input type='text' id='".$name."' name='".$name."' class='form-control input-sm tanggal' value='".(empty($value) ? date($format_php) : date($format_php, strtotime($value)))."' required data-date-format='".$format."' data-date-autoclose='true'>
-			<script>
-			var options={
-    format: 'dd-mm-yyyy',
-    // container: container,
-    todayHighlight: true,
-    autoclose: true, 
-    daysOfWeekDisabled: '0',
-    daysOfWeekHighlighted: '0',
-    language: 'id',
-    locale: 'id',
-  };
-			$(function(){
-			   $('#".$name."').datepicker(options);
-			});
-			</script>
+			<div class='date-group'>
+				<input type='text' class='form-control input-sm date' value='".$value_formated."' required data-date-format='".$format_datepicker."' data-date-autoclose='true'>
+				<input ".$attr_id." class='date-value ".$class."' type='hidden' name='".$name."' value='".(empty($value) ? date($format_php) : date($format_php, strtotime($value)))."' ".$addattr.">
+			</div>
 		";
 
 		return $content;

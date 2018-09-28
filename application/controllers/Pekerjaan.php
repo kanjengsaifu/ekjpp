@@ -2,14 +2,12 @@
 
 class Pekerjaan extends CI_Controller
 {
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
         $this->load->model('Pekerjaan_model','app_model');
 	}
 
-	function index()
-	{
+	function index() {
 		// redirect(base_url()."new/pekerjaan");
 		$config			= $this->spmlib->get_config();
 		$data["title"] 	= "Listing Pekerjaan";
@@ -22,8 +20,7 @@ class Pekerjaan extends CI_Controller
 		$this->load->view("pekerjaan/index", $data);
 	}
 
-	function tambah($id = null)
-	{
+	function tambah($id = null) {
 		$this->cek_tambah_pekerjaan($id);
 		$id = base64_decode($id);
                 $jmlobjek   = $this->global_model->get_by_query("select count(*) as jmlobjek from mst_lokasi where id_pekerjaan='".$id."' limit 1")->row()->jmlobjek;

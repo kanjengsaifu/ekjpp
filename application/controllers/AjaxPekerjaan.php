@@ -67,7 +67,7 @@ class ajaxpekerjaan extends CI_Controller
 
 			$data_table[$i]["nama"]					= $item_data->nama;
 			$data_table[$i]["nama_klien"]			= $item_data->nama_klien;
-			$data_table[$i]["tanggal_penerimaan"]	= "<div class='text-center'>".format_tanggal($item_data->tanggal_penerimaan)."</div>";
+			$data_table[$i]["tanggal_penerimaan"]	= "<div class='text-center'>".format_datetime($item_data->tanggal_penerimaan)."</div>";
 			$data_table[$i]["pic"]			= "<strong>".$item_data->nama_group . "</strong> <span>(".$item_data->sub_status.")</span>";
 			$data_table[$i]["status"]				= $status;
 			$data_table[$i]["action"]				= $action;
@@ -1597,8 +1597,8 @@ class ajaxpekerjaan extends CI_Controller
 		);
 		echo json_encode($return);
 	}
-	function get_penugasan()
-	{
+
+	function get_penugasan() {
 		$id_pekerjaan 	= base64_decode($_POST["id_pekerjaan"]);
 		$pekerjaan		= $this->global_model->get_data("view_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
 		$status			= $this->global_model->get_data("mst_status", 1, array("id"), array($pekerjaan->id_status))->row();
@@ -1625,9 +1625,9 @@ class ajaxpekerjaan extends CI_Controller
 					$data_table[$i]["kode"] 				= !empty($item_lokasi->kode) ? $item_lokasi->kode : "-";
 					$data_table[$i]["alamat"] 				= $item_lokasi->alamat." ".(!empty($item_lokasi->gang) ? "Gang ".$item_lokasi->gang : "")." No. ".$item_lokasi->nomor.", RT. ".$item_lokasi->rt." RW. ".$item_lokasi->rw."<br> Kel. ".$item_lokasi->nama_desa." ".(!empty($item_lokasi->dh_desa) ? "(d/h ".$item_lokasi->dh_desa.")" : "")." Kec. ".$item_lokasi->nama_kecamatan." ".(!empty($item_lokasi->dh_kecamatan) ? "(d/h ".$item_lokasi->dh_kecamatan.")" : "")." ".$item_lokasi->nama_kota." ".(!empty($item_lokasi->dh_kota) ? "(d/h ".$item_lokasi->dh_kota.")" : "");
 					$data_table[$i]["nama_provinsi"] 		= !empty($item_lokasi->nama_provinsi) ? $item_lokasi->nama_provinsi : "-";
-					$data_table[$i]["tanggal_mulai"] 		= format_tanggal($item_lokasi->tanggal_mulai);
+					$data_table[$i]["tanggal_mulai"] 		= format_datetime($item_lokasi->tanggal_mulai);
 					$data_table[$i]["jam"] 					= $item_lokasi->jam;
-					$data_table[$i]["tanggal_selesai"] 		= format_tanggal($item_lokasi->tanggal_selesai);
+					$data_table[$i]["tanggal_selesai"] 		= format_datetime($item_lokasi->tanggal_selesai);
 					$data_table[$i]["biaya"] 				= number_format($item_lokasi->biaya);
 					$data_table[$i]["petugas"] 				= "<div class='text-center'>".$user["nama"]."</div>";
 
@@ -1674,12 +1674,21 @@ class ajaxpekerjaan extends CI_Controller
 
 				if ($status->tambah_petugas)
 				{
-					$data_table[$i]["tanggal_mulai"] 		= "
-						<div class='input-group date default-date-picker' data-date-format='yyyy-mm-dd' data-date-autoclose='true' style='width: 130px;'>
-							<input type='text' id='tanggal_mulai_".$item_lokasi->id."' name='tanggal_mulai'  class='form-control input-sm tanggal_mulai textbox_penugasan' value='".$item_lokasi->tanggal_mulai."' placeholder='Tanggal Mulai' data-id-lokasi='".$item_lokasi->id."' />
-							<span class='input-group-addon'><i class='fa fa-calendar'></i></span>
-						</div>
-					";
+                    $date_name = "tanggal_mulai";
+                    $date_label = "tanggal_mulai";
+                    $date_value = $item_lokasi->tanggal_mulai;
+                    $date_id = "tanggal_mulai_".$item_lokasi->id;
+                    $date_class = "input-sm tanggal_mulai textbox_penugasan";
+                    $date_attr = " data-id-lokasi='".$item_lokasi->id."' ";
+					$tanggal_mulai_dpicker = $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr);
+
+					$data_table[$i]["tanggal_mulai"] 		= $tanggal_mulai_dpicker;
+					// "
+					// 	<div class='input-group date default-date-picker' data-date-format='yyyy-mm-dd' data-date-autoclose='true' style='width: 130px;'>
+					// 		<input type='text' id='tanggal_mulai_".$item_lokasi->id."' name='tanggal_mulai'  class='form-control input-sm tanggal_mulai textbox_penugasan' value='".$item_lokasi->tanggal_mulai."' placeholder='Tanggal Mulai' data-id-lokasi='".$item_lokasi->id."' />
+					// 		<span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+					// 	</div>
+					// ";
 
 
 					$data_table[$i]["jam"] 					= '
@@ -1692,21 +1701,30 @@ class ajaxpekerjaan extends CI_Controller
 
 					';
 
-					$data_table[$i]["tanggal_selesai"] 		= "
-						<div class='input-group date default-date-picker' data-date-format='yyyy-mm-dd' data-date-autoclose='true' style='width: 130px;'>
-							<input type='text' id='tanggal_selesai_".$item_lokasi->id."' name='tanggal_selesai'  class='form-control input-sm tanggal_selesai  textbox_penugasan' value='".$item_lokasi->tanggal_selesai."' placeholder='Tanggal Selesai' data-id-lokasi='".$item_lokasi->id."' />
-							<span class='input-group-addon'><i class='fa fa-calendar'></i></span>
-						</div>
-					";
+                    $date_name = "tanggal_selesai";
+                    $date_label = "tanggal_selesai";
+                    $date_value = $item_lokasi->tanggal_selesai;
+                    $date_id = "tanggal_selesai_".$item_lokasi->id;
+                    $date_class = "input-sm tanggal_selesai textbox_penugasan";
+                    $date_attr = " data-id-lokasi='".$item_lokasi->id."' ";
+					$tanggal_selesai_dpicker = $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr);
+
+					$data_table[$i]["tanggal_selesai"] 		= $tanggal_selesai_dpicker;
+					// "
+					// 	<div class='input-group date default-date-picker' data-date-format='yyyy-mm-dd' data-date-autoclose='true' style='width: 130px;'>
+					// 		<input type='text' id='tanggal_selesai_".$item_lokasi->id."' name='tanggal_selesai'  class='form-control input-sm tanggal_selesai  textbox_penugasan' value='".$item_lokasi->tanggal_selesai."' placeholder='Tanggal Selesai' data-id-lokasi='".$item_lokasi->id."' />
+					// 		<span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+					// 	</div>
+					// ";
 					$data_table[$i]["biaya"] 				= "
 						<input type='text' name='biaya' class='form-control input-sm biaya textbox_penugasan' value='".$item_lokasi->biaya."' placeholder='Biaya' data-id-lokasi='".$item_lokasi->id."' style='min-width: 70px;' />
 					";
 				}
 				else
 				{
-					$data_table[$i]["tanggal_mulai"] 		= format_tanggal($item_lokasi->tanggal_mulai);
+					$data_table[$i]["tanggal_mulai"] 		= format_datetime($item_lokasi->tanggal_mulai);
 					$data_table[$i]["jam"] 					= $item_lokasi->jam;
-					$data_table[$i]["tanggal_selesai"] 		= format_tanggal($item_lokasi->tanggal_selesai);
+					$data_table[$i]["tanggal_selesai"] 		= format_datetime($item_lokasi->tanggal_selesai);
 					$data_table[$i]["biaya"] 				= number_format($item_lokasi->biaya);
 				}
 
@@ -4995,12 +5013,21 @@ class ajaxpekerjaan extends CI_Controller
 					}
 					else if ($item_field->type == "Date")
 					{
-						$data["input"][$item_field->nama]	= "
-							<input type='text' id='textbox_".$item_field->nama."' name='".$name."' class='form-control table_input textbox_".$item_field->nama."' value='".((set_value(".$name.")) ? set_value(".$name.") : $value)."' required data-id-field='".$item_field->id."' data-date-format='dd-mm-yyyy' data-date-autoclose='true' data-keterangan='".$item_legalitas."'>
-							<script>
-								$('.textbox_".$item_field->nama."[data-keterangan=".$item_legalitas."]').datepicker();
-							</script>
-						";
+						$date_name = $name;
+                        $date_label = $name;
+                        $date_value = ((set_value(".$name.")) ? set_value(".$name.") : $value);
+                        $date_id = $item_field->id;
+                        $date_class = "table_input textbox_".$item_field->nama;
+                        $date_attr = "data-id-field='".$item_field->id."' data-keterangan='".$item_legalitas."'";
+
+						$data["input"][$item_field->nama]	= $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr);
+
+						// $data["input"][$item_field->nama]	= "
+						// 	<input type='text' id='textbox_".$item_field->nama."' name='".$name."' class='form-control table_input textbox_".$item_field->nama."' value='".((set_value(".$name.")) ? set_value(".$name.") : $value)."' required data-id-field='".$item_field->id."' data-date-format='dd-mm-yyyy' data-date-autoclose='true' data-keterangan='".$item_legalitas."'>
+						// 	<script>
+						// 		$('.textbox_".$item_field->nama."[data-keterangan=".$item_legalitas."]').datepicker();
+						// 	</script>
+						// ";
 					}
 					else if ($item_field->type == "Dropdown")
 					{

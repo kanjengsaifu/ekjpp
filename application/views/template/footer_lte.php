@@ -10,6 +10,7 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="<?php echo base_url() ?>asset/js/global_function.js"></script>
@@ -44,6 +45,29 @@
 <script src="<?=base_url()?>asset/js/jquery.number.js"></script>
 <script src="<?php echo base_url() ?>asset/plugins/select2/placeholders.jquery.min.js"></script>
 <script src="<?php echo base_url() ?>asset/plugins/select2/select2.min.js"></script>
-	
-    
-    
+<script>
+$.fn.datepicker.dates['id-ID'] = {
+	days: ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+	daysShort: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
+	daysMin: ["Mi", "Si", "Se", "Ra", "Ka", "Ju", "Sa"],
+	months: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+	monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+	today: "Hari ini",
+	clear: "Reset",
+	format: "dd/MM/yyyy",
+	titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+	weekStart: 0
+};
+$.fn.datepicker.defaults.language = 'id-ID';
+$.fn.datepicker.defaults.format = 'dd-MM-yyyy';
+
+function initDate(){
+	$('.date').datepicker().on('changeDate', function(e) {
+		var dbAcceptedDate = e.format('yyyy-mm-dd');
+		$(this).closest('.date-group').find('.date-value').val(dbAcceptedDate).trigger("change");
+	});
+}
+$(function(){
+	initDate();
+});
+</script>

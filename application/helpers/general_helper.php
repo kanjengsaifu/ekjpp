@@ -843,13 +843,4 @@ function numberToRomanRepresentation($number) {
     }
     return $returnValue;
 }
-function format_tanggal($ymd=""){
-
-    $time=strtotime($ymd);
-    if (!$ymd){
-        $time=time();
-    }
-    setlocale(LC_ALL, 'id_ID');
-    return iconv('ISO-8859-1', 'UTF-8', strftime('%d %B %Y', $time));
-}
 ?>

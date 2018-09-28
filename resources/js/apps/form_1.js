@@ -332,8 +332,7 @@ function get_data_legalitas(target)
 			var row = "";
 			
 			var a = 0;
-			$.each(data.data_table, function(i, item) 
-			{
+			$.each(data.data_table, function(i, item) {
 				row	= "<tr>";
 				
 				row	+= "<td align='center'>" + i + "</td>";
@@ -356,6 +355,8 @@ function get_data_legalitas(target)
 				$(terget_tab_tbody).append(row);
 				a++;
 			});
+
+			initDate();
 			
 			$("#total_data_legalitas").val(a);
 			$(".default-date-picker").datepicker();

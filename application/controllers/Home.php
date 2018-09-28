@@ -522,8 +522,8 @@ class home extends CI_Controller
                     <ul>
                         <li>Jenis Objek : '. $value['jenis_objek'] .'</li>
                         <li>Lokasi : '. $value['alamat'] .'</li>
-                        <li>Mulai &nbsp&nbsp: <span class="badge bg-green">'.format_tanggal($value['tanggal_mulai']).'</span> </li>
-                        <li>Selesai: <span class="badge bg-red">'.format_tanggal($value['tanggal_selesai']).'</span></li>
+                        <li>Mulai &nbsp&nbsp: <span class="badge bg-green">'.format_datetime($value['tanggal_mulai']).'</span> </li>
+                        <li>Selesai: <span class="badge bg-red">'.format_datetime($value['tanggal_selesai']).'</span></li>
                         <li>
                         	<a href="#">Surveyor : </a>
                         	<p>'.$value['nama_user'].'</p>
@@ -538,7 +538,7 @@ class home extends CI_Controller
             $dates[$i] = array(
                 'date' => $date,
                 'badge' => $i,
-                'title' => 'List Survey : '.format_tanggal() ,
+                'title' => 'List Survey : '.format_datetime() ,
                 'body' => $list_judul,
                 'footer' => 'EKJPP_ASUS',
             );

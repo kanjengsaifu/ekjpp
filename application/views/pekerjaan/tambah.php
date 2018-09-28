@@ -1,6 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
-
-<?php echo $_template["_head"]?>
+<?php  
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+echo $_template["_head"]; 
+?>
 <style>
 	.table_custom{
 		margin-bottom: 10px;

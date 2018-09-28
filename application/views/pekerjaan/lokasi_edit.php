@@ -944,6 +944,7 @@ function get_data_legalitas(target) {
 				// $(terget_tab_tbody).append(row);
 				a++;
 			});
+			initDate();
 			$("#textbox_tanah_61").val(total_luas);
 		}
 	})

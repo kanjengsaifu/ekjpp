@@ -127,20 +127,21 @@ class Migration_All extends CI_Migration {
         $this->dbforge->create_table("mst_daya_listrik"); 
 
         $this->dbforge->add_field(array(
-        'id' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => TRUE ),
-        'nama' => array( 'type' => 'varchar', 'constraint' => 50, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'alamat' => array( 'type' => 'varchar', 'constraint' => 250, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'id_provinsi' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'id_kota' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'kode_pos' => array( 'type' => 'varchar', 'constraint' => 6, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'npwp' => array( 'type' => 'varchar', 'constraint' => 50, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'id_status_kepemilikan' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'id_bidang_usaha' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'bidang_usaha_lainnya' => array( 'type' => 'varchar', 'constraint' => 100, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'go_publik' => array( 'type' => 'int', 'constraint' => 1, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'keterangan' => array( 'type' => 'varchar', 'constraint' => 500, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'created' => array( 'type' => 'time', 'constraint' => 0, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
-        'updated' => array( 'type' => 'time', 'constraint' => 0, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'id' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => TRUE, 'auto_increment' => TRUE ),
+            'nama' => array( 'type' => 'varchar', 'constraint' => 50, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'alamat' => array( 'type' => 'varchar', 'constraint' => 250, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'id_provinsi' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'id_kota' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'kode_pos' => array( 'type' => 'varchar', 'constraint' => 6, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'npwp' => array( 'type' => 'varchar', 'constraint' => 50, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'npwp_file' => array( 'type' => 'varchar', 'constraint' => 255, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'id_status_kepemilikan' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'id_bidang_usaha' => array( 'type' => 'int', 'constraint' => 11, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'bidang_usaha_lainnya' => array( 'type' => 'varchar', 'constraint' => 100, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'go_publik' => array( 'type' => 'int', 'constraint' => 1, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'keterangan' => array( 'type' => 'varchar', 'constraint' => 500, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'created' => array( 'type' => 'time', 'constraint' => 0, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
+            'updated' => array( 'type' => 'time', 'constraint' => 0, 'unsigned' => FALSE, 'auto_increment' => FALSE ),
         )); 
         $this->dbforge->add_key("id", TRUE);
         $this->dbforge->create_table("mst_debitur"); 

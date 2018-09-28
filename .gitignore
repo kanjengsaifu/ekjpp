@@ -1,5 +1,6 @@
 composer.phar
 adminer.php
+test.php
 composer.lock
 vendor/*
 stats/*

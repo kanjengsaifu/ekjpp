@@ -110,23 +110,47 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label>Tanggal Inspeksi & Penilaian</label>
-                                        <input type="text" id="textbox_entry_9" name="update[entry_9]" class="form-control table_input" value="<?php echo (empty($txn_kertas_kerja["tanggal_inspeksi_penilaian"])) ? format_ymd($tanggal_inspeksi_penilaian) : format_ymd($txn_kertas_kerja["tanggal_inspeksi_penilaian"]) ?>" data-id-field="9" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
+
+                                        <?php
+                                        $date_name = "update[entry_9]";
+                                        $date_label = "Tanggal Inspeksi & Penilaian";
+                                        $date_value = (!strtotime($txn_kertas_kerja["tanggal_inspeksi_penilaian"])) ? format_ymd($tanggal_inspeksi_penilaian) : format_ymd($txn_kertas_kerja["tanggal_inspeksi_penilaian"]);
+                                        $date_id = "textbox_entry_9";
+                                        $date_class = "table_input";
+                                        $date_attr = 'data-id-field="9" data-keterangan=""';
+
+                                        echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
+                                        ?>
+
+                                        <!-- <input type="text" id="textbox_entry_9" name="update[entry_9]" class="form-control table_input" value="<?php echo (empty($txn_kertas_kerja["tanggal_inspeksi_penilaian"])) ? format_ymd($tanggal_inspeksi_penilaian) : format_ymd($txn_kertas_kerja["tanggal_inspeksi_penilaian"]) ?>" data-id-field="9" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
                                         <script>
                                             $(function(){
                                                 $("#textbox_entry_9").datepicker({ dateFormat: "yyyy-mm-dd" });
                                             });
-                                        </script>
+                                        </script> -->
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <label>Tanggal Laporan</label>
-                                        <input type="text" id="textbox_entry_12" name="update[entry_12]" class="form-control table_input" value="<?php echo (empty($txn_kertas_kerja["tanggal_laporan"])) ? format_ymd($tanggal_laporan) : format_ymd($txn_kertas_kerja["tanggal_laporan"]) ?>" data-id-field="12" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
+
+                                        <?php
+                                        $date_name = "update[entry_12]";
+                                        $date_label = "Tanggal Laporan";
+                                        $date_value = (empty($txn_kertas_kerja["tanggal_laporan"])) ? format_ymd($tanggal_laporan) : format_ymd($txn_kertas_kerja["tanggal_laporan"]);
+                                        $date_id = "textbox_entry_12";
+                                        $date_class = "table_input";
+                                        $date_attr = 'data-id-field="12" data-keterangan=""';
+
+                                        echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
+                                        ?>
+
+                                        <!-- <input type="text" id="textbox_entry_12" name="update[entry_12]" class="form-control table_input" value="<?php echo (empty($txn_kertas_kerja["tanggal_laporan"])) ? format_ymd($tanggal_laporan) : format_ymd($txn_kertas_kerja["tanggal_laporan"]) ?>" data-id-field="12" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
                                         <script>
                                             $(function(){
                                                 $("#textbox_entry_12").datepicker({ dateFormat: "yyyy-mm-dd" });
                                             })
-                                        </script>
+                                        </script> -->
                                     </div>
                                 </div>
 
@@ -270,12 +294,24 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label>Tanggal Penugasan</label>
-                                        <input type="text" id="textbox_entry_26" name="update[entry_26]" class="form-control table_input" value="<?php echo format_ymd($txn_kertas_kerja["tanggal_penugasan"]) ?>" data-id-field="26" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
+
+                                        <?php
+                                        $date_name = "update[entry_26]";
+                                        $date_label = "Tanggal Penugasan";
+                                        $date_value = (!strtotime($txn_kertas_kerja["tanggal_penugasan"])) ? "" : format_ymd($txn_kertas_kerja["tanggal_penugasan"]);
+                                        $date_id = "textbox_entry_26";
+                                        $date_class = "table_input";
+                                        $date_attr = 'data-id-field="26" data-keterangan=""';
+
+                                        echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
+                                        ?>
+
+                                        <!-- <input type="text" id="textbox_entry_26" name="update[entry_26]" class="form-control table_input" value="<?php echo format_ymd($txn_kertas_kerja["tanggal_penugasan"]) ?>" data-id-field="26" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
                                         <script>
                                             $(function(){
                                              $("#textbox_entry_26").datepicker({ dateFormat: "yyyy-mm-dd" });
                                             });
-                                        </script>
+                                        </script> -->
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -1101,12 +1137,24 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                             <tr>
                                                                 <td><span>NJOP Tanggal</span></td>
                                                                 <td>
-                                                                    <input type="text" id="textbox_tanah_63" name="update[tanah_63]" class="form-control table_input" value="<?php echo format_ymd($txn_tanah["tanggal_njop"]) ?>" data-id-field="242" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
+                                                                    
+                                                                    <?php
+                                                                    $date_name = "update[tanah_63]";
+                                                                    $date_label = "NJOP Tanggal";
+                                                                    $date_value = $txn_tanah["tanggal_njop"];
+                                                                    $date_id = "textbox_tanah_63";
+                                                                    $date_class = "table_input";
+                                                                    $date_attr = 'data-id-field="242" data-keterangan=""';
+
+                                                                    echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
+                                                                    ?>
+
+                                                                    <!-- <input type="text" id="textbox_tanah_63" name="update[tanah_63]" class="form-control table_input" value="<?php echo format_ymd($txn_tanah["tanggal_njop"]) ?>" data-id-field="242" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
                                                                     <script>
                                                                     $(function(){
                                                                         $("#textbox_tanah_63").datepicker();
                                                                     });
-                                                                    </script>
+                                                                    </script> -->
                                                                 </td>
                                                             </tr>
 

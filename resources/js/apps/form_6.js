@@ -968,6 +968,8 @@ function get_data_legalitas(target)
 				$(terget_tab_tbody).append(row);
 				a++;
 			});
+
+			initDate();
 			
 			$("#total_data_legalitas").val(a);
 			$(".default-date-picker").datepicker();

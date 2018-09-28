@@ -158,6 +158,7 @@ class ajax extends CI_Controller
 		$go_publik		= isset($_POST['go_publik']) ? $_POST['go_publik'] : NULL;
 		$id_provinsi 	= $_POST["id_provinsi"];
 		$npwp                   = $_POST["npwp"];
+		$npwp_file                   = $_POST["npwp_file"];
         $keterangan           = $_POST["keterangan"];
 		$result			= "error";
 		$message		= "";
@@ -182,6 +183,7 @@ class ajax extends CI_Controller
 				"id_bidang_usaha"	=> empty($id_bidang_usaha) ? NULL : $id_bidang_usaha,
 				"go_publik"	=> is_numeric($go_publik) ? $go_publik : NULL,
 				"npwp" => $npwp,
+				"npwp_file" => $npwp_file,
                 "keterangan" => $keterangan
 			);
 			if ( $data["id_bidang_usaha"] == 17 ) {
@@ -1536,9 +1538,9 @@ class ajax extends CI_Controller
 				if ($type == "slide" && $item_field_view == "image"){
 					$data_table[$i][$item_field_view]	= "<a href='".base_url("asset/file/".$item_data->$item_field_view)."' target='_blank'><img src='".base_url("asset/file/".$item_data->$item_field_view)."' style='height: 50px; margin: 5px;'></a>";
 				}elseif ($type == "history" && ($item_field_view == "tanggal_laporan" || $item_field_view == "tanggal_penilaian")){
-					$data_table[$i][$item_field_view]	= format_tanggal($item_data->$item_field_view);
+					$data_table[$i][$item_field_view]	= format_datetime($item_data->$item_field_view);
 				}elseif ( $item_field_view == "created" || $item_field_view == "updated" ){
-					$data_table[$i][$item_field_view]	= format_tanggal($item_data->$item_field_view);
+					$data_table[$i][$item_field_view]	= format_datetime($item_data->$item_field_view);
 				}else{
 					$data_table[$i][$item_field_view]	= !empty($item_data->$item_field_view) ? $item_data->$item_field_view : "-";
 				}
@@ -1637,7 +1639,7 @@ class ajax extends CI_Controller
 				}
 				else if ($type == "lembar_kendali" && ($item_field_view == "created" || $item_field_view == "updated"))
 				{
-					$data_table[$i][$item_field_view]	= !empty($item_data->$item_field_view) ? format_tanggal($item_data->$item_field_view) : "-";
+					$data_table[$i][$item_field_view]	= !empty($item_data->$item_field_view) ? format_datetime($item_data->$item_field_view) : "-";
 				}
 				else
 				{

@@ -59,7 +59,7 @@
 							<tr>
 								<td>Tanggal Penerimaan</td>
 								<td style="width: 30px; text-align: center;">:</td>
-	                            <td><label><?php echo format_tanggal($pekerjaan->tanggal_penerimaan); ?></label></td>
+	                            <td><label><?php echo format_datetime($pekerjaan->tanggal_penerimaan); ?></label></td>
 							</tr>
 							<tr>
 								<td>Jenis Laporan</td>
@@ -247,11 +247,22 @@
 
 											<div class="form-group">
 												<label>Tanggal PO</label><span class="required">*</span>
-												<div class="input-group date default-date-picker" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
 
+		                                        <?php
+		                                        $date_name = "po_tanggal";
+		                                        $date_label = "Tanggal PO";
+		                                        $date_value = "";
+		                                        $date_id = "po_tanggal";
+		                                        $date_class = "input-sm";
+		                                        $date_attr = "";
+
+		                                        echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
+		                                        ?>
+
+												<!-- <div class="input-group date default-date-picker" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
 													<input id="po_tanggal" name="po_tanggal" class="form-control input-sm" value="" placeholder="Tanggal PO" type="text">
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-												</div>
+												</div> -->
 											</div>
 
 											<div class="form-group">
@@ -296,7 +307,7 @@
 									<tr>
 										<td valign="top">Tanggal</td>
 										<td valign="top" align="center" width="20">:</td>
-										<td><?=format_tanggal( $po->tanggal )?></td>
+										<td><?=format_datetime( $po->tanggal )?></td>
 									</tr>
 									<tr>
 										<td valign="top">File Scan</td>
@@ -811,7 +822,7 @@
 	var id_user				= <?=$user['id']?>;
 	var pekerjaan_id_user	= "<?=$pekerjaan->id_user?>";
 
-	$(".default-date-picker").datepicker();
+	// $(".default-date-picker").datepicker();
 
 	$(document).ready(function(){
 		id 			= $("#id").val();
@@ -1401,8 +1412,7 @@
 				//$(".test_data").html(data.data_table);
 				$("#table_tugas_body").html("");
 				var row = "";
-				$.each(data.data_table, function(i, item)
-				{
+				$.each(data.data_table, function(i, item) {
 					row	= "<tr>";
 					row	+= "<td align='center'>" + i + "</td>";
 					$.each(item, function(j, item1)
@@ -1423,9 +1433,11 @@
 					$("#table_tugas_body").append(row);
 				});
 
+				initDate();
+
 				$(".table_tugas_count").val(data.data_total);
 
-				$(".default-date-picker").datepicker();
+				// $(".default-date-picker").datepicker();
 
 				$(".jam").timepicker(
 					{ 'timeFormat': 'H:i' }
