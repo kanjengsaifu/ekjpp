@@ -7,6 +7,7 @@ stats/*
 application/config/database.php
 application/third_party/PHPWord/*
 asset/file/*
+asset/images/header_logo.png
 !asset/file/kertas_kerja/
 asset/file/kertas_kerja/*
 !asset/file/kertas_kerja/template_laporan.xls
