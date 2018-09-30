@@ -35,20 +35,20 @@ class Dokumen extends CI_Controller {
                     // "aoColumnDefs": [{"bSortable": false, "aTargets": [3]}],
                     dom: "Bfrtip",
                     "buttons": [
-                        {
-                            text: "<span class=\'fa fa-pencil-circle\'></span> Tambah", 
-                            className: "btn btn-sm btn-success",
-                            action: function ( e, dt, node, config ) {
-                                go_add_data();
-                            }
-                        },
-                        {
-                            text: "<span class=\'fa fa-pencil-circle\'></span> Edit", 
-                            className: "btn btn-sm btn-primary",
-                            action: function ( e, dt, node, config ) {
-                                go_edit_data();
-                            }
-                        }
+                        // {
+                        //     text: "<span class=\'fa fa-pencil-circle\'></span> Tambah", 
+                        //     className: "btn btn-sm btn-success",
+                        //     action: function ( e, dt, node, config ) {
+                        //         go_add_data();
+                        //     }
+                        // },
+                        // {
+                        //     text: "<span class=\'fa fa-pencil-circle\'></span> Edit", 
+                        //     className: "btn btn-sm btn-primary",
+                        //     action: function ( e, dt, node, config ) {
+                        //         go_edit_data();
+                        //     }
+                        // }
                     ],
                     // "processing": true,
                     "serverSide": true,

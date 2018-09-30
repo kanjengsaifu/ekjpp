@@ -373,29 +373,6 @@ class printpdf extends CI_Controller
 			if ( is_object($row) ) $txn_lampiran = $result;
 		}
 
-		/*$txn_lokasi_data = $this->global_model->get_data("txn_lokasi_data", 1, array("id_lokasi"), array($id_lokasi))->result();
-		
-
-		// echo"<pre>";var_dump( $txn_lokasi_data );echo"</pre>"; exit();
-		
-		$data_lokasi = array();
-		foreach($txn_lokasi_data as $item_lokasi)
-		{
-			$id_field = $item_lokasi->id_field;
-			$jawab = trim($item_lokasi->jawab);
-			$keterangan = trim($item_lokasi->keterangan);
-			if (preg_match("/bangunan/i", $keterangan))
-			{
-				$data_lokasi[$id_field][$keterangan] = $jawab;
-			}
-			else
-			{
-				$data_lokasi[$id_field][] = $jawab;
-			}
-		}
-		*/
-		//$custom_data	= unserialize($view_lokasi->custom_data);
-		//Lokasi Tanah Obyek
 		$lokasi_tanah_obyek = $this->global_model->get_list('mst_lokasi_tanah_objek', NULL, NULL, NULL, 3);
 		$kepadatan_bangunan = $this->global_model->get_list('mst_kepadatan_bangunan', NULL, NULL, NULL, 3);
 		$pertumbuhan_bangunan = $this->global_model->get_list('mst_pertumbuhan_bangunan', NULL, NULL, NULL, 3);

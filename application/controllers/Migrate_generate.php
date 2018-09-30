@@ -1,12 +1,34 @@
 <?php
 
-Class Dbs Extends CI_Controller{
+Class Migrate_generate Extends CI_Controller{
     public function __construct(){
         parent::__construct();
     }
 
     public function index(){
-        echo "<pre>";
+        $s  = $this->generate();
+        $data = $this->controller_migrate($s);
+        $this->save_file($data);
+    }
+
+    private function save_file($data){
+        $file_name = $this->fcpath()."application/migrations/001_All.php";
+        file_put_contents($file_name, $data);
+    }
+
+    private function controller_migrate($s){
+        $c = "<?php defined('BASEPATH') OR exit('No direct script access allowed');\n".
+        "class Migration_All extends CI_Migration{\n".
+        "\tpublic function up() {\n".
+        $s.
+        "\t}\n".
+        "\tpublic function down() {\n".
+        "\t}\n".
+        "}";
+        return $c;
+    }
+
+    private function generate(){
         $query = $this->db->query("show tables");
         $result = $query->result();
         $s = "";
@@ -50,7 +72,7 @@ Class Dbs Extends CI_Controller{
                         $key_field = $Field;
                     }
 
-                    $s .= "'".$Field."' => array( 'type' => '".$dataType."', 'constraint' => ".$constraint.", 'unsigned' => ".$IsUnsigned.", 'auto_increment' => ".$IsAutoIncrement." ),\n";
+                    $s .= "\t'".$Field."' => array( 'type' => '".$dataType."', 'constraint' => ".$constraint.", 'unsigned' => ".$IsUnsigned.", 'auto_increment' => ".$IsAutoIncrement." ),\n";
                     // \"blog_title\" => array( \"type\" => \"VARCHAR\", \"constraint\" =>\ \"100\" ),
                     // \"blog_description\" => array( \"type\" => \"TEXT\", \"null\" => TRUE )
                     
@@ -65,8 +87,7 @@ Class Dbs Extends CI_Controller{
             }
             $i++;
         }
-        echo $s;
-        echo "</pre>";
+        return $s;
     }
 
     private function is_key(){
@@ -84,5 +105,11 @@ Class Dbs Extends CI_Controller{
             }
         }
         return $type;
+    }
+
+    private function fcpath() {
+        $FCPATH = FCPATH;
+        $newpath = preg_replace("/\\\\/", "/", $FCPATH);
+        return $newpath;
     }
 }
