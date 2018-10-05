@@ -1396,14 +1396,24 @@ class ajaxpekerjaan extends CI_Controller
 				//simpan LKK2
 				if (!$is_update) {
 					$dokumen_gabung = array();
-					$dokumen_gabung["id_dokumen_master"] = 4;
 					$dokumen_gabung["created"] = date("Y-m-d");
 					$dokumen_gabung["updated"] = date("Y-m-d");
 					$dokumen_gabung["tanggal"] = date("Y-m-d");
 					$dokumen_gabung["id_pekerjaan"] = $id_pekerjaan;
+					$dokumen_gabung["id_dokumen_master"] = 4;
+
+					$dokumen_kwitansi = array();
+					$dokumen_kwitansi["created"] = date("Y-m-d");
+					$dokumen_kwitansi["updated"] = date("Y-m-d");
+					$dokumen_kwitansi["tanggal"] = date("Y-m-d");
+					$dokumen_kwitansi["id_pekerjaan"] = $id_pekerjaan;
+					$dokumen_kwitansi["id_dokumen_master"] = 7;
 					foreach ($invoice_list as $ke) {
 						$dokumen_gabung["termin"] = $ke;
 						$this->global_model->save("mst_dokumen_gabung", $dokumen_gabung);
+
+						$dokumen_kwitansi["termin"] = $ke;
+						$this->global_model->save("mst_dokumen_kwitansi", $dokumen_kwitansi);
 					}
 					
 					$this->global_model->update("txn_pekerjaan_status", 2, array("id_pekerjaan", "id_status"), array($pekerjaan->id, 3), array("do" => 1, "id_user" => $user["id"]));
@@ -4836,7 +4846,8 @@ class ajaxpekerjaan extends CI_Controller
 				}
 				else
 				{
-					$this->global_model->insert_data($table, $data_txn_kertas_kerja);
+					//print_r($data_txn_kertas_kerja);
+					$id_kertas_kerja = $this->global_model->insert_data($table, $data_txn_kertas_kerja);
 				}
 			}
 			elseif ($table === 'txn_tanah')
@@ -10508,6 +10519,13 @@ class ajaxpekerjaan extends CI_Controller
 			{
 				$tanah_np = $txn_tanah->nilai_pasar;
 				$tanah_nl = $txn_tanah->nilai_likuidasi;
+				$tanah_diskon = $txn_tanah->diskon;
+				if ( empty($tanah_diskon) && !is_numeric($tanah_diskon) ) {
+					$tanah_diskon = $tanah_nl < $tanah_np ?
+					(100-(($tanah_nl/$tanah_np)*100)): 0;
+					$this->global_model->update_data('txn_tanah', 'id_tanah', $txn_tanah->id_tanah, array('diskon' => $tanah_diskon));
+				}
+				$tanah_diskon = number_format($tanah_diskon,0);
 				$tanah_luas = $txn_tanah->luas;
 			}
 			
@@ -10541,6 +10559,7 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span style='font-weight: normal;'>".$tanah_luas."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$tanah_np."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$tanah_nl."</span></td>
+						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$tanah_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 			}
@@ -10555,6 +10574,7 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span style='font-weight: normal;'>".floatval($tanah_luas)."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$tanah_np."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$tanah_nl."</span></td>
+						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$tanah_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 			}
@@ -10583,6 +10603,13 @@ class ajaxpekerjaan extends CI_Controller
 
 				$bangunan_np = number_format(is_numeric($bangunan_np) ? $bangunan_np : 0);
 				$bangunan_nl = number_format(is_numeric($bangunan_nl) ? $bangunan_nl : 0);
+				$bangunan_diskon = $item_bangunan->diskon;
+				if ( empty($bangunan_diskon) && !is_numeric($bangunan_diskon) ) {
+					$bangunan_diskon = $bangunan_nl < $bangunan_np ?
+					100-(($bangunan_nl/$bangunan_np)*100): 0;
+					$this->global_model->update_data('txn_bangunan', 'id_bangunan', $item_bangunan->id_bangunan, array('diskon' => $bangunan_diskon));
+				}
+				$bangunan_diskon = number_format($bangunan_diskon, 0);
 				$bangunan_luas = number_format(is_numeric($bangunan_luas) ? $bangunan_luas : 0);
 
 				$table	.= "
@@ -10592,6 +10619,7 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span style='font-weight: normal;'>".$bangunan_luas."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$bangunan_np."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$bangunan_nl."</span></td>
+						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$bangunan_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 
@@ -10656,6 +10684,13 @@ class ajaxpekerjaan extends CI_Controller
 				// $total_nla	= $total_nla + ($count_sarana == 1 ? $saran_np_new->nilai_pasar/2 : 0);
 				$sarana_nl	= number_format(($count_sarana == 1 ? $saran_np_new->nilai_pasar/2 : 0));
 				$sarana_np	= number_format($count_sarana == 1 ? $saran_np_new->nilai_pasar : 0);
+				$sarana_diskon = $saran_np_new->diskon;
+				if ( empty($sarana_diskon) && !is_numeric($sarana_diskon) ) {
+					$sarana_diskon = $sarana_nl < $sarana_np ?
+					100-(($sarana_nl/$sarana_np)*100): 0;
+					$this->global_model->update_data('txn_sarana_pelengkap', 'id_sarana_pelengkap', $saran_np_new->id_sarana_pelengkap, array('diskon' => $sarana_diskon));
+				}
+				$sarana_diskon = number_format($sarana_diskon, 0);
 			}
 
 			if($lokasi->id_jenis_objek == 1 || $lokasi->id_jenis_objek == 2){
@@ -10666,6 +10701,7 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span style='font-weight: normal;'>1-Lot</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$sarana_np."</span></td>
 						<td align='right'><span style='font-weight: normal;'>".$sarana_nl."</span></td>
+						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$sarana_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 			}

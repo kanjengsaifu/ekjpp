@@ -1844,11 +1844,49 @@ class ajax extends CI_Controller
 						//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
 						$data_table[$i]["action"]	= "<div class='text-center' data-id_dokumen_gabung=\"".base64_encode($id_dokumen_gabung)."\">";
 						if ($file !='#'){
-							$data_table[$i]["action"]	.="<a target='_blank' href='". $file ."' class='btn btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a target='_blank' href='". $file ."' class='btn btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
+							$data_table[$i]["action"]	.="
+							<a target='_blank' href='". $file ."' class='btn btn-sm btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
+							<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
 						}else {
-							$data_table[$i]["action"]	.="<a href='". $file ."' class='btn btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a href='". $file ."' class='btn btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
+							$data_table[$i]["action"]	.="
+							<a href='". $file ."' class='btn btn-sm btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
+							<a href='". $file ."' class='btn btn-sm btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
 						}
-						$data_table[$i]["action"]	.="&nbsp;<button class='btn btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;<button class='btn btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Delete</button>";
+						$data_table[$i]["action"]	.="&nbsp;
+						<button class='btn btn-sm btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;
+						<button class='btn btn-sm btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Del</button>";
+						$data_table[$i]["action"]	.= "</div>";
+						$j++;
+						$i++;
+					}
+				} //if kwintansi
+				else if ($item_data->id == 7)
+				{
+					$invs = $this->global_model->get_list( 'mst_dokumen_kwitansi', 'id_dokumen_master=7 AND id_pekerjaan='.$id_pekerjaan, 'termin' );
+					$j = 1;
+					foreach ($invs as $inv) {
+						$id_kwitansi = $inv->id;
+						$file = base_url()."printpdf/kwitansi/".($id_pekerjaan)."/".$id_kwitansi;
+						// $id_dokumen_gabung = $inv->id;
+						$data_table[$i]["dokumen"]		= $item_data->nama." - ".$j;
+						//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
+						$data_table[$i]["keterangan"]	= $keterangan;
+						$data_table[$i]["nama_group"]	= "<div class='text-center'>".$nama_group."</div>";
+						$data_table[$i]["nama_user"]	= $nama_user;
+						//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
+						$data_table[$i]["action"]	= "<div class='text-center' data-id_kwitansi=\"".base64_encode($id_kwitansi)."\">";
+						if ($file !='#'){
+							$data_table[$i]["action"]	.="
+							<a target='_blank' href='". $file ."' class='btn btn-sm btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
+							<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
+						}else {
+							$data_table[$i]["action"]	.="
+							<a href='". $file ."' class='btn btn-sm btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
+							<a href='". $file ."' class='btn btn-sm btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
+						}
+						$data_table[$i]["action"]	.="&nbsp;
+						<button class='btn btn-sm btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;
+						<button class='btn btn-sm btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Del</button>";
 						$data_table[$i]["action"]	.= "</div>";
 						$j++;
 						$i++;
@@ -1862,11 +1900,20 @@ class ajax extends CI_Controller
 					//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
 					$data_table[$i]["action"]	= "<div class='text-center'>";
 					if ($file !='#'){
-						$data_table[$i]["action"]	.="<a target='_blank' href='". $file ."' class='btn btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a target='_blank' href='". $file ."' class='btn btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
+						$data_table[$i]["action"]	.="
+						<a target='_blank' href='". $file ."' class='btn btn-sm btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp
+
+
+						<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a> ";
 					}else {
-						$data_table[$i]["action"]	.="<a href='". $file ."' class='btn btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;<a href='". $file ."' class='btn btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
+						$data_table[$i]["action"]	.="
+						<a href='". $file ."' class='btn btn-sm btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
+						<a href='". $file ."' class='btn btn-sm btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
 					}
-					$data_table[$i]["action"]	.="&nbsp;<button class='btn btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;<button class='btn btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Delete</button>";
+					$data_table[$i]["action"]	.="&nbsp;
+					<button class='btn btn-sm btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;
+					<button class='btn btn-sm btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Del</button>
+					";
 					$data_table[$i]["action"]	.= "</div>";
 					$i++;
 				}

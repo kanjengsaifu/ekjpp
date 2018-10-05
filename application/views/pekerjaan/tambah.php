@@ -28,6 +28,10 @@ echo $_template["_head"];
 								<?=$input["id_klien"]?>
 							</div>
 							<div class="form-group">
+								<label>Bank <!-- <span class="required">*</span> --></label>
+								<?=$input["id_debitur"]?>
+							</div>
+							<div class="form-group">
 								<label>Nama Pekerjaan <span class="required">*</span></label>
 								<?=$input["nama"]?>
 							</div>
@@ -51,10 +55,12 @@ echo $_template["_head"];
 						</div>
 						<div class="step-1 col-md-6 col-xs-12">
 							<div class="form-group">
-								<label>Nama Pemberi Tugas <span class="required">*</span></label><br>
+								<label>Pemberi Tugas <span class="required">*</span></label><br>
 								<?=$input["jenis_pemberi_tugas"]?>
+								<?=$input["pemberi_tugas_klien_id"]?>
 								<?=$input["pemberi_tugas_klien"]?>
-								<?=$input["pemberi_tugas_debitur"]?>
+								<?=$input["pemberi_tugas_debitur_id"]?> 
+								<?=$input["pemberi_tugas_debitur"]?> 
 							</div>
 							<div class="form-group">
 								<label>Pemilik Properti <span class="required">*</span></label>
@@ -67,8 +73,8 @@ echo $_template["_head"];
 							<div class="form-group">
 								<label>Pengguna Laporan</label><br>
 								<?=$input["jenis_pengguna_laporan"]?>
-								<?=$input["pengguna_laporan_bank"]?>
-								<?=$input["pengguna_laporan_klien"]?>
+								<?=$input["pengguna_laporan"]?>
+								<!-- <?=$input["pengguna_laporan_bank"]?> -->
 							</div>
 							<div class="form-group">
 								<label>Laporan Ditujukan Kepada <span class="required">*</span></label><br>
@@ -169,42 +175,48 @@ echo $_template["_head"];
 		thn					= tgl.substring(6,10);
 		bln 				= tgl.substring(3,5);
 		hari 				= tgl.substring(0,2);
-		tanggal_penerimaan 	= thn+'-'+bln+'-'+hari;
+		// tanggal_penerimaan 	= thn+'-'+bln+'-'+hari;
+		tanggal_penerimaan 	= $("#tanggal_penerimaan").val();
 		no_surat_tugas		= $("#no_surat_tugas").val();
 		tgl					= $("#tgl_surat_tugas").val(); //13-06-2016
 		thn					= tgl.substring(6,10);
 		bln 				= tgl.substring(3,5);
 		hari 				= tgl.substring(0,2);
-		tgl_surat_tugas 	= thn+'-'+bln+'-'+hari;
+		// tgl_surat_tugas 	= thn+'-'+bln+'-'+hari;
+		tgl_surat_tugas		= $("#tgl_surat_tugas").val();
 		deskripsi			= $("#deskripsi").val();
 		jenis_laporan 	= $("#jenis_laporan").val();
 		jenis_jasa 	= $("#jenis_jasa").val();
 		keterangan			= $("#keterangan").val();
 		
 		if ($("#jenis_pemberi_tugas_0").is( ":checked" )){
-			  jenis_pemberi_tugas	= 0;
-				pemberi_tugas	= $("#pemberi_tugas_klien").val();
+			jenis_pemberi_tugas	= 0;
+			pemberi_tugas	= $("#pemberi_tugas_klien").val();
 		}else{
-			 jenis_pemberi_tugas	= 1;
-		   pemberi_tugas	= $("#pemberi_tugas_debitur").val();
+			jenis_pemberi_tugas	= 1;
+			pemberi_tugas	= $("#pemberi_tugas_debitur").val();
 		}
+
 		pemilik_properti			= $("#pemilik_properti").val();
 		maksud_tujuan			= $("#maksud_tujuan").val();
 		pengguna_laporan			= $("#pengguna_laporan").val();
 		if ($("#jenis_tujuan_pelaporan_0").is( ":checked" )){
-			  jenis_tujuan_pelaporan	= 0;
-				tujuan_pelaporan	= $("#tujuan_pelaporan_klien").val();
+			jenis_tujuan_pelaporan	= 0;
+			tujuan_pelaporan	= $("#tujuan_pelaporan_klien").val();
 		}else{
-			 jenis_tujuan_pelaporan	= 1;
-		   tujuan_pelaporan	= $("#tujuan_pelaporan_debitur").val();
+			jenis_tujuan_pelaporan	= 1;
+			tujuan_pelaporan	= $("#tujuan_pelaporan_debitur").val();
 		}
 
 		if ($("#jenis_pengguna_laporan_0").is( ":checked" )){
-			  jenis_pengguna_laporan	= 0;
-				pengguna_laporan	= $("#pengguna_laporan_klien").val();
+			jenis_pengguna_laporan	= 0;
+			// pengguna_laporan	= $("#pengguna_laporan_klien").val();
+		}else if ($("#jenis_pengguna_laporan_1").is( ":checked" )){
+			jenis_pengguna_laporan	= 1;
+			// pengguna_laporan	= $("#pengguna_laporan_klien").val();
 		}else{
-			 jenis_pengguna_laporan	= 1;
-		   pengguna_laporan	= $("#pengguna_laporan_bank").val();
+			jenis_pengguna_laporan	= 2;
+			// pengguna_laporan	= $("#pengguna_laporan_bank").val();
 		}
 		$.ajax({
 			type		: "POST",
@@ -367,6 +379,23 @@ echo $_template["_head"];
 		}
 	});
 
+	$(document).on("change", "#id_klien, #id_debitur", function(event){
+		var val = $(this).val();
+		var text = $("option:selected", this).text();
+		if ("id_klien"==$(this).attr("id")) 
+		{
+			$("#pemberi_tugas_klien").val(val);
+			$("#pemberi_tugas_klien_text").val(text);
+		}
+		else if ("id_debitur"==$(this).attr("id")) 
+		{
+			$("#pemberi_tugas_debitur").val(val);
+			$("#pemberi_tugas_debitur_text").val(text);
+		}
+
+		getPenggunaLaporan();
+	});
+
 	function get_lokasi()
 	{
 		$.ajax({
@@ -413,30 +442,39 @@ echo $_template["_head"];
 		});
 	}
 	function getPemberiTugas(){
+
 		if ($("#jenis_pemberi_tugas_0").is( ":checked" )){
-			  $("#pemberi_tugas_klien").show();
-				$("#pemberi_tugas_debitur").hide();
-				$("#pemberi_tugas_klien").prop('required',true);
-				$("#pemberi_tugas_debitur").prop('required',false);
+			var id_klien = $("#id_klien").val();
+			var klien = $("#id_klien option:selected").text();
+			$("#pemberi_tugas_klien_text").val(klien);
+			$("#pemberi_tugas_klien").val(id_klien);
+			$("#pemberi_tugas_klien_text").show();
+			$("#pemberi_tugas_debitur_text").hide();
+			$("#pemberi_tugas_klien_text").prop('required',true);
+			$("#pemberi_tugas_debitur_text").prop('required',false);
 		}else{
-				$("#pemberi_tugas_klien").hide();
-				$("#pemberi_tugas_debitur").show();
-				$("#pemberi_tugas_klien").prop('required',false);
-				$("#pemberi_tugas_debitur").prop('required',true);
+			var id_debitur = $("#id_debitur").val();
+			var debitur = $("#id_debitur option:selected").text();
+			$("#pemberi_tugas_debitur_text").val(debitur);
+			$("#pemberi_tugas_debitur").val(id_debitur);
+			$("#pemberi_tugas_klien_text").hide();
+			$("#pemberi_tugas_debitur_text").show();
+			$("#pemberi_tugas_klien_text").prop('required',false);
+			$("#pemberi_tugas_debitur_text").prop('required',true);
 		}
 	}
 	function getPenggunaLaporan(){
+		var klien = $("#id_klien option:selected").text();
+		var debitur = $("#id_debitur option:selected").text();
+		var val = "";
 		if ($("#jenis_pengguna_laporan_0").is( ":checked" )){
-			  $("#pengguna_laporan_klien").show();
-				$("#pengguna_laporan_bank").hide();
-				$("#pengguna_laporan_klien").prop('required',true);
-				$("#pengguna_laporan_bank").prop('required',false);
+			val = klien;
+		}else if ($("#jenis_pengguna_laporan_1").is( ":checked" )){
+			val = debitur;
 		}else{
-				$("#pengguna_laporan_klien").hide();
-				$("#pengguna_laporan_bank").show();
-				$("#pengguna_laporan_klien").prop('required',false);
-				$("#pengguna_laporan_bank").prop('required',true);
+			val = klien+" & "+debitur;
 		}
+		$("#pengguna_laporan").val(val);
 	}
 	function getTujuanPelaporan(){
 		if ($("#jenis_tujuan_pelaporan_0").is( ":checked" )){
@@ -458,7 +496,7 @@ echo $_template["_head"];
 			getPemberiTugas();
 		});
 		getPenggunaLaporan();
-		$("#jenis_pengguna_laporan_0,#jenis_pengguna_laporan_1").click(function() {
+		$("#jenis_pengguna_laporan_0,#jenis_pengguna_laporan_1,#jenis_pengguna_laporan_2").click(function() {
 			getPenggunaLaporan();
 		});
 		getTujuanPelaporan();

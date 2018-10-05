@@ -291,9 +291,24 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                         $date_class = "table_input";
                                         $date_attr = 'data-id-field="26" data-keterangan=""';
 
-                                        echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
+                                        //echo ( $this->formlib->_generate_input_date($date_name, $date_label, $date_value, true, false, "dd-mm-yyyy", $date_id, $date_class, $date_attr) );
                                         ?>
-
+                                        <?php
+                                        $string_tanggal_penugasan = '';
+                                        if ( !empty($lokasi->tanggal_mulai) && !empty($lokasi->tanggal_selesai) ) {
+                                            if ( $lokasi->tanggal_mulai <> $lokasi->tanggal_selesai )
+                                                $string_tanggal_penugasan = format_datetime($lokasi->tanggal_mulai).' s.d '.format_datetime($lokasi->tanggal_selesai);
+                                            else
+                                                $string_tanggal_penugasan = format_datetime($lokasi->tanggal_mulai);
+                                        } else if ( !empty($lokasi->tanggal_mulai) ) {
+                                            $string_tanggal_penugasan = format_datetime($lokasi->tanggal_mulai);
+                                        } else if ( !empty($lokasi->tanggal_selesai) ) {
+                                            $string_tanggal_penugasan = format_datetime($lokasi->tanggal_selesai);
+                                        } else {
+                                            $string_tanggal_penugasan = '-';
+                                        }
+                                        ?>
+                                        <span class="form-control" disabled><?php echo $string_tanggal_penugasan; ?></span>
                                         <!-- <input type="text" id="textbox_entry_26" name="update[entry_26]" class="form-control table_input" value="<?php echo (!strtotime($txn_kertas_kerja["tanggal_penugasan"])) ? "" : format_ymd($txn_kertas_kerja["tanggal_penugasan"]) ?>" data-id-field="26" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-keterangan="">
                                         <script>
                                             $(function(){
@@ -387,6 +402,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                 <td align="center" style="color:#ffffff; padding-left: 10px; padding-right: 10px"><span>Luas (m<sup>2</sup>) / Jumlah</span></td>
                                                 <td align="center" style="color:#ffffff; padding-left: 10px; padding-right: 10px"><span>Nilai Pasar (Rp)</span></td>
                                                 <td align="center" style="color:#ffffff; padding-left: 10px; padding-right: 10px"><span>Nilai Lukuidasi (Rp)</span></td>
+                                                <td align="center" style="color:#ffffff; padding-left: 10px; padding-right: 10px"><span>Diskon (%)</span></td>
                                             </tr>
                                         </tbody>
                                         <tbody  id="table_body_ringkasan"></tbody>

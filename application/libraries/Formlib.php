@@ -9,9 +9,9 @@ class formlib
 	}
 
 	// Initial Form Component
-	function _generate_input_text($name = "", $placeholder = "", $value = "", $visible = true, $required = false, $maxlength = "")
+	function _generate_input_text($name = "", $placeholder = "", $value = "", $visible = true, $required = false, $maxlength = "", $readonly = false)
 	{
-		$content	= "<input type='".($visible == true ? "text" : "hidden")."' id='".$name."' name='".$name."' class='form-control input-sm number-".str_replace("input[", "", str_replace("]", "", $name))."' value='".((set_value(".$name.")) ? set_value(".$name.") : $value)."' placeholder='".$placeholder."'".(empty($maxlength) ? NULL : " maxlength='".$maxlength."'")." ".($required ? "required" : "").">";
+		$content	= "<input type='".($visible == true ? "text" : "hidden")."' id='".$name."' name='".$name."' class='form-control input-sm number-".str_replace("input[", "", str_replace("]", "", $name))."' value='".((set_value(".$name.")) ? set_value(".$name.") : $value)."' placeholder='".$placeholder."'".(empty($maxlength) ? NULL : " maxlength='".$maxlength."'")." ".($required ? "required" : "").(!$readonly ? "":" readonly").">";
 
 		return $content;
 	}

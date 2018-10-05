@@ -89,14 +89,23 @@
     <div class="panel" style="margin-bottom: 0px;">
         <table style="font-family: Century Gothic; font-size: 10pt" border ="0" width="100%">
             <tr>
-                <td colspan="7">No. <?=$dokumen_penawaran->no_penawaran?></td>
+                <td colspan="3"><?=$dokumen_penawaran->kota?>, <?=format_datetime($dokumen_penawaran->tanggal);?></td>
             </tr>
             <tr>
-                <td colspan="7"><?=$dokumen_penawaran->kota?>, <?=date("d F Y", strtotime($dokumen_penawaran->tanggal))?></td>
+                <td style="width: 65px">Nomor</td>
+                <td style="width: 20px; text-align: center;">:</td>
+                <td><?=$dokumen_penawaran->no_penawaran?></td>
             </tr>
             <tr>
-                <td colspan="7">&nbsp;</td>
+                <td>Lampiran</td>
+                <td style="text-align: center;">:</td>
+                <td>1 (satu) Halaman</td>
             </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+        </table>
+        <table style="font-family: Century Gothic; font-size: 10pt" border ="0" width="100%">
             <tr>
                 <td colspan="7">Kepada Yang Terhormat</td>
             </tr>
@@ -125,7 +134,7 @@
                 <td colspan="7" style="text-align:justify">Sehubungan dengan informasi yang kami terima dari <?=$beri_tugas->nama?>, 
                     Tbk yang  berdomisili <?=$dokumen_penawaran->domisili?> dengan C.P <?=$dokumen_penawaran->kontak?> 
                     via <?=$dokumen_penawaran->komunikasi_via?> 
-                    tanggal <?=date("d F Y", strtotime($dokumen_penawaran->tanggal_komunikasi))?> 
+                    tanggal <?=format_datetime($dokumen_penawaran->tanggal_komunikasi);?> 
                     tentang kebutuhan Manajemen <b><?=strtoupper($beri_tugas->nama)?></b> 
                     untuk melakukan penilaian properti/aset tetap, maka bersama ini kami sampaikan 
                     perihal tersebut di atas dengan persyaratan/ruang lingkup penugasan, sebagai berikut :</td>

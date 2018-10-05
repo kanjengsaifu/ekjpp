@@ -466,8 +466,11 @@ class printpdf extends CI_Controller
 			
 		$user_approve		= $this->global_model->get_data("mst_user", 1, array("id"), array($dokumen_penawaran->penanda_tangan))->row();
 		$id_tugas			= $this->global_model->get_data("mst_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
-		$beri_tugas			= $this->global_model->get_data("mst_debitur", 1, array("id"), array($id_tugas->pemberi_tugas))->row();
-
+		$jenis_pemberi_tugas = $id_tugas->jenis_pemberi_tugas;
+		if ( $jenis_pemberi_tugas == 0 )
+			$beri_tugas			= $this->global_model->get_data("mst_klien", 1, array("id"), array($id_tugas->pemberi_tugas))->row();
+		else if ( $jenis_pemberi_tugas == 1 ) 
+			$beri_tugas			= $this->global_model->get_data("mst_debitur", 1, array("id"), array($id_tugas->pemberi_tugas))->row();
 		// echo $dokumen_penawaran->no_penawaran;
 		// exit();
 		// Next Step
@@ -565,7 +568,7 @@ class printpdf extends CI_Controller
 			exit;
 		}
 	}
-	function kwitansi($id_pekerjaan = "")
+	function kwitansi($id_pekerjaan = "",  $id_kwitansi)
 	{
 		if (!empty($id_pekerjaan))
 		{

@@ -3490,16 +3490,14 @@
 
 	<div class="page" style="page-break-before: always;">
 		<div class="title">PERHITUNGAN NILAI PASAR TANAH</div>
-
 		<br /><br />
-
 		<table class="table padding-td-3" cellspacing="0" cellpadding="0" style="" style="table-layout: fixed;">
 			<colgroup>
-				<col style="width: 20%">
-				<col style="width: 20%">
-				<col style="width: 20%">
-				<col style="width: 20%">
-				<col style="width: 20%">
+				<col style="width: 30%">
+				<col style="width: 17.5%">
+				<col style="width: 17.5%">
+				<col style="width: 17.5%">
+				<col style="width: 17.5%">
 			</colgroup>
 			<thead>
 			</thead>
@@ -3526,8 +3524,8 @@
 							$img_src = "default.jpg";
 						}
 						?>
-					<td style="background: url(<?php echo base_url() ?>asset/file/<?php echo $img_src; ?>) 50% 50% no-repeat; width: 144px; height: 144px;-webkit-print-color-adjust: exact;">
-						<!-- <img src="<?php echo base_url() ?>asset/file/<?php echo $img_src; ?>" style="max-width: 100%"> -->
+					<td style="width: 100px; text-align:center; height: 50px;-webkit-print-color-adjust: exact;">
+						<img src="<?php echo base_url() ?>asset/file/<?php echo $img_src; ?>" style="height: 50px;">
 					</td>
 					<?php } ?>
 				</tr>

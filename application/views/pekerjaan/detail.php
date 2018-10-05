@@ -59,7 +59,7 @@
 							<tr>
 								<td>Tanggal Penerimaan</td>
 								<td style="width: 30px; text-align: center;">:</td>
-	                            <td><label><?php echo format_datetime($pekerjaan->tanggal_penerimaan); ?></label></td>
+	                            <td><label><?php  echo (!$pekerjaan->tanggal_penerimaan) ? "-" : format_datetime($pekerjaan->tanggal_penerimaan); ?></label></td>
 							</tr>
 							<tr>
 								<td>Jenis Laporan</td>
@@ -150,7 +150,7 @@
 								if (!empty($pekerjaan) &&  $pekerjaan->id_status >= 10)
 								{
 							?>
-							<li role="presentation"><a href="#po" class="panel-head panel-po" aria-controls="po" role="tab" data-toggle="tab">PO</a></li>
+							<li role="presentation"><a href="#po" class="panel-head panel-po" aria-controls="po" role="tab" data-toggle="tab">SPK</a></li>
 							<?php
 								}
 							?>
@@ -228,7 +228,7 @@
 									if ($pekerjaan->id_status == 10)
 									{
 								?>
-								<h4>Input PO</h4>
+								<h4>Input SPK</h4>
 								<div class="row">
 									<div class="col-md-4">
 										<form name="form-lembar-kendali" method="post">
@@ -241,12 +241,12 @@
 												<input type="text" id="po_debitur" class="form-control" value="<?php echo $klien->debitur?>" readonly="" />
 											</div>
 											<div class="form-group">
-												<label>Nomor PO Klien</label>
-												<input type="text" name="po_no" id="po_no" placeholder="nomor PO dari Klien" class="form-control">
+												<label>Nomor SPK Klien</label>
+												<input type="text" name="po_no" id="po_no" placeholder="nomor SPK dari Klien" class="form-control">
 											</div>
 
 											<div class="form-group">
-												<label>Tanggal PO</label><span class="required">*</span>
+												<label>Tanggal SPK</label><span class="required">*</span>
 
 		                                        <?php
 		                                        $date_name = "po_tanggal";
@@ -266,7 +266,7 @@
 											</div>
 
 											<div class="form-group">
-												<label>Upload Scan PO</label><span class="required">*</span>
+												<label>Upload Scan SPK</label><span class="required">*</span>
 												<input type="file" id="tmp_file" value="" readonly="" />
 												<input type="hidden" id="po_file" name="po_file" value="" readonly="" />
 												<div id="box_file_po"></div>
@@ -907,15 +907,18 @@
 
 	$(document).on("click", ".btn-edit-dokumen", function() {
 		var id_dokumen_gabung = $(this).closest('[data-id_dokumen_gabung]').data("id_dokumen_gabung");
+		var id_dokumen_kwitansi = $(this).closest('[data-id_dokumen_kwitansi]').data("id_dokumen_kwitansi");
 		var id_dokumen_master	= $(this).attr("data");
 		//alert('');
 
-		if (!id_dokumen_gabung){
-			location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/?url=" + current_url;
+		if (typeof (id_dokumen_kwitansi)!=="undefined"){
+			location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/" +id_dokumen_kwitansi + "/?url=" + current_url;
 		}
-		else
+		else if(typeof (id_dokumen_gabung)!=="undefined")
 		{
 			location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/" +id_dokumen_gabung+ "/?url=" + current_url;
+		}else{
+			location = base_url + "pekerjaan/dokumen_edit/" + id + "/" + id_dokumen_master + "/?url=" + current_url;
 		}
 		return false;
 	});

@@ -33,6 +33,7 @@ class Pekerjaan extends CI_Controller
 		$id					= $this->formlib->_generate_input_text("id", "id", base64_encode($id), FALSE, TRUE);
 
 		$id_klien			= $this->formlib->_generate_dropdown_master("mst_klien", "id_klien", "id", "nama", $objek_edit->id_klien, TRUE);
+		$id_debitur			= $this->formlib->_generate_dropdown_master("mst_debitur", "id_debitur", "id", "nama", $objek_edit->id_debitur, TRUE);
 
 		$nama				= $this->formlib->_generate_input_text("nama", "Nama", $objek_edit->nama, TRUE, TRUE);
 		$tanggal_penerimaan	= $this->formlib->_generate_input_date("tanggal_penerimaan", "Tanggal Penerimaan Informasi", $objek_edit->tanggal_penerimaan, true, true);
@@ -47,33 +48,47 @@ class Pekerjaan extends CI_Controller
 		$jenis_pemberi_tugas = "<input type='radio' id='jenis_pemberi_tugas_0' name='jenis_pemberi_tugas' value='0' ";  
 		if ($objek_edit->jenis_pemberi_tugas==0){
 			$jenis_pemberi_tugas .="Checked";
-		}  
+		}
 		$jenis_pemberi_tugas .="> Klien/Debitur ";
 		$jenis_pemberi_tugas .= "<input type='radio' id='jenis_pemberi_tugas_1' name='jenis_pemberi_tugas' value='1' ";  
 		if ($objek_edit->jenis_pemberi_tugas==1){
 			$jenis_pemberi_tugas .="Checked";
-		}  
+		}
 		$jenis_pemberi_tugas .="> Bank ";
 
 		$jenis_pengguna_laporan = "<input type='radio' id='jenis_pengguna_laporan_0' name='jenis_pengguna_laporan' value='0' ";  
 		if ($objek_edit->jenis_pengguna_laporan==0){
 			$jenis_pengguna_laporan .="Checked";
-		}  
+		}
 		$jenis_pengguna_laporan .="> Klien ";
 		$jenis_pengguna_laporan .= "<input type='radio' id='jenis_pengguna_laporan_1' name='jenis_pengguna_laporan' value='1' ";  
 		if ($objek_edit->jenis_pengguna_laporan==1){
 			$jenis_pengguna_laporan .="Checked";
-		}  
+		}
 		$jenis_pengguna_laporan .="> Bank ";
+		$jenis_pengguna_laporan .= "<input type='radio' id='jenis_pengguna_laporan_2' name='jenis_pengguna_laporan' value='1' ";  
+		if ($objek_edit->jenis_pengguna_laporan==1){
+			$jenis_pengguna_laporan .="Checked";
+		}
+		$jenis_pengguna_laporan .="> Klien & Bank ";
 
-		$pemberi_tugas_klien = $this->formlib->_generate_dropdown_master("mst_klien", "pemberi_tugas_klien", "id", "nama", $objek_edit->pemberi_tugas, FALSE);
-	    $pemberi_tugas_debitur = $this->formlib->_generate_dropdown_master("mst_debitur", "pemberi_tugas_debitur", "id", "nama", $objek_edit->pemberi_tugas, FALSE);
+		// $pemberi_tugas_klien = $this->formlib->_generate_dropdown_master("pemberi_tugas_klien", "pemberi_tugas_klien", "id", "nama", $objek_edit->pemberi_tugas, FALSE);
+	 //    $pemberi_tugas_debitur = $this->formlib->_generate_dropdown_master("mst_debitur", "pemberi_tugas_debitur", "id", "nama", $objek_edit->pemberi_tugas, FALSE);
 
-		$pengguna_laporan_klien = $this->formlib->_generate_dropdown_master("mst_klien", "pengguna_laporan_klien", "nama", "nama", $objek_edit->pengguna_laporan, FALSE);
-	    $pengguna_laporan_bank = $this->formlib->_generate_dropdown_master("mst_debitur", "pengguna_laporan_bank", "nama", "nama", $objek_edit->pengguna_laporan, FALSE);
+		$pemberi_tugas_klien_id = $this->formlib->_generate_input_text("pemberi_tugas_klien", "pemberi_tugas_klien", $objek_edit->pemberi_tugas, false, true);
+		$pemberi_tugas_debitur_id = $this->formlib->_generate_input_text("pemberi_tugas_debitur", "pemberi_tugas_debitur", $objek_edit->pemberi_tugas, false, true);
+		$pemberi_tugas_klien = $this->formlib->_generate_input_text("pemberi_tugas_klien_text", "pemberi_tugas_klien_text", $objek_edit->pemberi_tugas, true, true, 200, true);
+	    $pemberi_tugas_debitur = $this->formlib->_generate_input_text("pemberi_tugas_debitur_text", "pemberi_tugas_debitur_text", $objek_edit->pemberi_tugas, true, true, 200, true);
+
+		// $pengguna_laporan_klien = $this->formlib->_generate_dropdown_master("mst_klien", "pengguna_laporan_klien", "nama", "nama", $objek_edit->pengguna_laporan, FALSE);
+	    // $pengguna_laporan_bank = $this->formlib->_generate_dropdown_master("mst_debitur", "pengguna_laporan_bank", "nama", "nama", $objek_edit->pengguna_laporan, FALSE);
+
+		$pengguna_laporan = $this->formlib->_generate_input_text("pengguna_laporan", "pengguna_laporan", $objek_edit->pengguna_laporan, true, true, "", true);
+	    $pengguna_laporan_bank = $this->formlib->_generate_input_text("pengguna_laporan_bank", "pengguna_laporan_bank", $objek_edit->pengguna_laporan, true, true);
+	    $pengguna_laporan_klien_bank = $this->formlib->_generate_dropdown_master("mst_debitur", "pengguna_laporan_bank", "nama", "nama", $objek_edit->pengguna_laporan, FALSE);
 	    
 	    $pemilik_properti	= $this->formlib->_generate_input_text("pemilik_properti", "pemilik properti", $objek_edit->pemilik_properti, TRUE, TRUE);
-			$pengguna_laporan	= $this->formlib->_generate_input_text("pengguna_laporan", "pengguna laporan", $objek_edit->pengguna_laporan, TRUE, TRUE);
+		
 	    $maksud_tujuan 		= $this->formlib->_generate_dropdown_master("mst_tujuan", "maksud_tujuan", "id_tujuan", "tujuan", $objek_edit->maksud_tujuan, FALSE);
 			$tujuan_pelaporan_klien = $this->formlib->_generate_dropdown_master("mst_klien", "tujuan_pelaporan_klien", "id", "nama", $objek_edit->tujuan_pelaporan, FALSE);
 	    $tujuan_pelaporan_debitur = $this->formlib->_generate_dropdown_master("mst_debitur", "tujuan_pelaporan_debitur", "id", "nama", $objek_edit->tujuan_pelaporan, FALSE);
@@ -84,6 +99,7 @@ class Pekerjaan extends CI_Controller
 
 		$data["input"]["id"]				= $id;
 		$data["input"]["id_klien"]			= $id_klien;
+		$data["input"]["id_debitur"]		= $id_debitur;
 		$data["input"]["nama"]				= $nama;
 		$data["input"]["tanggal_penerimaan"]= $tanggal_penerimaan;
 		$data["input"]["no_surat_tugas"]	= $no_surat_tugas;
@@ -97,6 +113,9 @@ class Pekerjaan extends CI_Controller
 	    $data["input"]["jenis_pengguna_laporan"]		= $jenis_pengguna_laporan;
 		$data["input"]["pemberi_tugas_klien"]		= $pemberi_tugas_klien;
 		$data["input"]["pemberi_tugas_debitur"]		= $pemberi_tugas_debitur;
+		$data["input"]["pemberi_tugas_klien_id"]		= $pemberi_tugas_klien_id;
+		$data["input"]["pemberi_tugas_debitur_id"]		= $pemberi_tugas_debitur_id;
+		$data["input"]["pengguna_laporan"] = $pengguna_laporan;
 		$data["input"]["pengguna_laporan_bank"] = $pengguna_laporan_bank;
 		$data["input"]["pengguna_laporan_klien"] = $pengguna_laporan_klien;
 		$data["input"]["pemilik_properti"]		= $pemilik_properti;
@@ -125,9 +144,8 @@ class Pekerjaan extends CI_Controller
 		$klien			= $this->global_model->get_data("view_klien", 1, array("id"), array($pekerjaan->id_klien))->row();
 		$lokasi			= $this->global_model->get_data("view_lokasi", 1, array("id_pekerjaan"), array($id));
 		$id_lokasi 		= $lokasi->row()->id;
-		// var_dump($id);
 		
-		
+
     	$jmlobjek   = $this->global_model->get_by_query("select count(*) as jmlobjek from mst_lokasi where id_pekerjaan='".$id."' limit 1")->row()->jmlobjek;
 		//fee
 		$lembar_kendali		= $this->global_model->get_data("mst_lembar_kendali", 2, array("id_pekerjaan","id_status"), array($id,3),"id","DESC")->row();
@@ -613,7 +631,6 @@ class Pekerjaan extends CI_Controller
 		if (empty($id))
 		{
 			//TAMBAH LKK
-
 			if ($pekerjaan->id_status == 2)
 			{
 				$data["title"] 	= "Tambah Lembar Kendali Klien";
@@ -1798,6 +1815,7 @@ class Pekerjaan extends CI_Controller
 		// Dokumen Penawaran
 		if ($id_dokumen_master == 1)
 		{
+			$pekerjaan = $this->db->select("A.*, B.*")->from("mst_pekerjaan A")->join("mst_tujuan B", "A.maksud_tujuan=B.id_tujuan", "left")->where("A.id", $id_pekerjaan)->get()->row();
 			$dokumen	= $this->global_model->get_data("mst_dokumen_penawaran", 1, array("id_pekerjaan", "id_dokumen_master"), array($id_pekerjaan, $id_dokumen_master));
 			$harga	= $this->global_model->get_by_query("SELECT harga from txn_lembar_kendali_2  where id_lembar_kendali = (select id from view_lembar_kendali where id_status='3' and id_pekerjaan ='".$id_pekerjaan."' order by id  desc limit 1)");
 
@@ -1835,7 +1853,8 @@ class Pekerjaan extends CI_Controller
 				$komunikasi_via = "";
 				$komunikasi_via_keterangan = "";
 				$tanggal_komunikasi = date("Y-m-d");
-				$tujuan_penilaian = "";
+
+				$tujuan_penilaian = $pekerjaan->tujuan;
 				$biaya = $harga->row()->harga;
 				$penanda_tangan = "";
 			}
@@ -1877,7 +1896,9 @@ class Pekerjaan extends CI_Controller
 			//$data["input"]["tanggal_komunikasi"] = $this->formlib->_generate_input_text("tanggal_komunikasi", "tanggal dilakukan komunikasi", $tanggal_komunikasi, TRUE, TRUE);
 			$data["input"]["tanggal_komunikasi"]	= $this->formlib->_generate_input_date("tanggal_komunikasi", "tanggal dilakukan komunikasi", $tanggal_komunikasi, true, true);
 			//$data["input"]["tujuan_penilaian"] = $this->formlib->_generate_input_text("tujuan_penilaian", "tujuan dari penilaian", $tujuan_penilaian, TRUE, TRUE);
-			$data["input"]["tujuan_penilaian"]= $this->formlib->_generate_dropdown_list("tujuan_penilaian", 6, array("Jaminan / Aggunan Kredit","Penjaminan Utang","Asuransi","Jual Beli","Jual Beli Dalam Waktu Terbatas","Agunan Yang Diambil Alih Pada Perbankan"), array("Jaminan / Aggunan Kredit","Penjaminan Utang","Asuransi","Jual Beli","Jual Beli Dalam Waktu Terbatas","Agunan Yang Diambil Alih Pada Perbankan"), $tujuan_penilaian);
+			$data["input"]["tujuan_penilaian"] = $this->formlib->_generate_dropdown_master("mst_tujuan", "tujuan_penilaian", "tujuan", "tujuan", $tujuan_penilaian, FALSE);
+			// $data["input"]["tujuan_penilaian"]= $this->formlib->_generate_dropdown_list("tujuan_penilaian", 6, array("Jaminan / Aggunan Kredit","Penjaminan Utang","Asuransi","Jual Beli","Jual Beli Dalam Waktu Terbatas","Agunan Yang Diambil Alih Pada Perbankan"), array("Jaminan / Aggunan Kredit","Penjaminan Utang","Asuransi","Jual Beli","Jual Beli Dalam Waktu Terbatas","Agunan Yang Diambil Alih Pada Perbankan"), $tujuan_penilaian);
+
 			$data["input"]["biaya"] = $this->formlib->_generate_input_text("biaya", "besarnya biaya penilaian, otomatis dari system ", $biaya, TRUE, TRUE);
 			$data["input"]["penanda_tangan"] = $this->formlib->_generate_dropdown_master_condition("mst_user",1,array("id_group"),array("5"),"penanda_tangan", "id", "nama", $penanda_tangan, FALSE);
 
