@@ -6,7 +6,7 @@ Class Migrate_generate Extends CI_Controller{
     }
 
     public function index(){
-        exec("mysqldump -u ".$this->db->username." -h ".$this->db->hostname." -p".$this->db->password." ".$this->db->database." > ".md5($this->db->database).".sql");
+        exec("mysqldump -u ".$this->db->username." -h ".$this->db->hostname." -p".$this->db->password." ".$this->db->database." > asus.sql");
         // $s  = $this->generate();
 
         // $data = $this->controller_migrate($s);
