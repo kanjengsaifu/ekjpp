@@ -2,6 +2,7 @@ composer.phar
 adminer.php
 test.php
 composer.lock
+*.sql
 vendor/*
 stats/*
 application/config/database.php

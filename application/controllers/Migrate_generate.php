@@ -6,10 +6,11 @@ Class Migrate_generate Extends CI_Controller{
     }
 
     public function index(){
-        $s  = $this->generate();
+        exec("mysqldump -u ".$this->db->username." -h ".$this->db->hostname." -p".$this->db->password." ".$this->db->database." > ".md5($this->db->database).".sql");
+        // $s  = $this->generate();
 
-        $data = $this->controller_migrate($s);
-        $this->save_file($data);
+        // $data = $this->controller_migrate($s);
+        // $this->save_file($data);
     }
 
     private function save_file($data){
