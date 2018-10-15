@@ -843,4 +843,16 @@ function numberToRomanRepresentation($number) {
     }
     return $returnValue;
 }
+function get_data_config($key) {
+    $CI = &get_instance();
+    $CI->db->select('value')->from('mst_config')->where('key', $key);
+    $query = $CI->db->get();
+    if ( is_object($query) ) {
+        $row = $query->row();
+        if ( is_object($row) ) {
+            return $row->value;
+        }
+    }
+    return NULL;
+}
 ?>

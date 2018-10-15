@@ -643,7 +643,7 @@ $(document).on("change", ".table_input", function()
 	var id_field	= $(this).attr("data-id-field");
 	var type		= $(this).attr("type");
 	var value		= $(this).val();
-	
+	var $input  	= $(this);
 	
 	if ($(this).attr("data-keterangan"))
 	{
@@ -826,7 +826,25 @@ $(document).on("change", ".table_input", function()
 		}
 	}
 	
-	
+	if ($input.is("#latitude_pembanding_0, #latitude_pembanding_1,#latitude_pembanding_2,#latitude_pembanding_3,#longitude_pembanding_0,#longitude_pembanding_1,#longitude_pembanding_2,#longitude_pembanding_3")){
+		var keterangan = $input.attr('data-keterangan');
+		var latitude = $("#latitude_pembanding_"+keterangan).val();
+		var longitude = $("#longitude_pembanding_"+keterangan).val();
+		var id_lokasi = $('#id_lokasi').val();
+		$.ajax({
+				type		: "POST",
+				url 		: base_url + "AjaxPekerjaan/update_lokasi_pembanding_by_map/",
+				data		: {
+					id_lokasi 	: id_lokasi,
+					latitude		: latitude,
+					longitude		: longitude,
+					keterangan	: keterangan
+				},
+				success		: function (data) {
+					
+				},
+			});
+	}
 });
 
 $(document).on("click", ".btn-data-legalitas", function()

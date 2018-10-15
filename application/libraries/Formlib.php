@@ -32,7 +32,7 @@ class formlib
 
 		$list_dropdown	= $this->_ci->global_model->get_data($table_name, 0, array(), array(), $order_field, "asc")->result();
 
-		$data_dropdown = "<select id='".$name."' name='".$name."' class='form-control input-sm' ".($required ? "required" : "").">";
+		$data_dropdown = "<select id='".$name."' name='".$name."' class='form-control cmb_select2 input-sm' ".($required ? "required" : "").">";
 		$data_dropdown .= "<option disabled='disabled' selected='selected'>Pilih</option>";
 		foreach ($list_dropdown as $item_dropdown)
 		{

@@ -1973,7 +1973,7 @@ class Pekerjaan extends CI_Controller
 			$data["input"]["id"] 				= $this->formlib->_generate_input_text("id", "id", $id, FALSE, TRUE);
 
 			$data["input"]["berupa"] 			= $this->formlib->_generate_input_radio_caption("input[berupa]", array("Uang Tunai", "Cek / Giro Biylet"), $berupa);
-			$data["input"]["bank"] 				= $this->formlib->_generate_input_text("input[bank]", "Bank", $bank, TRUE, TRUE);
+			$data["input"]["bank"] 				= $this->formlib->_generate_dropdown_master("mst_debitur", "input[bank]", "nama", "nama", $bank, TRUE);
 			$data["input"]["no"] 				= $this->formlib->_generate_input_text("input[no]", "Nomor", $no, TRUE, TRUE);
 			$data["input"]["sebesar"] 			= $this->formlib->_generate_input_text("input[sebesar]", "Rp", $sebesar, TRUE, TRUE);
 			$data["input"]["terbilang"] 		= $this->formlib->_generate_input_text("input[terbilang]", "Terbilang", $terbilang, TRUE, TRUE);

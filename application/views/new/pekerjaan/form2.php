@@ -2084,10 +2084,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                         </table>
                                                     </div>
                                                 </div>
-
+                                                <?php
+                                                $nomor_bangunan_expl = explode('_', $role);
+                                                $nomor_bangunan = trim($nomor_bangunan_expl[1]);
+                                                $nomor_bangunan = is_numeric($nomor_bangunan) && !empty($nomor_bangunan) ? $nomor_bangunan: 1;
+                                                ?>
                                                 <div class="col-sm-2">
                                                     <div class="table-responsive">
-                                                        <table class="table table_border_2 teras_1" cellpadding="0" cellspacing="0" style="text-align: center">
+                                                        <table class="table table_border_2 teras_<?php echo $nomor_bangunan ?>" cellpadding="0" cellspacing="0" style="text-align: center">
                                                             <thead>
                                                                 <tr>
                                                                     <th>Teras<br>Balkon(m<sup>2</sup>)</th>

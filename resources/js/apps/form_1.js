@@ -117,7 +117,7 @@ $(document).on("change", ".table_input", function(){
 	var id_field	= $(this).attr("data-id-field");
 	var type		= $(this).attr("type");
 	var value		= $(this).val();
-	
+	var $input      = $(this);
 	
 	if ($(this).attr("data-keterangan")){
 		var keterangan	= $(this).attr("data-keterangan");
@@ -208,6 +208,26 @@ $(document).on("change", ".table_input", function(){
 			$("#textbox_tanah_74").hide();
 			$("#textbox_tanah_74").css("border", "0px");
 		}
+	}
+
+	if ($input.is("#latitude_pembanding_0, #latitude_pembanding_1,#latitude_pembanding_2,#latitude_pembanding_3,#longitude_pembanding_0,#longitude_pembanding_1,#longitude_pembanding_2,#longitude_pembanding_3")){
+		var keterangan = $input.attr('data-keterangan');
+		var latitude = $("#latitude_pembanding_"+keterangan).val();
+		var longitude = $("#longitude_pembanding_"+keterangan).val();
+		var id_lokasi = $('#id_lokasi').val();
+		$.ajax({
+				type		: "POST",
+				url 		: base_url + "AjaxPekerjaan/update_lokasi_pembanding_by_map/",
+				data		: {
+					id_lokasi 	: id_lokasi,
+					latitude		: latitude,
+					longitude		: longitude,
+					keterangan	: keterangan
+				},
+				success		: function (data) {
+					
+				},
+			});
 	}
 });
 
@@ -1062,10 +1082,12 @@ function calculate_tab_pembanding_3()
 		var indikasi = $("#textbox_pembanding_48").val() * tanah_luas;
 		
 		$("#textbox_tanah_65").val(indikasi).addClass("text-right").attr("readonly", true).addClass("readonly").number( true, 0 ).trigger("change");
-		
-		var textbox_tanah_66 = indikasi * 80 / 100;
+		var tanah_diskon = $('.custom_tanah[id="diskon"]').val();
+		tanah_diskon = parseInt(tanah_diskon);
+		var textbox_tanah_66 = indikasi * tanah_diskon / 100;
 		
 		$("#textbox_tanah_66").val(textbox_tanah_66).addClass("text-right").attr("readonly", true).addClass("readonly").number( true, 0 ).trigger("change");
+		$('#text_nl_tanah').html(textbox_tanah_66).number(true, 0);
 	}
 
 	style_after_ajax_pembanding();
@@ -1291,35 +1313,6 @@ function reset_markers(item_marker) {
         item_marker[i].setMap(null);
     }
 }
-function placeMarker(location) {
-    if ( typeof MyLatLng != 'undefined' ) {
-        reset_markers(markers);
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map,
-            icon: base_url + 'asset/images/aset-icon/' + icon_marker
-        });
-        temp_marker.push(marker);
-        $('#latitude_pembanding_'+active_idx).val(marker.getPosition().lat());
-        $('#longitude_pembanding_'+active_idx).val(marker.getPosition().lng());
-        $.ajax({
-				type		: "POST",
-				url 		: base_url + "AjaxPekerjaan/update_lokasi_pembanding_by_map/",
-				data		: {
-					id_lokasi 	: $('#id_lokasi').val(),
-					latitude		: $('#latitude_pembanding_'+active_idx).val(),
-					longitude		: $('#longitude_pembanding_'+active_idx).val(),
-					keterangan	: active_idx
-				},
-				success		: function (data) {
-					if ($(this).attr("data-keterangan")){
-						calculate_total_luas_tanah_data_legalitas();
-					}
-				},
-			});
-        $('#formAddMarker').modal('hide');
-    }
-}
 
 var map;
 var temp_marker = [];
@@ -1488,6 +1481,42 @@ $(document).on("change", ".custom_input", function(event) {
 	$('#string_kode_jenis_jasa').html(kode_jenis_jasa);
 	update_nomor_laporan();
 });
+$(document).on("change", ".custom_tanah", function(event) {
+	var name  = $(this).attr("id");
+	var value = $(this).val();
+	var lokasi = $('#id_lokasi').val();
+	update_tanah(name, value, lokasi);
+
+	if ( name == 'diskon' ) {
+		var np_tanah = $('#text_np_tanah').html();
+		np_tanah = np_tanah.replace(/,/g, '');
+		console.log("NP Tanah: "+np_tanah+"\r\n");
+		np_tanah = parseInt(np_tanah);
+		var diskon_tanah = $('.custom_tanah[id="diskon"]').val();
+		diskon_tanah = parseInt(diskon_tanah);
+		var nl_tanah = np_tanah-((diskon_tanah/100)*np_tanah);
+		update_tanah('nilai_likuidasi', nl_tanah, lokasi);
+		$('#text_nl_tanah').html(nl_tanah).number(true, 0);
+	}
+});
+$(document).on("change", ".custom_sarana", function(event) {
+	var name  = $(this).attr("id");
+	var value = $(this).val();
+	var lokasi = $('#id_lokasi').val();
+	update_sarana(name, value, lokasi);
+
+	if ( name == 'diskon' ) {
+		var np_sarana = $('#text_np_sarana').html();
+		np_sarana = np_sarana.replace(/,/g, '');
+		console.log("NP sarana: "+np_sarana+"\r\n");
+		np_sarana = parseInt(np_sarana);
+		var diskon_sarana = $('.custom_sarana[id="diskon"]').val();
+		diskon_sarana = parseInt(diskon_sarana);
+		var nl_sarana = np_sarana-((diskon_sarana/100)*np_sarana);
+		update_sarana('nilai_likuidasi', nl_sarana, lokasi);
+		$('#text_nl_sarana').html(nl_sarana).number(true, 0);
+	}
+});
 $(document).on("change", '#textbox_entry_1', function(){
     var no_mappi = $(this).find(":selected").attr("data-nomappi");
     var no_ijinpp = $(this).find(":selected").attr("data-noijinpp");
@@ -1561,7 +1590,52 @@ function update_kertas_kerja(name, value, id) {
 	    }
 	}); 
 }
-
+function update_tanah(name, value, lokasi) {
+	$.ajax({
+		type : "POST",
+		url : base_url + "AjaxPekerjaan/update_tanah/"+lokasi,
+		data : {
+			name : name,
+			value : value
+		},
+		success : function (d) {
+			var data;
+			try {
+				//test
+				data = JSON.parse(d);
+			} catch(e)
+			{
+					//test
+			}
+		},
+	    error: function (jqXHR, textStatus, errorThrown) {
+	        console.log('Ajax error! ' + errorThrown.message + "\n status: " + textStatus);
+	    }
+	}); 
+}
+function update_sarana(name, value, lokasi) {
+	$.ajax({
+		type : "POST",
+		url : base_url + "AjaxPekerjaan/update_sarana/"+lokasi,
+		data : {
+			name : name,
+			value : value
+		},
+		success : function (d) {
+			var data;
+			try {
+				//test
+				data = JSON.parse(d);
+			} catch(e)
+			{
+					//test
+			}
+		},
+	    error: function (jqXHR, textStatus, errorThrown) {
+	        console.log('Ajax error! ' + errorThrown.message + "\n status: " + textStatus);
+	    }
+	}); 
+}
 function romanize(num) {
   var lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1},roman = '',i;
   for ( i in lookup ) {

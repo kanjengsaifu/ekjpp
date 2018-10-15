@@ -255,20 +255,23 @@ function ajaxTableInputSend($input){
 	}
 
 	if ($input.is("#latitude_pembanding_0, #latitude_pembanding_1,#latitude_pembanding_2,#latitude_pembanding_3,#longitude_pembanding_0,#longitude_pembanding_1,#longitude_pembanding_2,#longitude_pembanding_3")){
+		var keterangan = $input.attr('data-keterangan');
+		var latitude = $("#latitude_pembanding_"+keterangan).val();
+		var longitude = $("#longitude_pembanding_"+keterangan).val();
+		var id_lokasi = $('#id_lokasi').val();
 		$.ajax({
-			type		: "POST",
-			url 		: base_url + "AjaxPekerjaan/update_lokasi_pembanding/",
-			data		: {
-				id_lokasi 	: id_lokasi,
-				value		: value,
-				keterangan	: keterangan
-			},
-			success		: function (data) {
-				// if ($input.attr("data-keterangan")){
-				// 	calculate_total_luas_tanah_data_legalitas();
-				// }
-			},
-		});
+				type		: "POST",
+				url 		: base_url + "AjaxPekerjaan/update_lokasi_pembanding_by_map/",
+				data		: {
+					id_lokasi 	: id_lokasi,
+					latitude		: latitude,
+					longitude		: longitude,
+					keterangan	: keterangan
+				},
+				success		: function (data) {
+					
+				},
+			});
 	}
 
 	if (id_field == "10")
@@ -1065,10 +1068,13 @@ function kalkulasiBiaya(role){
 	nilai_pasar  = parseFloat(nilai_pasar).toFixed(0);
 	$("#nilai_pasar").attr("readonly", "readonly").val(addCommas(nilai_pasar));
 	$("#" + role).find("input#textbox_bangunan_55").val(nilai_pasar).addClass("text-right").number( true, 0 ).attr("readonly", true).addClass("readonly")	.updateTextbox();
-	var nilai_pasar_luquidasi	= nilai_pasar - (nilai_pasar * 30 / 100);
+	var bangunan_diskon = $('#diskon[data-role="'+role+'"]').val();
+	bangunan_diskon = parseInt(bangunan_diskon);
+	var nilai_pasar_luquidasi	= nilai_pasar - (nilai_pasar * bangunan_diskon / 100);
 	data_bangunan['indikasi_nilai_pasar'] = nilai_pasar;
 			
 	$("#" + role).find("input#textbox_bangunan_56").val(nilai_pasar_luquidasi).addClass("text-right").number( true, 0 ).attr("readonly", true).addClass("readonly")	.updateTextbox();
+	$('#text_nl_bangunan[data-role="'+role+'"]').html(nilai_pasar_luquidasi).number(true, 0);
 }
 
 function addCommas(nStr)
@@ -2581,11 +2587,12 @@ function calculate_tab_pembanding_3(doUpdate = NO, $input)
 	$(".input_274_0").val($("#textbox_pembanding_48").val() * tanah_luas)	.updateTextbox()
 	var indikasi = $("#textbox_pembanding_48").val() * tanah_luas;
 	$("#textbox_tanah_65").val(indikasi).addClass("text-right").attr("readonly", true).addClass("readonly").number( true, 0 ).updateTextbox();
-	
-	var textbox_tanah_66 = indikasi * 80 / 100;
+	var tanah_diskon = $('.custom_tanah[id="diskon"]').val();
+	tanah_diskon = parseInt(tanah_diskon);
+	var textbox_tanah_66 = indikasi * tanah_diskon / 100;
 	
 	$("#textbox_tanah_66").val(textbox_tanah_66).addClass("text-right").attr("readonly", true).addClass("readonly").number( true, 0 ) .updateTextbox();
-
+	$('#text_nl_tanah').html(textbox_tanah_66).number(true, 0);
 	if (tab_loaded.indexOf('Bangunan_1') !== -1)
 	{
 		$(".input_270_0").val(data_bangunan["brb_bangunan"]).number( true, 0 ) .updateTextbox();
@@ -2955,10 +2962,15 @@ function load_tab_bangunan(role) {
 		var role_bangunan	= "Bangunan_" + i;
 		if (role_bangunan != role)
 		{
-			$("#tab_" + role_bangunan).html("");
+			//$("#tab_" + role_bangunan).html("");
 		}
 	}
-
+	var title_bangunan = $("#tab_"+role).children().find('.input_635_'+role).val();
+	if ( title_bangunan != undefined && title_bangunan != '' && title_bangunan != null ){
+		$('#'+role+' h4:first-child').html('Penilaian '+title_bangunan);
+	} else {
+		$('#'+role+' h4:first-child').html('Penilaian '+role);
+	}
 	$(".table_bangunan").find("input").addClass("text-center")
 
 	hitung_luas_fisik_bangunan(role)
@@ -3305,18 +3317,17 @@ function hitung_bct_bangunan(role)
 			
 			
 			// $("#" + role).find("input#textbox_bangunan_55").val(data.nilai_pasar2).addClass("text-right").number( true, 0 ).attr("readonly", true).addClass("readonly")	.updateTextbox();
-			
-			var nilai_pasar_luquidasi	= data.nilai_pasar2 - (data.nilai_pasar2 * 30 / 100);
+			var bangunan_diskon = $('#diskon[data-role="'+role+'"]').val();
+			bangunan_diskon = parseInt(bangunan_diskon);
+			var nilai_pasar_luquidasi	= data.nilai_pasar2 - (data.nilai_pasar2 * bangunan_diskon / 100);
 			
 			// $("#" + role).find("input#textbox_bangunan_56").val(nilai_pasar_luquidasi).addClass("text-right").number( true, 0 ).attr("readonly", true).addClass("readonly").updateTextbox();
 			
 			var luas_resmi					= luas_bangunan - e;
 			var nilai_resmi_pasar			= data.rcn_rp_m * luas_resmi;
-			var nilai_resmi_pasar_luquidasi	= nilai_resmi_pasar - (nilai_resmi_pasar * 30 / 100);
+			var nilai_resmi_pasar_luquidasi	= nilai_resmi_pasar - (nilai_resmi_pasar * bangunan_diskon / 100);
 			$("#" + role).find("input#textbox_bangunan_57").val(nilai_resmi_pasar).addClass("text-right").number( true, 0 ).attr("readonly", true).addClass("readonly") .updateTextbox();
 			$("#" + role).find("input#textbox_bangunan_58").val(nilai_resmi_pasar_luquidasi).addClass("text-right").number( true, 0 ).attr("readonly", true).addClass("readonly") .updateTextbox();
-			
-			
 			
 			if (role == "Bangunan_1")
 			{
@@ -3535,12 +3546,67 @@ $(document).on("change", ".custom_input", function(event) {
 	var name  = $(this).attr("id");
 	var value = $(this).val();
 	var kertas_kerja = $('#id_kertas_kerja').val();
+	var lokasi = $('#id_lokasi').val();
 	var kode_jenis_jasa = '__';
 	if ( value != '' && value != undefined && value != null )
 		kode_jenis_jasa = value;
-	update_kertas_kerja(name, value, kertas_kerja);
+	update_kertas_kerja(name, value, kertas_kerja, lokasi);
 	$('#string_kode_jenis_jasa').html(kode_jenis_jasa);
 	update_nomor_laporan();
+});
+$(document).on("change", ".custom_tanah", function(event) {
+	var name  = $(this).attr("id");
+	var value = $(this).val();
+	var lokasi = $('#id_lokasi').val();
+	update_tanah(name, value, lokasi);
+
+	if ( name == 'diskon' ) {
+		var np_tanah = $('#text_np_tanah').html();
+		np_tanah = np_tanah.replace(/,/g, '');
+		console.log("NP Tanah: "+np_tanah+"\r\n");
+		np_tanah = parseInt(np_tanah);
+		var diskon_tanah = $('.custom_tanah[id="diskon"]').val();
+		diskon_tanah = parseInt(diskon_tanah);
+		var nl_tanah = np_tanah-((diskon_tanah/100)*np_tanah);
+		update_tanah('nilai_likuidasi', nl_tanah, lokasi);
+		$('#text_nl_tanah').html(nl_tanah).number(true, 0);
+	}
+});
+$(document).on("change", ".custom_bangunan", function(event) {
+	var name  = $(this).attr("id");
+	var value = $(this).val();
+	var lokasi = $('#id_lokasi').val();
+	var role = $(this).attr('data-role');
+	update_bangunan(name, value, lokasi, role);
+
+	if ( name == 'diskon' ) {
+		var np_bangunan = $('#text_np_bangunan[data-role="'+role+'"]').html();
+		np_bangunan = np_bangunan.replace(/,/g, '');
+		np_bangunan = parseInt(np_bangunan);
+		var diskon_bangunan = $('#diskon[data-role="'+role+'"]').val();
+		diskon_bangunan = parseInt(diskon_bangunan);
+		var nl_bangunan = np_bangunan-((diskon_bangunan/100)*np_bangunan);
+		update_bangunan('nilai_likuidasi', nl_bangunan, lokasi, role);
+		$('#text_nl_bangunan[data-role="'+role+'"]').html(nl_bangunan).number(true, 0);
+	}
+});
+$(document).on("change", ".custom_sarana", function(event) {
+	var name  = $(this).attr("id");
+	var value = $(this).val();
+	var lokasi = $('#id_lokasi').val();
+	update_sarana(name, value, lokasi);
+
+	if ( name == 'diskon' ) {
+		var np_sarana = $('#text_np_sarana').html();
+		np_sarana = np_sarana.replace(/,/g, '');
+		console.log("NP sarana: "+np_sarana+"\r\n");
+		np_sarana = parseInt(np_sarana);
+		var diskon_sarana = $('.custom_sarana[id="diskon"]').val();
+		diskon_sarana = parseInt(diskon_sarana);
+		var nl_sarana = np_sarana-((diskon_sarana/100)*np_sarana);
+		update_sarana('nilai_likuidasi', nl_sarana, lokasi);
+		$('#text_nl_sarana').html(nl_sarana).number(true, 0);
+	}
 });
 $(document).on("change", '#textbox_entry_1', function(){
     var no_mappi = $(this).find(":selected").attr("data-nomappi");
@@ -3549,8 +3615,9 @@ $(document).on("change", '#textbox_entry_1', function(){
    	var name  = "no_ijinpp_penandatangan";
 	var value = no_ijinpp;
 	var kertas_kerja = $('#id_kertas_kerja').val();
-	update_kertas_kerja(name, value, kertas_kerja);
-	update_kertas_kerja('no_mappi_penandatangan_laporan', no_mappi, kertas_kerja);
+	var lokasi = $('#id_lokasi').val();
+	update_kertas_kerja(name, value, kertas_kerja, lokasi);
+	update_kertas_kerja('no_mappi_penandatangan_laporan', no_mappi, kertas_kerja, lokasi);
 	var length_val = value.length;
 	if ( parseInt(length_val) >= 4 ) {
 		var start = parseInt(length_val)-4;
@@ -3590,11 +3657,80 @@ function update_nomor_laporan() {
     $('#textbox_entry_15').val(nomor_laporan);
     $('#textbox_entry_15').trigger('change');
 }
-function update_kertas_kerja(name, value, id) {
+function update_kertas_kerja(name, value, id, lokasi) {
 	var kertas_kerja = id;
 	$.ajax({
 		type : "POST",
-		url : base_url + "AjaxPekerjaan/update_kertas_kerja/"+kertas_kerja,
+		url : base_url + "AjaxPekerjaan/update_kertas_kerja/"+lokasi+"/"+kertas_kerja,
+		data : {
+			name : name,
+			value : value
+		},
+		success : function (d) {
+			var data;
+			try {
+				//test
+				data = JSON.parse(d);
+			} catch(e)
+			{
+					//test
+			}
+		},
+	    error: function (jqXHR, textStatus, errorThrown) {
+	        console.log('Ajax error! ' + errorThrown.message + "\n status: " + textStatus);
+	    }
+	}); 
+}
+function update_tanah(name, value, lokasi) {
+	$.ajax({
+		type : "POST",
+		url : base_url + "AjaxPekerjaan/update_tanah/"+lokasi,
+		data : {
+			name : name,
+			value : value
+		},
+		success : function (d) {
+			var data;
+			try {
+				//test
+				data = JSON.parse(d);
+			} catch(e)
+			{
+					//test
+			}
+		},
+	    error: function (jqXHR, textStatus, errorThrown) {
+	        console.log('Ajax error! ' + errorThrown.message + "\n status: " + textStatus);
+	    }
+	}); 
+}
+function update_bangunan(name, value, lokasi, role) {
+	$.ajax({
+		type : "POST",
+		url : base_url + "AjaxPekerjaan/update_bangunan/"+lokasi+"/"+role,
+		data : {
+			name : name,
+			value : value
+		},
+		success : function (d) {
+			var data;
+			try {
+				//test
+				data = JSON.parse(d);
+			} catch(e)
+			{
+					//test
+			}
+		},
+	    error: function (jqXHR, textStatus, errorThrown) {
+	        console.log('Ajax error! ' + errorThrown.message + "\n status: " + textStatus);
+	    }
+	}); 
+}
+function update_sarana(name, value, lokasi) {
+	$.ajax({
+		type : "POST",
+		url : base_url + "AjaxPekerjaan/update_sarana/"+lokasi,
 		data : {
 			name : name,
 			value : value
@@ -3621,9 +3757,10 @@ $(document).on("change", '#textbox_pembanding_101, #textbox_pembanding_16', func
     get_brb_standar_mappi(idx_pembanding, jenis_bangunan, lantai);
 });
 function get_brb_standar_mappi(idx_pembanding, jenis_bangunan, lantai) {
+	var kertas_kerja = $('#id_kertas_kerja').val();
 	$.ajax({
 		type : "POST",
-		url : base_url + "AjaxPekerjaan/get_brb_standar_mappi/",
+		url : base_url + "AjaxPekerjaan/get_brb_standar_mappi/"+kertas_kerja,
 		data : {
 			jenis_bangunan : jenis_bangunan,
 			index_dbanding : idx_pembanding,

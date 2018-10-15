@@ -15,17 +15,16 @@
 				<td style="width: 500px;">
 					<table>
 						<tr>
+							<td rowspan="2"><img src="<?=base_url("asset/images/kwitansi_logo.png")?>" style="width: 150px;"/></td>
+							<td><span style="font-size: 12px; font-weight: bold; color: #201A48">KJPP ASNO MINANDA USEP PRAWIRA DAN REKAN</span></td>
+						</tr>
+						<tr>
 							<td>
-								<img src="<?=base_url("asset/images/kwitansi_logo.jpg")?>" style="width: 100px;"/>
-							</td>
-							<td>
-								<img src="<?=base_url("asset/images/kwitansi_text.jpg")?>" style="width: 150px;"/><br />
 								<span style="font-size: 10px; font-weight: bold;">Kantor Jasa Penilai Publik</span><br />
-								<span style="font-size: 8px;">Nomor Izin : 2.10.0081, Kep. Menkeu Nomor : 83/KM, 1/2010</span><br />
-								<span style="font-size: 9px;">d/h. : <b>PT. RAXINDO WARDANA</b></span><br />
-								<span style="font-size: 10px;">Sentra Arteri Mas</span><br />
-								<span style="font-size: 8px;">Jl. Sultan Iskandar Muda Kav. 10V (Arteri Pondok Indah), Kebayoran Lama - Jakarta 12240</span><br />
-								<span style="font-size: 8px;">Telp : 021-727-95755 (hunting), Fax : 021-727-96335, Email : consulting@raxindo.com </span><br />
+								<span style="font-size: 8px;">Nomor Izin : 2.16.0139, Kep. Menkeu Nomor : 1020/KM, 1/2016</span><br />
+								<span style="font-size: 8px;">Wilayah Negara Republik Indonesia</span><br />
+								<span style="font-size: 8px;"><?=$company_address;?></span><br />
+								<span style="font-size: 8px;">Telp : <?=$company_phone?> (hunting), Fax : <?=$company_fax?>, Email : consulting@kjpp-asus.com </span><br />
 							</td>
 						</tr>
 					</table>
@@ -43,9 +42,9 @@
 							<td colspan="4">Telah terima dari</td>
 						</tr>
 						<tr>
-							<td>1.</td>
-							<td>Nama</td>
-							<td>:</td>
+							<td width="20px">1.</td>
+							<td width="80px">Nama</td>
+							<td width="10px" style="text-align: center">:</td>
 							<td><?=$klien->nama_kontak?></td>
 						</tr>
 						<tr>
@@ -82,7 +81,7 @@
 											<!--<input type="checkbox" <?=($kwitansi->berupa == "Cek / Giro Biylet" ? "checked" : "")?>/>--> 
 										</td>
 										<td style="width: 150px;">Bank : <?=$kwitansi->bank?></td>
-										<td style="width: 150px;">No. : <?=$kwitansi->no?></td>
+										<td style="width: 150px;">No. Kwitansi : <?=$kwitansi->no?></td>
 									</tr>
 								</table>
 							</td>
@@ -103,7 +102,7 @@
 						<tr>
 							<td>Terbilang</td>
 							<td>:</td>
-							<td><?=$kwitansi->terbilang?></td>
+							<td><?=terbilang($kwitansi->sebesar)?></td>
 						</tr>
 						<tr>
 							<td>Keterangan</td>

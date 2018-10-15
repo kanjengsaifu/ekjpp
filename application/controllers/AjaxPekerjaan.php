@@ -1382,6 +1382,13 @@ class ajaxpekerjaan extends CI_Controller
 				$this->global_model->update($table_txn, 1, array("id_lembar_kendali"), array($id), $data_txn);
 			}
 
+			//Update Biaya Penawaran
+			if ( $type == "lembar_kendali_2" ) {
+				$harga = $this->input->post('harga');
+				$harga = preg_replace('/[^0-9]/s', '', $harga);
+				$this->global_model->update('mst_dokumen_penawaran', 1, array('id_pekerjaan'), array($id_pekerjaan), array('biaya' => $harga));
+			}
+
 			if ($pekerjaan->id_status == 2)
 			{
 				//simpan LKK1
@@ -2093,6 +2100,10 @@ class ajaxpekerjaan extends CI_Controller
 			'latitude_pembanding_'.$keterangan => $latitude,
 			'longitude_pembanding_'.$keterangan => $longitude
 		);
+		if ( $keterangan == 0 ) {
+			$data_update['latitude'] = $latitude;
+			$data_update['longitude'] = $longitude;
+		}
 		$this->global_model->update_by_id("mst_lokasi", 'id', $id_lokasi, $data_update);	
 	}
 	function update_lokasi_pembanding()
@@ -10525,6 +10536,10 @@ class ajaxpekerjaan extends CI_Controller
 					(100-(($tanah_nl/$tanah_np)*100)): 0;
 					$this->global_model->update_data('txn_tanah', 'id_tanah', $txn_tanah->id_tanah, array('diskon' => $tanah_diskon));
 				}
+				if ( empty($tanah_nl) && !empty($tanah_np) && !empty($tanah_diskon) ) {
+					$tanah_nl = $tanah_np-(($tanah_diskon/100)*$tanah_np);
+					$this->global_model->update_data('txn_tanah', 'id_tanah', $txn_tanah->id_tanah, array('nilai_likuidasi' => $tanah_nl));
+				}
 				$tanah_diskon = number_format($tanah_diskon,0);
 				$tanah_luas = $txn_tanah->luas;
 			}
@@ -10548,7 +10563,7 @@ class ajaxpekerjaan extends CI_Controller
 			$tanah_np = number_format(!empty($tanah_np) ? $tanah_np : 0);
 			$tanah_nl = number_format(!empty($tanah_nl) ? $tanah_nl : 0);
 
-			if ($lokasi->id_jenis_objek == 2 || $lokasi->id_jenis_objek == 1)
+			if ( in_array($lokasi->id_jenis_objek, array(1,2)) )
 			{
 			
 				$tanah_luas	= number_format(!empty($tanah_luas) ? $tanah_luas : 0);
@@ -10557,13 +10572,13 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span></span></td>
 						<td><span style='font-weight: normal;'>Tanah ".$lokasi->jenis_sertifikat."</span></td>
 						<td align='center'><span style='font-weight: normal;'>".$tanah_luas."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$tanah_np."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$tanah_nl."</span></td>
-						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$tanah_diskon."' style='text-align: right'></td>
+						<td align='right'><span id='text_np_tanah' style='font-weight: normal;'>".$tanah_np."</span></td>
+						<td align='right'><span id='text_nl_tanah' style='font-weight: normal;'>".$tanah_nl."</span></td>
+						<td align='right'><input type='number' id='diskon' class='form-control number custom_tanah' step='1' max='100' min='0' value='".$tanah_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 			}
-			elseif ($lokasi->id_jenis_objek == 6 || $lokasi->id_jenis_objek == 7)
+			elseif (in_array($lokasi->id_jenis_objek, array(6,7)))
 			{
 				$tanah_luas	= number_format(!empty($tanah_luas) ? $tanah_luas : 0);
 
@@ -10572,9 +10587,9 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span></span></td>
 						<td><span style='font-weight: normal;'>".$lokasi->jenis_sertifikat."</span></td>
 						<td align='center'><span style='font-weight: normal;'>".floatval($tanah_luas)."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$tanah_np."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$tanah_nl."</span></td>
-						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$tanah_diskon."' style='text-align: right'></td>
+						<td align='right'><span id='text_np_tanah' style='font-weight: normal;'>".$tanah_np."</span></td>
+						<td align='right'><span id='text_nl_tanah' style='font-weight: normal;'>".$tanah_nl."</span></td>
+						<td align='right'><input type='number' id='diskon' class='form-control number custom_tanah' step='1' max='100' min='0' value='".$tanah_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 			}
@@ -10582,12 +10597,10 @@ class ajaxpekerjaan extends CI_Controller
 
 		/*Bangunan*/
 		// var_dump("TEST ".$lokasi->id_jenis_objek);
-		if ($lokasi->id_jenis_objek == 2)
+		if ( in_array($lokasi->id_jenis_objek, array(2, 6)) )
 		{
 			$list_bangunan = $this->global_model->get_list('txn_bangunan', "id_kertas_kerja='".$id_kertas_kerja."'");
-
-			// var_dump($list_bangunan);
-			
+			// var_dump($list_bangunan);			
 			$i = 1;
 			foreach ($list_bangunan as $key_bangunan => $item_bangunan) {
 				$key_bangunan = $item_bangunan->bangunan_role;
@@ -10596,7 +10609,8 @@ class ajaxpekerjaan extends CI_Controller
 				$bangunan_np	= $item_bangunan->nilai_pasar;
 				$bangunan_nl	= $item_bangunan->nilai_likuidasi;
 				$bangunan_luas 	= $item_bangunan->luas;
-
+				$bangunan_number_np = preg_replace('/[^0-9]/', '', $item_bangunan->nilai_pasar);
+				$bangunan_number_nl = preg_replace('/[^0-9]/', '', $item_bangunan->nilai_likuidasi);
 
 				$total_np	= $total_np + $bangunan_np;
 				$total_nl	= $total_nl + $bangunan_nl;
@@ -10609,6 +10623,11 @@ class ajaxpekerjaan extends CI_Controller
 					100-(($bangunan_nl/$bangunan_np)*100): 0;
 					$this->global_model->update_data('txn_bangunan', 'id_bangunan', $item_bangunan->id_bangunan, array('diskon' => $bangunan_diskon));
 				}
+
+				if ( empty($bangunan_nl) && !empty($bangunan_np) && !empty($bangunan_diskon) ) {
+					$bangunan_nl = $bangunan_number_np-(($bangunan_diskon/100)*$bangunan_number_np);
+					$this->global_model->update_data('txn_bangunan', 'id_bangunan', $item_bangunan->id_bangunan, array('nilai_likuidasi' => $bangunan_nl));
+				}
 				$bangunan_diskon = number_format($bangunan_diskon, 0);
 				$bangunan_luas = number_format(is_numeric($bangunan_luas) ? $bangunan_luas : 0);
 
@@ -10617,9 +10636,9 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span></span></td>
 						<td><span style='font-weight: normal;'>Bangunan ".$bangunan_name."</span></td>
 						<td align='center'><span style='font-weight: normal;'>".$bangunan_luas."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$bangunan_np."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$bangunan_nl."</span></td>
-						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$bangunan_diskon."' style='text-align: right'></td>
+						<td align='right'><span id='text_np_bangunan' data-role='".$bangunan_name."' style='font-weight: normal;'>".$bangunan_np."</span></td>
+						<td align='right'><span id='text_nl_bangunan' data-role='".$bangunan_name."' style='font-weight: normal;'>".$bangunan_nl."</span></td>
+						<td align='right'><input type='number' id='diskon' data-role='".$bangunan_name."' class='form-control number custom_bangunan' step='1' max='100' min='0' value='".$bangunan_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 
@@ -10666,6 +10685,7 @@ class ajaxpekerjaan extends CI_Controller
 		}
 
 		/*Sarana Pelengkap*/
+		if ( in_array($lokasi->id_jenis_objek, array(1, 2)) )
 		{
 			// $sarana_np	= $this->global_model->get_data("txn_lokasi_data", 2, array("id_lokasi", "id_field"), array($id_lokasi, 865));
 
@@ -10678,19 +10698,24 @@ class ajaxpekerjaan extends CI_Controller
 
 			if (!empty($saran_np_new))
 			{
-				$total_np	= $total_np + ($count_sarana == 1 ? $saran_np_new->nilai_pasar : 0);
-				$total_nl	= $total_nl + ($count_sarana == 1 ? $saran_np_new->nilai_pasar/2 : 0);
 				// $total_npa	= $total_npa + ($count_sarana == 1 ? $saran_np_new->nilai_pasar : 0);
 				// $total_nla	= $total_nla + ($count_sarana == 1 ? $saran_np_new->nilai_pasar/2 : 0);
-				$sarana_nl	= number_format(($count_sarana == 1 ? $saran_np_new->nilai_pasar/2 : 0));
 				$sarana_np	= number_format($count_sarana == 1 ? $saran_np_new->nilai_pasar : 0);
 				$sarana_diskon = $saran_np_new->diskon;
-				if ( empty($sarana_diskon) && !is_numeric($sarana_diskon) ) {
+				if ( $count_sarana > 0 && empty($sarana_diskon) && !is_numeric($sarana_diskon) ) {
 					$sarana_diskon = $sarana_nl < $sarana_np ?
 					100-(($sarana_nl/$sarana_np)*100): 0;
 					$this->global_model->update_data('txn_sarana_pelengkap', 'id_sarana_pelengkap', $saran_np_new->id_sarana_pelengkap, array('diskon' => $sarana_diskon));
 				}
+				$sarana_nl	= (int)(str_replace(',', '', $sarana_np))-(($sarana_diskon/100)*(int)(str_replace(',', '', $sarana_np)));
+				//echo $sarana_np."-".'(('.$sarana_diskon.'/100)*'.$sarana_np.') = '.$sarana_nl;
+				if ( empty($saran_np_new->nilai_likuidasi) && !empty($sarana_np_new->id_sarana_pelengkap) ) {
+					$this->global_model->update_data('txn_sarana_pelengkap', 'id_sarana_pelengkap', $sarana_np_new->id_sarana_pelengkap, array('nilai_likuidasi' => $sarana_nl));
+				}
+				$sarana_nl = number_format($sarana_nl,0);
 				$sarana_diskon = number_format($sarana_diskon, 0);
+				$total_np	= $total_np + ($count_sarana == 1 ? $saran_np_new->nilai_pasar : 0);
+				$total_nl	= $total_nl + $sarana_nl;
 			}
 
 			if($lokasi->id_jenis_objek == 1 || $lokasi->id_jenis_objek == 2){
@@ -10699,15 +10724,13 @@ class ajaxpekerjaan extends CI_Controller
 						<td align='center'><span></span></td>
 						<td><span style='font-weight: normal;'>Sarana Pelengkap</span></td>
 						<td align='center'><span style='font-weight: normal;'>1-Lot</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$sarana_np."</span></td>
-						<td align='right'><span style='font-weight: normal;'>".$sarana_nl."</span></td>
-						<td align='right'><input type='number' class='form-control' step='1' max='100' min='0' value='".$sarana_diskon."' style='text-align: right'></td>
+						<td align='right'><span id='text_np_sarana' style='font-weight: normal;'>".$sarana_np."</span></td>
+						<td align='right'><span id='text_nl_sarana' style='font-weight: normal;'>".$sarana_nl."</span></td>
+						<td align='right'><input type='number' id='diskon' class='form-control number custom_sarana' step='1' max='100' min='0' value='".$sarana_diskon."' style='text-align: right'></td>
 					</tr>
 				";
 			}
 		}
-
-
 
 		/*TOTAL*/
 		{
@@ -10989,20 +11012,120 @@ class ajaxpekerjaan extends CI_Controller
 
 		echo $alamat;
 	}
-	function update_kertas_kerja($id_kertas_kerja = NULL) {
+	function update_kertas_kerja($id_lokasi = NULL, $id_kertas_kerja = NULL) {
 		$name = $this->input->post('name');
 		$value = $this->input->post('value');
-		
-		$dt_update = array(
+		if ( empty($id_kertas_kerja) ) {
+			$check_lokasi = count_data('mst_lokasi', array('id' => $id_lokasi));
+			$check_kertas_kerja = count_data('txn_kertas_kerja', array('id_lokasi' => $id_lokasi));
+			if ( $check_lokasi && !$check_kertas_kerja ) {
+				$dt_insert_kertas_kerja = array(
+					'id_lokasi' => $id_lokasi,
+					$name => $value
+				);
+				$this->global_model->insert_data('txn_kertas_kerja', $dt_insert_kertas_kerja);
+			} else if ( $check_kertas_kerja) {
+				$dt_update = array(
+					$name => $value
+				);
+				$this->global_model->update_data('txn_kertas_kerja', 'id_lokasi', $id_lokasi, $dt_update);
+			}
+		} else {
+			$dt_update = array(
+				$name => $value
+			);
+			$this->global_model->update_data('txn_kertas_kerja', 'id_kertas_kerja', $id_kertas_kerja, $dt_update);
+		}
+	}
+	function update_tanah($id_lokasi = NULL) {
+		$name = $this->input->post('name');
+		$value = $this->input->post('value');
+		$check_lokasi = count_data('txn_tanah', array('id_lokasi' => $id_lokasi));
+		$data = array(
+			'id_lokasi' => $id_lokasi,
 			$name => $value
 		);
-		$this->global_model->update_data('txn_kertas_kerja', 'id_kertas_kerja', $id_kertas_kerja, $dt_update);
+		if ( $check_lokasi ) {
+			$this->global_model->update_data('txn_tanah', 'id_lokasi', $id_lokasi, $data);
+		} else {
+			$this->global_model->insert_data('txn_tanah', $data);
+		}
+	}
+	function update_bangunan($id_lokasi = NULL, $role = NULL) {
+		$name = $this->input->post('name');
+		$value = $this->input->post('value');
+		if ( !empty($role) ) {
+			$check_bangunan = count_data('txn_bangunan', array('id_lokasi' => $id_lokasi, 'bangunan_role' => $role));
+			$data = array(
+				'id_lokasi' => $id_lokasi,
+				'bangunan_role' => $role,
+				$name => $value
+			);
+			if ( $check_bangunan ) {
+				$this->global_model->update('txn_bangunan', 2, array('id_lokasi', 'bangunan_role'), array($id_lokasi, $role), $data);
+			} else {
+				$this->global_model->insert_data('txn_bangunan', $data);
+			}
+		}
+	}
+	function update_sarana($id_lokasi = NULL) {
+		$name = $this->input->post('name');
+		$value = $this->input->post('value');
+		$check_lokasi = count_data('txn_sarana_pelengkap', array('id_lokasi' => $id_lokasi));
+		$data = array(
+			'id_lokasi' => $id_lokasi,
+			$name => $value
+		);
+		if ( $check_lokasi ) {
+			$this->global_model->update_data('txn_sarana_pelengkap', 'id_lokasi', $id_lokasi, $data);
+		} else {
+			$this->global_model->insert_data('txn_sarana_pelengkap', $data);
+		}
 	}
 	function get_brb_standar_mappi_dbanding($id_kertas_kerja = NULL) {
 		$jenis_bangunan = $this->input->post('jenis_bangunan');
 		$input_jenis = json_decode($jenis_bangunan, true);
 		$jumlah_lantai = $this->input->post('jumlah_lantai');
 		$input_lantai = json_decode($jumlah_lantai, true);
+
+		//Get Data
+		$this->db->select('A.id_lokasi, B.id_provinsi, B.id_kota')
+				 ->from('txn_kertas_kerja A')
+				 ->join('mst_lokasi B', 'A.id_lokasi = B.id')
+				 ->where('A.id_kertas_kerja', $id_kertas_kerja);
+		$q_lokasi = $this->db->get();
+		$koefisien_provinsi = 1;
+		if ( is_object($q_lokasi) ) {
+			$row = $q_lokasi->row();
+			if ( is_object($row) ) {
+				$id_kota = $row->id_kota;
+				$id_provinsi = $row->id_provinsi;
+				if ( empty($id_kota) && !empty($id_provinsi) ) {
+					$this->db->select('INDEKS')
+							 ->from('kotakab_btb_2018')
+							 ->where('ID_PROINSI', $id_provinsi)
+							 ->where('ID_KOTAKAB', $id_provinsi.'00');
+					$q_koef_prov = $this->db->get();
+					if ( is_object($q_koef_prov) ) {
+						$row_koef_prov = $q_koef_prov->row();
+						if ( is_object($row_koef_prov) ) {
+							$koefisien_provinsi = $row_koef_prov->INDEKS;
+						}
+					}
+				} elseif (!empty($id_kota)) {
+					$this->db->select('INDEKS')
+							 ->from('kotakab_btb_2018')
+							 ->where('ID_KOTAKAB', $id_kota);
+					$q_koef_prov = $this->db->get();
+					if ( is_object($q_koef_prov) ) {
+						$row_koef_prov = $q_koef_prov->row();
+						if ( is_object($row_koef_prov) ) {
+							$koefisien_provinsi = $row_koef_prov->INDEKS;
+						}
+					}
+				}
+			}
+		}
 
 		$result = array();
 		foreach ( $input_jenis as $index_banding=>$jenis ) {
@@ -11014,7 +11137,7 @@ class ajaxpekerjaan extends CI_Controller
 
 			$biaya_langsung = $biaya_tidak_langsung = $total = 0;
 			$where = "tipe <> 'TIPE BANGUNAN MAPPI' AND data3 <> '' AND data1 = '$jenis'";
-			$this->db->select('SUM(CAST(data3 AS DECIMAL(10,2))) AS total', false)
+			$this->db->select('SUM(CAST(data3 AS DECIMAL(10,2))*'.$koefisien_provinsi.') AS total', false)
 					 ->from('mst_reference')
 					 ->where($where);
 			$query = $this->db->get();
@@ -11039,10 +11162,48 @@ class ajaxpekerjaan extends CI_Controller
 		}
 		echo json_encode(array('result' => $result));
 	}
-	function get_brb_standar_mappi() {
+	function get_brb_standar_mappi($id_kertas_kerja) {
 		$jenis_bangunan = $this->input->post('jenis_bangunan');
 		$index_banding = $this->input->post('index_dbanding');
 		$jumlah_lantai = $this->input->post('lantai');
+
+		$this->db->select('A.id_lokasi, B.id_provinsi, B.id_kota')
+				 ->from('txn_kertas_kerja A')
+				 ->join('mst_lokasi B', 'A.id_lokasi = B.id')
+				 ->where('A.id_kertas_kerja', $id_kertas_kerja);
+		$q_lokasi = $this->db->get();
+		$koefisien_provinsi = 1;
+		if ( is_object($q_lokasi) ) {
+			$row = $q_lokasi->row();
+			if ( is_object($row) ) {
+				$id_kota = $row->id_kota;
+				$id_provinsi = $row->id_provinsi;
+				if ( empty($id_kota) && !empty($id_provinsi) ) {
+					$this->db->select('INDEKS')
+							 ->from('kotakab_btb_2018')
+							 ->where('ID_PROINSI', $id_provinsi)
+							 ->where('ID_KOTAKAB', $id_provinsi.'00');
+					$q_koef_prov = $this->db->get();
+					if ( is_object($q_koef_prov) ) {
+						$row_koef_prov = $q_koef_prov->row();
+						if ( is_object($row_koef_prov) ) {
+							$koefisien_provinsi = $row_koef_prov->INDEKS;
+						}
+					}
+				} elseif (!empty($id_kota)) {
+					$this->db->select('INDEKS')
+							 ->from('kotakab_btb_2018')
+							 ->where('ID_KOTAKAB', $id_kota);
+					$q_koef_prov = $this->db->get();
+					if ( is_object($q_koef_prov) ) {
+						$row_koef_prov = $q_koef_prov->row();
+						if ( is_object($row_koef_prov) ) {
+							$koefisien_provinsi = $row_koef_prov->INDEKS;
+						}
+					}
+				}
+			}
+		}
 
 		$obj = $this->global_model->get_by_query("SELECT * FROM mst_koefisien_lantai WHERE bangunan='". $jenis_bangunan ."' AND jml_lantai='". $jumlah_lantai ."'");
 		$koefisien = 1;
@@ -11052,7 +11213,7 @@ class ajaxpekerjaan extends CI_Controller
 
 		$biaya_langsung = $biaya_tidak_langsung = $total = 0;
 		$where = "tipe <> 'TIPE BANGUNAN MAPPI' AND data3 <> '' AND data1 = '$jenis_bangunan'";
-		$this->db->select('SUM(CAST(data3 AS DECIMAL(10,2))) AS total', false)
+		$this->db->select('SUM(CAST(data3 AS DECIMAL(10,2))*'.$koefisien_provinsi.') AS total', false)
 			     ->from('mst_reference')
 				 ->where($where);
 		$query = $this->db->get();

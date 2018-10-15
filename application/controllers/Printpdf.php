@@ -572,10 +572,20 @@ class printpdf extends CI_Controller
 	{
 		if (!empty($id_pekerjaan))
 		{
-			$id_pekerjaan		= base64_decode($id_pekerjaan);
+			//$id_pekerjaan		= base64_decode($id_pekerjaan);
 			$pekerjaan			= $this->global_model->get_data("mst_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
-			$klien				= $this->global_model->get_data("view_klien", 1, array("id"), array($pekerjaan->id_klien))->row();
-			
+			$klien				= $this->global_model->get_data("mst_klien", 1, array("id"), array($pekerjaan->id_klien))->row();
+			//echo $id_pekerjaan; 
+			//var_dump($pekerjaan); echo nl2br($this->db->last_query()); exit();
+			$company_address    = get_data_config('company_address');
+			$company_name  		= get_data_config('company_name');
+			$company_phone		= get_data_config('company_phone');
+			$company_fax 		= get_data_config('company_fax');
+
+			$data["company_name"] = $company_name;
+			$data["company_address"] = $company_address;
+			$data["company_phone"] = $company_phone;
+			$data["company_fax"] = $company_fax;
 			$data["klien"]		= $klien;
 			$data["kwitansi"]	= $this->global_model->get_data("mst_dokumen_kwitansi", 2, array("id_pekerjaan", "id_dokumen_master"), array($id_pekerjaan, 7))->row();
 			
@@ -614,19 +624,104 @@ class printpdf extends CI_Controller
 		{
 			$id_lokasi			= base64_decode($id_lokasi);
 			$lokasi				= $this->global_model->get_data("view_lokasi", 1, array("id"), array($id_lokasi))->row();
+			
 			$id_pekerjaan		= $lokasi->id_pekerjaan;
 			$pekerjaan			= $this->global_model->get_data("view_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
 			$pekerjaan1			= $this->global_model->get_data("mst_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
-			$pemberi_tugas	    = $pekerjaan1->pemberi_tugas;		
-     		$debitur			= $this->global_model->get_data("mst_debitur", 1, array("id"), array($pemberi_tugas))->row();
-			$klien				= $this->global_model->get_data("view_klien", 1, array("id"), array($pekerjaan->id_klien))->row();
+			$jenis_pemberi_tugas = $pekerjaan1->jenis_pemberi_tugas;
+			//echo $jenis_pemberi_tugas; exit();
+			$pemberi_tugas      = false;
+			if ( $jenis_pemberi_tugas == 0 && is_numeric($jenis_pemberi_tugas) ) {
+				$this->db->select('A.id, A.nama, A.alamat,
+								   A.id_kota, B.nama AS kota,
+								   A.id_provinsi, C.nama AS provinsi, A.kode_pos')
+						 ->from('mst_klien A')
+						 ->join('mst_kota B', 'A.id_kota = B.id', 'left')
+						 ->join('mst_provinsi C', 'A.id_provinsi = C.id', 'left')
+						 ->where('A.id', $pekerjaan1->pemberi_tugas);
+
+				$q_pemberi_tugas = $this->db->get(); 
+				//echo $this->db->last_query(); exit();
+				if ( is_object($q_pemberi_tugas) ) {
+					$row = $q_pemberi_tugas->row();
+					if ( is_object($row) ) {
+						$pemberi_tugas = $row;
+					}
+				}
+			} else if ( $jenis_pemberi_tugas == 1 ) {
+				$this->db->select('A.id, A.nama, A.alamat,
+								   A.id_kota, B.nama AS kota,
+								   A.id_provinsi, C.nama AS provinsi, A.kode_pos')
+						 ->from('mst_debitur A')
+						 ->join('mst_kota B', 'A.id_kota = B.id', 'left')
+						 ->join('mst_provinsi C', 'A.id_provinsi = C.id', 'left')
+						 ->where('A.id', $pekerjaan1->pemberi_tugas);
+
+				$q_pemberi_tugas = $this->db->get();
+				if ( is_object($q_pemberi_tugas) ) {
+					$row = $q_pemberi_tugas->row();
+					if ( is_object($row) ) {
+						$pemberi_tugas = $row;
+					}
+				}
+			}	
+			$lembar_kendali_2   = false;
+			$this->db->select('A.jangka_waktu')
+					 ->from('txn_lembar_kendali_2 A')
+					 ->join('mst_lembar_kendali B', 'A.id_lembar_kendali = B.id')
+					 ->where('B.id_pekerjaan', $id_pekerjaan)
+					 ->where('B.id_status', 3);
+			$q_lembar_kendali_3 = $this->db->get();
+			if ( is_object($q_lembar_kendali_3) ) {
+				$row = $q_lembar_kendali_3->row();
+				if ( is_object($row) ) {
+					$lembar_kendali_2 = $row;
+				}
+			}
+
+     		$klien				= $this->global_model->get_data("view_klien", 1, array("id"), array($pekerjaan->id_klien))->row();
 			$pt	 				= $this->global_model->get_data("mst_dokumen_penawaran", 1, array("id_pekerjaan"), array($id_pekerjaan))->row();
 			$tanda_tangan		= $pt->penanda_tangan;
      		$penanda 			= $this->global_model->get_data("view_user", 1, array("id"), array($tanda_tangan))->row();
      		$tugas      		= $this->global_model->get_data("txn_tugas", 1, array("id_lokasi"), array($id_lokasi))->row();
      		$id_user 			= $tugas->id_user;
      		$surveyor			= $this->global_model->get_data("view_user", 1, array("id"), array($id_user))->row();
+     		$tujuan_pelaporan  	= false;
+     		$jenis_tujuan_pelaporan = $pekerjaan1->jenis_tujuan_pelaporan;
+     		if ( $jenis_tujuan_pelaporan == 0 && is_numeric($jenis_tujuan_pelaporan) && !empty($pekerjaan1->tujuan_pelaporan) ) {
+     			$this->db->select('A.id, A.nama, A.alamat,
+								   A.id_kota, B.nama AS kota,
+								   A.id_provinsi, C.nama AS provinsi, A.kode_pos')
+						 ->from('mst_klien A')
+						 ->join('mst_kota B', 'A.id_kota = B.id', 'left')
+						 ->join('mst_provinsi C', 'A.id_provinsi = C.id', 'left')
+						 ->where('A.id', $pekerjaan1->tujuan_pelaporan);
 
+				$q_tujuan_pelaporan = $this->db->get(); 
+				//echo $this->db->last_query(); exit();
+				if ( is_object($q_tujuan_pelaporan) ) {
+					$row = $q_tujuan_pelaporan->row();
+					if ( is_object($row) ) {
+						$tujuan_pelaporan = $row;
+					}
+				}
+     		} else if ( $jenis_tujuan_pelaporan == 1 ) {
+				$this->db->select('A.id, A.nama, A.alamat,
+								   A.id_kota, B.nama AS kota,
+								   A.id_provinsi, C.nama AS provinsi, A.kode_pos')
+						 ->from('mst_debitur A')
+						 ->join('mst_kota B', 'A.id_kota = B.id', 'left')
+						 ->join('mst_provinsi C', 'A.id_provinsi = C.id', 'left')
+						 ->where('A.id', $pekerjaan1->tujuan_pelaporan);
+
+				$q_tujuan_pelaporan = $this->db->get();
+				if ( is_object($q_tujuan_pelaporan) ) {
+					$row = $q_tujuan_pelaporan->row();
+					if ( is_object($row) ) {
+						$tujuan_pelaporan = $row;
+					}
+				}
+			}	
 
 			// Next Step
 			{
@@ -662,8 +757,10 @@ class printpdf extends CI_Controller
 			$data["surveyor"]	= $surveyor;
 			$data["penanda"]	= $penanda;			
 			$data["pekerjaan"]	= $pekerjaan;		
+			$data["pemberi_tugas"] = $pemberi_tugas;
+			$data["tujuan_pelaporan"] = $tujuan_pelaporan;
 			$data["klien"]		= $klien;
-			$data["debitur"]	= $debitur;
+			$data["lembar_kendali_2"] = $lembar_kendali_2;
 			$data_lokasi		= $this->global_model->get_data("txn_lokasi_data", 1, array("id_lokasi"), array($id_lokasi))->result();
 		
 			$array_data_lokasi	= array();

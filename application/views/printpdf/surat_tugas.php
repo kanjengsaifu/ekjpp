@@ -63,12 +63,21 @@
 				<tr>
 					<td style="width: 200px;">Bank / Perusahaan / Perorangan</td>
 					<td style="width: 30px; text-align: center;">:</td>
-					<td><?=$debitur->nama?></td>
+					<td><?=($pemberi_tugas ? $pemberi_tugas->nama: NULL);?></td>
 				</tr>
 				<tr>
 					<td>Alamat Pemberi Tugas</td>
 					<td style="text-align: center;">:</td>
-					<td>-</td>
+					<?php
+					$alamat_pemberi_tugas = NULL;
+					if ( $pemberi_tugas ) {
+						$alamat_pemberi_tugas = $pemberi_tugas->alamat;
+						$alamat_pemberi_tugas .= empty($pemberi_tugas->kota) ? NULL: ', '.$pemberi_tugas->kota;
+						$alamat_pemberi_tugas .= empty($pemberi_tugas->provinsi) ? NULL: ', '.$pemberi_tugas->provinsi;
+						$alamat_pemberi_tugas .= empty($pemberi_tugas->kode_pos) ? NULL: ', '.$pemberi_tugas->kode_pos;
+					}
+					?>
+					<td><?php echo $alamat_pemberi_tugas; ?></td>
 				</tr>
 				<tr>
 					<td>No. Telp. / HP & Fax</td>
@@ -83,7 +92,7 @@
 				<tr>
 					<td>Tanggal Penugasan</td>
 					<td style="text-align: center;">:</td>
-					<td><?=$this->spmlib->indonesian_date($lokasi->tanggal_mulai, "d F Y", "")?></td>
+					<td><?=format_datetime($lokasi->tanggal_mulai)?></td>
 				</tr>
 				<tr>
 					<td>Jam Penugasan</td>
@@ -150,7 +159,7 @@
 				<tr>
 					<td>No. Telp. / HP</td>
 					<td style="width: 30px; text-align: center;">:</td>
-					<td><?=(array_key_exists(8 ,$data_lokasi) ? $data_lokasi[8][null] : "-")?></td>
+					<td><?=($klien ? $klien->telepon: NULL)?></td>
 				</tr>
 				<tr>
 					<td>Penilai</td>
@@ -228,7 +237,7 @@
 				<tr>
 					<td>Laporan Ditujukan Ke</td>
 					<td style="text-align: center;">:</td>
-					<td><?=$klien->debitur?></td>
+					<td><?=($tujuan_pelaporan ? $tujuan_pelaporan->nama: NULL)?></td>
 				</tr>
 				<tr>
 					<td>Tujuan Penilaian</td>
@@ -253,12 +262,17 @@
 				<tr>
 					<td style="width: 200px;">Batas waktu pekerjaan</td>
 					<td style="width: 30px; text-align: center;">:</td>
-					<td>7 Hari Kerja (setelah survey & data lengkap)</td>
+					<?php
+					$jumlahHari = $lembar_kendali_2 ? $lembar_kendali_2->jangka_waktu: 1;
+					$jumlahHari = empty($jumlahHari) ? 1: $jumlahHari;
+					?>
+					<td><?php echo $jumlahHari; ?> Hari Kerja (setelah survey & data lengkap)</td>
 				</tr>
 				<tr>
 					<td>Target laporan diserahkan pada tanggal</td>
 					<td style="text-align: center;">:</td>
-					<td></td>
+					<?php $tenggat_waktu = strtotime($lokasi->tanggal_mulai."+ $jumlahHari day"); ?>
+					<td><?php echo format_datetime(date('Y-m-d', $tenggat_waktu)) ?></td>
 				</tr>
 				
 			</table>

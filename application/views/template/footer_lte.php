@@ -69,5 +69,8 @@ function initDate(){
 }
 $(function(){
 	initDate();
+	$('.cmb_select2').select2({
+      theme: 'bootstrap'
+    });
 });
 </script>
