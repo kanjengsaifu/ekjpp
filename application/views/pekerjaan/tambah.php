@@ -479,12 +479,16 @@ echo $_template["_head"];
 	function getTujuanPelaporan(){
 		if ($("#jenis_tujuan_pelaporan_0").is( ":checked" )){
 			  $("#tujuan_pelaporan_klien").show();
+			  $("#tujuan_pelaporan_klien").next("span.select2").show();
 				$("#tujuan_pelaporan_debitur").hide();
+			  $("#tujuan_pelaporan_debitur").next("span.select2").hide();
 				$("#tujuan_pelaporan_klien").prop('required',true);
 				$("#tujuan_pelaporan_debitur").prop('required',false);
 		}else{
 				$("#tujuan_pelaporan_klien").hide();
+			  $("#tujuan_pelaporan_klien").next("span.select2").hide();
 				$("#tujuan_pelaporan_debitur").show();
+			  $("#tujuan_pelaporan_debitur").next("span.select2").show();
 				$("#tujuan_pelaporan_klien").prop('required',false);
 				$("#tujuan_pelaporan_debitur").prop('required',true);
 		}
