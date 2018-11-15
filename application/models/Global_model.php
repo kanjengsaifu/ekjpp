@@ -187,6 +187,16 @@ class global_model extends CI_Model
         $delete = $this->db->delete($table);
         return $delete;
     }
+    function get_value_column($table_name = "", $value_name, $con = array()) {
+    	$this->db->select($value_name)->from($table_name)->where($con);
+    	$query = $this->db->get();
+    	if ( is_object($query) ) {
+    		$row = $query->row();
+    		if ( is_object($row) )
+    			return $row->$value_name;
+    	}
+    	return NULL;
+	}
 }
 
 ?>

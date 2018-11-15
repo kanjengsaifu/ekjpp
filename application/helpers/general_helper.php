@@ -855,4 +855,38 @@ function get_data_config($key) {
     }
     return NULL;
 }
+function get_data_user($id_user) {
+    if ( !empty($id_user) ) {
+        $CI = &get_instance();
+        $CI->db->select('B.nama,
+                         B.no_mappi, B.jabatan, B.no_ijinpp, B.no_sttdojk, B.kualifikasi')
+               ->from('mst_user B')
+               ->where('B.id', $id_user);
+        $query = $CI->db->get();
+        if ( is_object($query) ) {
+            $row = $query->row();
+            if ( is_object($row) ) 
+                return $row;
+        }
+    }
+    return false;
+}
+function get_penandatangan_laporan($id_pekerjaan = NULL) {
+    if ( !empty($id_pekerjaan) ) {
+        $CI = &get_instance();
+        $CI->db->select('A.penanda_tangan, B.nama AS nama_penanda_tangan,
+                         B.no_mappi, B.jabatan, B.no_ijinpp, B.no_sttdojk, B.kualifikasi')
+               ->from('mst_dokumen_penawaran A')
+               ->join('mst_user B', 'A.penanda_tangan = B.id')
+               ->where('A.id_pekerjaan', $id_pekerjaan)
+               ->where('A.id_dokumen_master', 1);
+        $query = $CI->db->get();
+        if ( is_object($query) ) {
+            $row = $query->row();
+            if ( is_object($row) ) 
+                return $row;
+        }
+    }
+    return false;
+}
 ?>

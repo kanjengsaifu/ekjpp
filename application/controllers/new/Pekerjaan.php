@@ -281,11 +281,19 @@ class Pekerjaan extends CI_Controller
         $user   = $this->auth->get_data_login();
                 
         $data['id_pekerjaan'] = $id_pekerjaan;
+        $data['penandatangan_laporan'] = get_penandatangan_laporan($id_pekerjaan);
         $id_pekerjaan = base64_decode($id_pekerjaan);
         $id_lokasi = base64_decode($id_lokasi);
         $pekerjaan = $this->global_model->get_data("view_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
         $lokasi = $this->global_model->get_data("view_lokasi", 1, array("id"), array($id_lokasi))->row();
         $data["lokasi"] = $lokasi;
+        $id_tugas           = $this->global_model->get_data("mst_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
+        $jenis_pemberi_tugas = $id_tugas->jenis_pemberi_tugas;
+        if ( $jenis_pemberi_tugas == 0 )
+            $beri_tugas         = $this->global_model->get_data("mst_klien", 1, array("id"), array($id_tugas->pemberi_tugas))->row();
+        else if ( $jenis_pemberi_tugas == 1 ) 
+            $beri_tugas         = $this->global_model->get_data("mst_debitur", 1, array("id"), array($id_tugas->pemberi_tugas))->row();
+
         $kertas_kerja = "";
         $custom_data  = unserialize($lokasi->custom_data);
         if (($custom_data) && array_key_exists("tab_pembanding", $custom_data))
@@ -298,7 +306,10 @@ class Pekerjaan extends CI_Controller
             $this->global_model->update("mst_lokasi", 1, array("id"), array($lokasi->id), array("custom_data" => serialize($custom_data)));
             $lokasi = $this->global_model->get_data("view_lokasi", 1, array("id"), array($lokasi->id))->row();
         }
-        
+        $data_penilai = false;
+        if ( !empty($pekerjaan->penilai) ) {
+            $data_penilai = get_data_user($pekerjaan->penilai);
+        }
         $custom_data    = unserialize($lokasi->custom_data);
     
         if (($custom_data) && array_key_exists("tab_bangunan", $custom_data))
@@ -322,13 +333,70 @@ class Pekerjaan extends CI_Controller
         if (empty($txn_kertas_kerja))
         {
             $data_kertas_kerja = array(
-                "id_lokasi" => $id_lokasi
+                "id_lokasi" => $id_lokasi,
             );
+            if ( $data['penandatangan_laporan'] ) {
+                $data_kertas_kerja["no_mappi_penandatangan_laporan"] = $data['penandatangan_laporan']['no_mappi'];
+                $data_kertas_kerja["no_ijinpp_penandatangan"] = $data['penandatangan_laporan']['no_ijinpp'];
+                $data_kertas_kerja["penandatangan_laporan"] = $data['penandatangan_laporan']['nama_penanda_tangan'];
+            }
+            if ( $data_penilai ) {
+                $data_kertas_kerja["nama_penilai"] = $data_penilai['nama'];
+                $data_kertas_kerja["no_mappi_penilai"] = $data_penilai['no_mappi'];
+            }
+            if ( $id_tugas ) {
+                $id_jenis_jasa = $id_tugas->jenis_jasa;
+                if ( !empty($id_jenis_jasa) ) {
+                    $data_jenis_jasa = $this->global_model->get_by_id('mst_jenis_jasa', 'id', $id_jenis_jasa);
+                    if ( $data_jenis_jasa )
+                        $data_kertas_kerja["kode_jenis_jasa"] = $data_jenis_jasa->kode;
+                }
+                $maksud_tujuan = $id_tugas->maksud_tujuan;
+                if ( !empty($maksud_tujuan) ) {
+                    $tujuan_penilaian = $this->global_model->get_value_column('mst_tujuan', 'tujuan', array('id_tujuan' => $maksud_tujuan));
+                    if ( !empty($tujuan_penilaian) ) {
+                        $data_kertas_kerja["tujuan_penilaian"] = $tujuan_penilaian;
+                    }
+                }
+            }
 
             $id_kertas_kerja = $this->global_model->insert_data('txn_kertas_kerja', $data_kertas_kerja );
             $txn_kertas_kerja = $this->app_model->get_txn_kertas_kerja_by_id_lokasi($id_lokasi);
+        } else {
+            $dupdate_kertas_kerja = array();
+            if ( empty($txn_kertas_kerja['penandatangan_laporan']) && $data['penandatangan_laporan'] ) {
+                $dupdate_kertas_kerja["no_mappi_penandatangan_laporan"] = $data['penandatangan_laporan']['no_mappi'];
+                $dupdate_kertas_kerja["no_ijinpp_penandatangan"] = $data['penandatangan_laporan']['no_ijinpp'];
+                $dupdate_kertas_kerja["penandatangan_laporan"] = $data['penandatangan_laporan']['nama_penanda_tangan'];
+            }
+            if ( empty($txn_kertas_kerja['nama_penilai']) && $data_penilai ) {
+                $dupdate_kertas_kerja["nama_penilai"] = $data_penilai['nama'];
+                $dupdate_kertas_kerja["no_mappi_penilai"] = $data_penilai['no_mappi'];
+            }
+            if ( empty($txn_kertas_kerja['kode_jenis_jasa']) && $id_tugas ) {
+                $id_jenis_jasa = $id_tugas->jenis_jasa;
+                if ( !empty($id_jenis_jasa) ) {
+                    $data_jenis_jasa = $this->global_model->get_by_id('mst_jenis_jasa', 'id', $id_jenis_jasa);
+                    if ( $data_jenis_jasa )
+                        $dupdate_kertas_kerja["kode_jenis_jasa"] = $data_jenis_jasa->kode;
+                }
+            }
+            if ( empty($txn_kertas_kerja['tujuan_penilaian']) && $id_tugas ) {
+                $maksud_tujuan = $id_tugas->maksud_tujuan;
+                if ( !empty($maksud_tujuan) ) {
+                    $tujuan_penilaian = $this->global_model->get_value_column('mst_tujuan', 'tujuan', array('id_tujuan' => $maksud_tujuan));
+                    if ( !empty($tujuan_penilaian) ) {
+                        $dupdate_kertas_kerja["tujuan_penilaian"] = $tujuan_penilaian;
+                    }
+                }
+            }
+            if ( count($dupdate_kertas_kerja) > 0 ) {
+                $this->global_model->update_data('txn_kertas_kerja', 'id_kertas_kerja', $txn_kertas_kerja['id_kertas_kerja'], $dupdate_kertas_kerja);
+                foreach ($dupdate_kertas_kerja as $ku => $vu) {
+                    $txn_kertas_kerja[$ku] = $vu;
+                }
+            }
         }
-
         $txn_data_banding = $this->app_model->get_txn_data_banding_by_id_lokasi($id_lokasi);
         $total_data_banding = count($txn_data_banding);
 

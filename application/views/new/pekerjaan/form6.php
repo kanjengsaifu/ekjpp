@@ -205,12 +205,6 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12">
-                                        <label>Telepon / HP.</label>
-                                        <input type="text" id="textbox_entry_8" name="update[entry_8]" class="form-control table_input input_8_ " value="<?php echo $txn_kertas_kerja["telepon_klien"] ?>" data-id-field="8" data-keterangan="">                                
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
                                         <label>Status Obyek</label>
                                         <select class="form-control table_input input_10_" id="textbox_entry_10" name="update[entry_10]" data-id-field="10" data-keterangan="">
                                             <option>Select</option>
@@ -230,6 +224,12 @@
                                     <div class="col-md-12">
                                         <label>Selaku</label>
                                         <input type="text" id="textbox_entry_13" name="update[entry_13]" class="form-control table_input input_13_ " value="<?php echo $txn_kertas_kerja["selaku"] ?>" data-id-field="13" data-keterangan="">                               
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label>Telepon / HP.</label>
+                                        <input type="text" id="textbox_entry_8" name="update[entry_8]" class="form-control table_input input_8_ " value="<?php echo $txn_kertas_kerja["telepon_klien"] ?>" data-id-field="8" data-keterangan="">                                
                                     </div>
                                 </div>
                                 <div class="form-group row">
