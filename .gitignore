@@ -21,3 +21,4 @@ asset/file/legalitas_tanah/*
 !asset/file/default.jpg
 nbproject/private/*
 *.zip
+*.sql
