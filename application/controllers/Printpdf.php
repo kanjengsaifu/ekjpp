@@ -621,12 +621,36 @@ class printpdf extends CI_Controller
 		
 		if (!empty($id_lokasi))
 		{
+			$nomor_surat_tugas  = '';
 			$id_lokasi			= base64_decode($id_lokasi);
 			$lokasi				= $this->global_model->get_data("view_lokasi", 1, array("id"), array($id_lokasi))->row();
-			
+			if ( empty($lokasi->no_surat_tugas) && !empty($lokasi->tanggal_mulai) ) {
+				$bulan = date('n', strtotime($lokasi->tanggal_mulai));
+				$tahun = date('y', strtotime($lokasi->tanggal_mulai));
+				$bulan_romawi = numberToRomanRepresentation($bulan);
+				$this->db->select('MAX(CAST(substr(no_surat_tugas,1,4) AS SIGNED)) AS max_nomor', false)
+						 ->from('mst_lokasi')
+						 ->where("YEAR(tanggal_mulai) = '".date('Y', strtotime($lokasi->tanggal_mulai))."'")
+						 ->where("MONTH(tanggal_mulai) = '$bulan'");
+				$query_max = $this->db->get();
+				if ( is_object($query_max) ) {
+					$row_max = $query_max->row();
+					if ( is_object($row_max) ) {
+						$max_number = $row_max->max_nomor;
+						$new_number = $max_number+1;
+						$nomor = str_pad($new_number,4,'0000',STR_PAD_LEFT);
+						$nomor_surat_tugas = $nomor.'/ST/KJPP-ASUS/'.$bulan_romawi.'/'.$tahun;
+
+						$dt_update = array('no_surat_tugas' => $nomor_surat_tugas);
+						$this->global_model->update_data('mst_lokasi', 'id', $id_lokasi, $dt_update);
+					}
+				}
+			}
 			$id_pekerjaan		= $lokasi->id_pekerjaan;
 			$pekerjaan			= $this->global_model->get_data("view_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
+
 			$pekerjaan1			= $this->global_model->get_data("mst_pekerjaan", 1, array("id"), array($id_pekerjaan))->row();
+
 			$jenis_pemberi_tugas = $pekerjaan1->jenis_pemberi_tugas;
 			//echo $jenis_pemberi_tugas; exit();
 			$pemberi_tugas      = false;
@@ -751,6 +775,7 @@ class printpdf extends CI_Controller
 					$this->global_model->save("txn_pekerjaan_status", $data_next);
 				}
 			}
+			$data['no_surat_tugas'] = $nomor_surat_tugas;
 			$data["pt"]		= $pt;
 			$data["lokasi"]		= $lokasi;
 			$data["surveyor"]	= $surveyor;
@@ -1005,6 +1030,37 @@ class printpdf extends CI_Controller
 		//print_r($result_legalitas);
 		$final_result = $result_legalitas;
 		return $final_result;
+	}
+	function generate_no_surat_tugas() {
+		$this->load->model('global_model');
+		$this->db->select('id, no_surat_tugas, tanggal_mulai')->from('mst_lokasi')->where("tanggal_mulai IS NOT NULL")
+				 ->order_by('tanggal_mulai', 'asc');
+		$query = $this->db->get(); 
+		foreach ($query->result() as $lokasi) {
+			if ( !empty($lokasi->tanggal_mulai) ) {
+				$bulan = date('n', strtotime($lokasi->tanggal_mulai));
+				$tahun = date('y', strtotime($lokasi->tanggal_mulai));
+				$bulan_romawi = numberToRomanRepresentation($bulan);
+				$this->db->select('MAX(CAST(substr(no_surat_tugas,1,4) AS SIGNED)) AS max_nomor', false)
+						 ->from('mst_lokasi')
+						 ->where("YEAR(tanggal_mulai) = '".date('Y', strtotime($lokasi->tanggal_mulai))."'")
+						 ->where("MONTH(tanggal_mulai) = '$bulan'");
+				$query_max = $this->db->get();
+				if ( is_object($query_max) ) {
+					$row_max = $query_max->row();
+					if ( is_object($row_max) ) {
+						$max_number = empty($row_max->max_nomor) ? 0: $row_max->max_nomor;
+						$new_number = $max_number+1;
+						$nomor = str_pad($new_number,4,'0000',STR_PAD_LEFT);
+						$nomor_surat_tugas = $nomor.'/ST/KJPP-ASUS/'.$bulan_romawi.'/'.$tahun;
+
+						$dt_update = array('no_surat_tugas' => $nomor_surat_tugas);
+						$this->global_model->update_data('mst_lokasi', 'id', $lokasi->id, $dt_update);
+						echo "UPDATED,ID: $lokasi->id, NOMOR: $nomor_surat_tugas <br/>";
+					}
+				}
+			}
+		}
 	}        
 }
 
