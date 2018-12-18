@@ -630,8 +630,7 @@ class printpdf extends CI_Controller
 				$bulan_romawi = numberToRomanRepresentation($bulan);
 				$this->db->select('MAX(CAST(substr(no_surat_tugas,1,4) AS SIGNED)) AS max_nomor', false)
 						 ->from('mst_lokasi')
-						 ->where("YEAR(tanggal_mulai) = '".date('Y', strtotime($lokasi->tanggal_mulai))."'")
-						 ->where("MONTH(tanggal_mulai) = '$bulan'");
+						 ->where("YEAR(tanggal_mulai) = '".date('Y', strtotime($lokasi->tanggal_mulai))."'");
 				$query_max = $this->db->get();
 				if ( is_object($query_max) ) {
 					$row_max = $query_max->row();
@@ -1043,8 +1042,7 @@ class printpdf extends CI_Controller
 				$bulan_romawi = numberToRomanRepresentation($bulan);
 				$this->db->select('MAX(CAST(substr(no_surat_tugas,1,4) AS SIGNED)) AS max_nomor', false)
 						 ->from('mst_lokasi')
-						 ->where("YEAR(tanggal_mulai) = '".date('Y', strtotime($lokasi->tanggal_mulai))."'")
-						 ->where("MONTH(tanggal_mulai) = '$bulan'");
+						 ->where("YEAR(tanggal_mulai) = '".date('Y', strtotime($lokasi->tanggal_mulai))."'");
 				$query_max = $this->db->get();
 				if ( is_object($query_max) ) {
 					$row_max = $query_max->row();

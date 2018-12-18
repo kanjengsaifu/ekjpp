@@ -1,6 +1,8 @@
 var map;
 var temp_marker = [];
 var markers = [];
+var idLat,idLong;
+
 if ( typeof google != 'undefined' ) {
     var MyLatLng = new google.maps.LatLng(-6.296225924299342, 106.709375);
     var CurrentLatLng = MyLatLng;
@@ -42,7 +44,7 @@ $(document).ready(function() {
             var bounds = new google.maps.LatLngBounds();
             places.forEach(function(place) {
                 if (!place.geometry) {
-                    console.log("Returned place contains no geometry");
+                    //console.log("Returned place contains no geometry");
                     return;
                 }
                 var icon = {
@@ -79,7 +81,11 @@ $(document).ready(function() {
         map.setCenter(CurrentLatLng);
     });
 });
-function open_map() {
+function open_map(id_lat,id_long) {
+    //console.log(id_lat)
+    idLat = !id_lat ? '#koordinat_latitude' : id_lat;
+    idLong = !id_long ? '#koordinat_longitude' : id_long;
+
     if ( typeof MyLatLng != 'undefined' ) {
         reset_markers(temp_marker);
         CurrentLatLng = MyLatLng;
@@ -115,6 +121,7 @@ function reset_markers(item_marker) {
     }
 }
 function placeMarker(location) {
+    //console.log(idLat)
     if ( typeof MyLatLng != 'undefined' ) {
         reset_markers(markers);
         var marker = new google.maps.Marker({
@@ -123,8 +130,8 @@ function placeMarker(location) {
             icon: base_url + 'asset/images/aset-icon/' + icon_marker
         });
         temp_marker.push(marker);
-        $('#koordinat_latitude').val(marker.getPosition().lat());
-        $('#koordinat_longitude').val(marker.getPosition().lng());
+        $(idLat).val(marker.getPosition().lat());
+        $(idLong).val(marker.getPosition().lng());
         $('#formAddMarker').modal('hide');
     }
 }
