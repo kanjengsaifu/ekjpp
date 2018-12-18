@@ -1854,7 +1854,7 @@ class ajax extends CI_Controller
 						$data_table[$i]["action"]	= "<div class='text-center' data-id_dokumen_gabung=\"".base64_encode($id_dokumen_gabung)."\">";
 						$attr_disabled = $file=="#" ? " disabled":"";
 						$data_table[$i]["action"]	.="
-						<div class=\"btn-group\">
+						<div class=\"btn-group btn-download-dokumen\">
 							<button type='button' class=\"btn btn-success dropdown-toggle btn-sm\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ".$attr_disabled.">
 								Download <span class=\"caret\"></span>
 							</button>
@@ -1897,7 +1897,7 @@ class ajax extends CI_Controller
 
 						$attr_disabled = $file=="#" ? " disabled":"";
 						$data_table[$i]["action"]	.="
-						<div class=\"btn-group\">
+						<div class=\"btn-group btn-download-dokumen\">
 							<button type='button' class=\"btn btn-success dropdown-toggle btn-sm\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ".$attr_disabled.">
 								Download <span class=\"caret\"></span>
 							</button>
@@ -1926,7 +1926,7 @@ class ajax extends CI_Controller
 
 					$attr_disabled = $file=="#" ? " disabled":"";
 					$data_table[$i]["action"]	.="
-						<div class=\"btn-group\">
+						<div class=\"btn-group btn-download-dokumen\">
 							<button type='button' class=\"btn btn-success dropdown-toggle btn-sm\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ".$attr_disabled.">
 								Download <span class=\"caret\"></span>
 							</button>

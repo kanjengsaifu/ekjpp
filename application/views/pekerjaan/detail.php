@@ -1398,6 +1398,8 @@
 
 				$("#dokumen_count").val(data.data_total);
 				cek_button();
+
+				hide_dokumen_download();
 			},
 		});
 	}
@@ -1556,6 +1558,17 @@
 		if (update_dokumen == 0){
 			$(".update_dokumen").addClass("hidden");
 		}
+	}
+
+	function hide_dokumen_download(){
+		$(document).find('.btn-download-dokumen').each(function(){
+			console.log("hide_dokumen_download")
+			$(this).find('a').each(function(){
+				if ($(this).attr("href")=="#"){
+				$(this).closest("li").hide();
+				}
+			})
+		})
 	}
 
 
