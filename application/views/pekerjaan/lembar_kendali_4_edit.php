@@ -8,6 +8,9 @@
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1><?=$title?></h1>
+		<ol class="breadcrumb">
+			<li><?php echo $_breadcrumb ?></li>
+		</ol>
 	</section>
 	<section class="content">
 		<div class="box box-info">
