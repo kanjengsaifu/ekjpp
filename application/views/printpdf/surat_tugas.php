@@ -50,7 +50,7 @@
 				<td class="title" style="width: 620px"><u>SURAT TUGAS INSPEKSI</u></td>
 			</tr>
 			<tr>
-				<td class="title-sub">No. <?=$pekerjaan->no_surat_tugas?></td>
+				<td class="title-sub">No. <?=$no_surat_tugas?></td>
 			</tr>
 			<tr>
 				<td class="title-date">Tanggal  :  <?=$this->spmlib->indonesian_date(date("d-m-Y"), "d F Y", "")?></td>
