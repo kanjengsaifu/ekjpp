@@ -42,23 +42,25 @@
 			</div>
 			<div class="box-body">
 				<div class="table_div">
-					<table class="table table-striped" cellpadding='0' cellspacing='0' border='0'>
-						<thead>
-							<tr>
-								<th>No</th>
-								<th>Group</th>
-								<th>Nama</th>
-								<th>Jabatan</th>
-								<th>Email</th>
-								<th>Alamat</th>
-								<th>Telepon</th>
-								<th>Created</th>
-								<th>Updated</th>
-								<th>Action</th>
-							</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
+					<div class="table-responsive">
+						<table class="table table-striped" cellpadding='0' cellspacing='0' border='0'>
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Group</th>
+									<th>Nama</th>
+									<th>Jabatan</th>
+									<th>Email</th>
+									<th>Alamat</th>
+									<th>Telepon</th>
+									<th>Created</th>
+									<th>Updated</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-12 border_bottom">

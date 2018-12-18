@@ -2650,6 +2650,7 @@ function style_after_ajax_pembanding(doUpdate = NO, $input)
 		$(".input_257_" + i).number( true, 0 );
 		// $(".input_260_" + i).number( true, 0 );
 		// $(".input_261_" + i).number( true, 0 );
+		$(".input_263_" + i).addClass("text-right");
 		$(".input_270_" + i).number( true, 0 );
 		$(".input_271_" + i).number( true, 0 );
 		$(".input_273_" + i).number( true, 0 );
@@ -2819,11 +2820,11 @@ function style_after_ajax_pembanding(doUpdate = NO, $input)
 		$(".input_289_" + i + "-3").addClass("text-right").attr("readonly", true).addClass("readonly").number( true, 0 );
 
 		$(".input_290_" + i).addClass("text-right").attr("readonly", true).addClass("readonly");
-		$(".input_291_" + i).addClass("text-center").attr("readonly", true).addClass("readonly");
+		$(".input_291_" + i).addClass("text-right").attr("readonly", true).addClass("readonly");
 		$(".input_292_" + i).addClass("text-right").attr("readonly", true).addClass("readonly");
 		// Text Align Center
-		$(".input_256_" + i).addClass("text-center");
-		$(".input_272_" + i).addClass("text-center").css("background-color", "white");
+		$(".input_256_" + i).addClass("text-right");
+		$(".input_272_" + i).addClass("text-right").css("background-color", "white");
 		
 		$(".input_277_" + i + "-0").addClass("text-center");
 		$(".input_278_" + i + "-0").addClass("text-center");

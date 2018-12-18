@@ -48,18 +48,20 @@
 					</div>
 			</div>
 			<div class="box-body">
-				<table class="table table-striped">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>Nama Perusahaan <br/>/ Perorangan</th>
-									<th>Alamat</th>
-									<th>Action</th>
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Nama Perusahaan <br/>/ Perorangan</th>
+								<th>Alamat</th>
+								<th>Action</th>
 
-								</tr>
-							</thead>
-							<tbody></tbody>
-						</table>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
 			</div>
 			<div class="box-footer">
 				<div class="col-md-6 table_count"></div>

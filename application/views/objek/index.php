@@ -29,22 +29,24 @@
 
 			<div class="box-body">
 				<div class="table_div">
-					<table class="table table-striped" cellpadding='0' cellspacing='0' border='0'>
-						<thead>
-							<tr>
-								<th>No</th>
-								<th>Jenis Objek</th>
-								<th>Alamat</th>
-								<th>Tanggal Survey</th>
-								<th>Luas Tanah</th>
-								<th>Luas Bangunan</th>
-								<th>Tanggal Laporan</th>
-								<th>Action</th>
+					<div class="table-responsive">
+						<table class="table table-striped" cellpadding='0' cellspacing='0' border='0'>
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Jenis Objek</th>
+									<th>Alamat</th>
+									<th>Tanggal Survey</th>
+									<th>Luas Tanah</th>
+									<th>Luas Bangunan</th>
+									<th>Tanggal Laporan</th>
+									<th>Action</th>
 
-							</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
 				</div>
 				<div class="col-md-12 border_bottom">
 					<div class="col-md-6 table_count"></div>

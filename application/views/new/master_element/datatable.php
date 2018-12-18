@@ -33,18 +33,20 @@ tr.selected {
                         </div>
                     </div>
 
-                    <table class="table table-bordered" id="datatable" style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th style="width: 20px;">No</th>
-                                <th>Elemen</th>
-                                <th>Bangunan</th>
-                                <th>Lov</th>
-                                <th>Index</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="datatable" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 20px;">No</th>
+                                    <th>Elemen</th>
+                                    <th>Bangunan</th>
+                                    <th>Lov</th>
+                                    <th>Index</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,18 +24,20 @@ tr.selected {
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body">
-                    <table class="table table-bordered" id="datatable" style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th style="width: 20px;">No</th>
-                                <th>Nama</th>
-                                <th>Rekening</th>
-                                <th>Bank</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="datatable" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 20px;">No</th>
+                                    <th>Nama</th>
+                                    <th>Rekening</th>
+                                    <th>Bank</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -449,11 +449,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                             <div role="tabpanel" class="tab-pane active" id="tanah_form">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">OBYEK PENILAIAN</h3>
+                                        <div class="box box-info">
+                                            <div class="box-header">
+                                                <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>OBYEK PENILAIAN</h3>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <table class="table table_info" cellpadding="0" cellspacing="0" style="width: 100%">
                                                     <colgroup>
                                                         <col style="width: 30%">
@@ -478,113 +478,113 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     </tr>
                                                 </table>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <div class="row">
-                                                	<div class="col-sm-12">
-		                                                <table class="table table_info" cellpadding="0" cellspacing="0" style="width: 100%">
-		                                                    <colgroup>
-		                                                        <col style="width: 30%">
-		                                                        <col style="width: 20">
-		                                                    </colgroup>
-		                                                    <tr valign="top">
-		                                                        <td>Yang dijumpai dilokasi</td>
-		                                                        <td align="center" width="20">:</td>
-		                                                        <td class="tanah-td-yang-dijumpai"><?php echo $txn_kertas_kerja["yang_dijumpai"] ?></td>
-		                                                    </tr>
-		                                                    <tr valign="top">
-		                                                        <td>Jabatan</td>
-		                                                        <td align="center" width="20">:</td>
-		                                                        <td class="tanah-td-jabatan"><?php echo $txn_kertas_kerja["jabatan"] ?></td>
-		                                                    </tr>
-		                                                    <tr valign="top">
-		                                                        <td>Upload Photo</td>
-		                                                        <td align="center" width="20">:</td>
-		                                                        <td>
-		                                                            <img id="img_tanah_32" src="<?php echo base_url() ?>/asset/file/<?php echo (empty($txn_tanah["foto"]) ? "default.jpg" : $txn_tanah["foto"]) ?>" data-id-field="133" data-name-field="tanah_32" data-keterangan="" class="img-responsive btn-upload-image img-133-" style="border: 1px solid #ccc; margin-top: 10px; margin-bottom: 20px; height: 100px;" />
-		                                                            <input type="file" id="file-133" class="form-control tmp_file file-133-" data-id-field="133" data-name-field="tanah_32" style="display: none;" data-keterangan="">
-		                                                            <input type="hidden" id="textbox_tanah_32" name="update[tanah_32]" class="form-control table_input textbox-133-" value="<?php echo $txn_tanah["foto"] ?>" data-id-field="133" data-name-field="tanah_32" data-keterangan="">
-		                                                        </td>
-		                                                    </tr>
-		                                                </table>
-		                                            </div>
-	                                            </div>
+                                                    <div class="col-sm-12">
+                                                        <table class="table table_info" cellpadding="0" cellspacing="0" style="width: 100%">
+                                                            <colgroup>
+                                                                <col style="width: 30%">
+                                                                <col style="width: 20">
+                                                            </colgroup>
+                                                            <tr valign="top">
+                                                                <td>Yang dijumpai dilokasi</td>
+                                                                <td align="center" width="20">:</td>
+                                                                <td class="tanah-td-yang-dijumpai"><?php echo $txn_kertas_kerja["yang_dijumpai"] ?></td>
+                                                            </tr>
+                                                            <tr valign="top">
+                                                                <td>Jabatan</td>
+                                                                <td align="center" width="20">:</td>
+                                                                <td class="tanah-td-jabatan"><?php echo $txn_kertas_kerja["jabatan"] ?></td>
+                                                            </tr>
+                                                            <tr valign="top">
+                                                                <td>Upload Photo</td>
+                                                                <td align="center" width="20">:</td>
+                                                                <td>
+                                                                    <img id="img_tanah_32" src="<?php echo base_url() ?>/asset/file/<?php echo (empty($txn_tanah["foto"]) ? "default.jpg" : $txn_tanah["foto"]) ?>" data-id-field="133" data-name-field="tanah_32" data-keterangan="" class="img-responsive btn-upload-image img-133-" style="border: 1px solid #ccc; margin-top: 10px; margin-bottom: 20px; height: 100px;" />
+                                                                    <input type="file" id="file-133" class="form-control tmp_file file-133-" data-id-field="133" data-name-field="tanah_32" style="display: none;" data-keterangan="">
+                                                                    <input type="hidden" id="textbox_tanah_32" name="update[tanah_32]" class="form-control table_input textbox-133-" value="<?php echo $txn_tanah["foto"] ?>" data-id-field="133" data-name-field="tanah_32" data-keterangan="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
-	                                                <div class="col-sm-6">
-	                                                    <h4>Informasi Properti</h4>
-	                                                    <table class="table table_border" cellpadding="0" cellspacing="0">
-	                                                        <colgroup>
-	                                                            <col style="width: 40%">
-	                                                        </colgroup>
-	                                                        <tr>
-	                                                            <td><span>Status obyek</span></td>
-	                                                            <td><input type="text" id="textbox_tanah_1" name="update[tanah_1]" class="form-control table_input input_102_ " value="<?php echo $txn_kertas_kerja["status_objek"] ?>" data-id-field="102" data-keterangan=""></td>
-	                                                        </tr>
-	                                                        <tr>
-	                                                            <td><span>Obyek dihuni oleh</span></td>
-	                                                            <td><input type="text" id="textbox_tanah_2" name="update[tanah_2]" class="form-control table_input input_103_ " value="<?php echo $txn_kertas_kerja["obyek_ditempati_oleh"] ?>" data-id-field="103" data-keterangan=""></td>
-	                                                        </tr>
-	                                                        <tr>
-	                                                            <td><span>Penggunaan obyek</span></td>
-	                                                            <td><input type="text" id="textbox_tanah_3" name="update[tanah_3]" class="form-control table_input input_104_ " value="<?php echo $txn_kertas_kerja["penggunaan_obyek"] ?>" data-id-field="104" data-keterangan=""></td>
-	                                                        </tr>
-	                                                    </table>
-	                                                </div>
-	                                                <div class="col-sm-6" style="padding: 0px">
-	                                                    <h4>Batas-batas Properti</h4>
-	                                                    <table class="table table_border" cellpadding="0" cellspacing="0">
-	                                                        <colgroup>
-	                                                            <col style="width: 40%">
-	                                                        </colgroup>
-	                                                        <tr>
-	                                                            <td width="30%">
-	                                                                <select class="form-control table_input input_105_" id="textbox_tanah_4" name="update[tanah_4]" data-id-field="105" data-keterangan="">
-	                                                                    <option>Select</option>
-	                                                                    <?php foreach ($batas_properti as $key => $value) { ?>
-	                                                                    <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_1"] == $value->batas_properti) ? "selected":"" ?>><?php echo $value->batas_properti ?></option>
-	                                                                    <?php } ?>
-	                                                                </select>
-	                                                            </td>
-	                                                            <td><input type="text" id="textbox_tanah_5" name="update[tanah_5]" class="form-control table_input input_106_ " value="<?php echo $txn_tanah["batas_properti_1"] ?>" data-id-field="106" data-keterangan=""></td>
-	                                                        </tr>
-	                                                        <tr>
-	                                                            <td>
-	                                                                <select class="form-control table_input input_107_" id="textbox_tanah_6" name="update[tanah_6]" data-id-field="107" data-keterangan="">
-	                                                                    <option>Select</option>
-	                                                                    <?php foreach ($batas_properti as $key => $value) { ?>
-	                                                                    <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_2"] == $value->batas_properti) ? "selected":""  ?>><?php echo $value->batas_properti ?></option>
-	                                                                    <?php } ?>
-	                                                                </select>
-	                                                            </td>
-	                                                            <td><input type="text" id="textbox_tanah_7" name="update[tanah_7]" class="form-control table_input input_108_ " value="<?php echo $txn_tanah["batas_properti_2"] ?>" data-id-field="108" data-keterangan=""></td>
-	                                                        </tr>
-	                                                        <tr>
-	                                                            <td>
-	                                                                <select class="form-control table_input input_109_" id="textbox_tanah_8" name="update[tanah_8]" data-id-field="109" data-keterangan="">
-	                                                                    <option>Select</option>
-	                                                                    <?php foreach ($batas_properti as $key => $value) { ?>
-	                                                                    <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_3"] == $value->batas_properti) ? "selected":""  ?>><?php echo $value->batas_properti ?></option>
-	                                                                    <?php } ?>
-	                                                                </select>
-	                                                            </td>
-	                                                            <td><input type="text" id="textbox_tanah_9" name="update[tanah_9]" class="form-control table_input input_110_ " value="<?php echo $txn_tanah["batas_properti_3"] ?>" data-id-field="110" data-keterangan=""></td>
-	                                                        </tr>
-	                                                        <tr>
-	                                                            <td>
-	                                                                <select class="form-control table_input input_111_" id="textbox_tanah_10" name="update[tanah_10]" data-id-field="111" data-keterangan="">
-	                                                                    <option>Select</option>
-	                                                                    <?php foreach ($batas_properti as $key => $value) { ?>
-	                                                                    <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_4"] == $value->batas_properti) ? "selected":""  ?>><?php echo $value->batas_properti ?></option>
-	                                                                    <?php } ?>
-	                                                                </select>
-	                                                            </td>
-	                                                            <td><input type="text" id="textbox_tanah_11" name="update[tanah_11]" class="form-control table_input input_112_ " value="<?php echo $txn_tanah["batas_properti_4"] ?>" data-id-field="112" data-keterangan=""></td>
-	                                                        </tr>
-	                                                    </table>
-	                                                </div>
-	                                            </div>
+                                                    <div class="col-sm-6">
+                                                        <h4>Informasi Properti</h4>
+                                                        <table class="table table_border" cellpadding="0" cellspacing="0">
+                                                            <colgroup>
+                                                                <col style="width: 40%">
+                                                            </colgroup>
+                                                            <tr>
+                                                                <td><span>Status obyek</span></td>
+                                                                <td><input type="text" id="textbox_tanah_1" name="update[tanah_1]" class="form-control table_input input_102_ " value="<?php echo $txn_kertas_kerja["status_objek"] ?>" data-id-field="102" data-keterangan=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span>Obyek dihuni oleh</span></td>
+                                                                <td><input type="text" id="textbox_tanah_2" name="update[tanah_2]" class="form-control table_input input_103_ " value="<?php echo $txn_kertas_kerja["obyek_ditempati_oleh"] ?>" data-id-field="103" data-keterangan=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span>Penggunaan obyek</span></td>
+                                                                <td><input type="text" id="textbox_tanah_3" name="update[tanah_3]" class="form-control table_input input_104_ " value="<?php echo $txn_kertas_kerja["penggunaan_obyek"] ?>" data-id-field="104" data-keterangan=""></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-sm-6" style="padding: 0px">
+                                                        <h4>Batas-batas Properti</h4>
+                                                        <table class="table table_border" cellpadding="0" cellspacing="0">
+                                                            <colgroup>
+                                                                <col style="width: 40%">
+                                                            </colgroup>
+                                                            <tr>
+                                                                <td width="30%">
+                                                                    <select class="form-control table_input input_105_" id="textbox_tanah_4" name="update[tanah_4]" data-id-field="105" data-keterangan="">
+                                                                        <option>Select</option>
+                                                                        <?php foreach ($batas_properti as $key => $value) { ?>
+                                                                        <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_1"] == $value->batas_properti) ? "selected":"" ?>><?php echo $value->batas_properti ?></option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </td>
+                                                                <td><input type="text" id="textbox_tanah_5" name="update[tanah_5]" class="form-control table_input input_106_ " value="<?php echo $txn_tanah["batas_properti_1"] ?>" data-id-field="106" data-keterangan=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <select class="form-control table_input input_107_" id="textbox_tanah_6" name="update[tanah_6]" data-id-field="107" data-keterangan="">
+                                                                        <option>Select</option>
+                                                                        <?php foreach ($batas_properti as $key => $value) { ?>
+                                                                        <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_2"] == $value->batas_properti) ? "selected":""  ?>><?php echo $value->batas_properti ?></option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </td>
+                                                                <td><input type="text" id="textbox_tanah_7" name="update[tanah_7]" class="form-control table_input input_108_ " value="<?php echo $txn_tanah["batas_properti_2"] ?>" data-id-field="108" data-keterangan=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <select class="form-control table_input input_109_" id="textbox_tanah_8" name="update[tanah_8]" data-id-field="109" data-keterangan="">
+                                                                        <option>Select</option>
+                                                                        <?php foreach ($batas_properti as $key => $value) { ?>
+                                                                        <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_3"] == $value->batas_properti) ? "selected":""  ?>><?php echo $value->batas_properti ?></option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </td>
+                                                                <td><input type="text" id="textbox_tanah_9" name="update[tanah_9]" class="form-control table_input input_110_ " value="<?php echo $txn_tanah["batas_properti_3"] ?>" data-id-field="110" data-keterangan=""></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <select class="form-control table_input input_111_" id="textbox_tanah_10" name="update[tanah_10]" data-id-field="111" data-keterangan="">
+                                                                        <option>Select</option>
+                                                                        <?php foreach ($batas_properti as $key => $value) { ?>
+                                                                        <option value="<?php echo $value->batas_properti ?>" <?php echo ($txn_tanah["jenis_batas_4"] == $value->batas_properti) ? "selected":""  ?>><?php echo $value->batas_properti ?></option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </td>
+                                                                <td><input type="text" id="textbox_tanah_11" name="update[tanah_11]" class="form-control table_input input_112_ " value="<?php echo $txn_tanah["batas_properti_4"] ?>" data-id-field="112" data-keterangan=""></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <h4>INFORMASI LINGKUNGAN</h4>
@@ -647,7 +647,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <h4>ANALISA LINGKUNGAN</h4>
@@ -826,11 +826,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">L O K A S I&nbsp;&nbsp;&nbsp;S I T E</h3>
+                                        <div class="box box-info">
+                                            <div class="box-header">
+                                                <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>L O K A S I&nbsp;&nbsp;&nbsp;S I T E</h3>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <h4>FASILITAS LINGKUNGAN</h4>
                                                 <div class="row">
                                                     <div class="col-sm-6">
@@ -939,7 +939,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <h4>GAMBARAN UMUM SITE</h4>
 
                                                 <div class="row">
@@ -1035,9 +1035,9 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </div>
                                         </div>
 
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">DATA LEGALITAS</h3>
+                                        <div class="box box-info">
+                                            <div class="box-header">
+                                                <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>DATA LEGALITAS</h3>
                                             </div>
 
                                             <input type="hidden" id="total_data_legalitas">
@@ -1143,11 +1143,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                         </div>
 
                                         <br>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">K E S I M P U L A N&nbsp;&nbsp;&nbsp;N I L A I&nbsp;&nbsp;&nbsp;T A N A H</h3>
+                                        <div class="box box-info">
+                                            <div class="box-header">
+                                                <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>K E S I M P U L A N&nbsp;&nbsp;&nbsp;N I L A I&nbsp;&nbsp;&nbsp;T A N A H</h3>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <table class="table table_border" cellpadding="0" cellspacing="0">
@@ -1203,11 +1203,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">C A T A T A N&nbsp;&nbsp;&nbsp;P E N I L A I</h3>
+                                        <div class="box box-info">
+                                            <div class="box-header">
+                                                <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>C A T A T A N&nbsp;&nbsp;&nbsp;P E N I L A I</h3>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="box-body">
                                                 <textarea id="textbox_tanah_67" name="update[tanah_67]" class="form-control table_input input_246_" data-id-field="246" data-keterangan=""><?php echo $txn_tanah["catatan_penilai"] ?></textarea>
                                             </div>
                                         </div>
@@ -1251,11 +1251,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
 
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="bangunan_bangunan_<?php echo $role ?>">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">OBYEK PENILAIAN</h3>
+                                    <div class="box box-info">
+                                        <div class="box-header">
+                                            <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>OBYEK PENILAIAN</h3>
                                         </div>
-                                        <div class="panel-body">
+                                        <div class="box-body">
                                             <table class="table">
                                                 <colgroup>
                                                     <col style="width: 30%">
@@ -1284,7 +1284,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="panel-body">
+                                        <div class="box-body">
                                             <div class="col-sm-6">
                                                 <table class="table table_border" cellpadding="0" cellspacing="0">
                                                     <tr>
@@ -1318,8 +1318,16 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                         </div>
                                     </div>
 
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <h4>INFORMASI DINAS TATAKOTA <span class="div-provinsi" style=""></span></h4>
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <span>INFORMASI DINAS TATAKOTA <span class="div-provinsi" style=""></span>
+                                        </span>
+                                            <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="box-body"
+                                    >
+                                        
                                         <p style="font-weight: bold;">Ijin Mendirikan Bangunan (IMB)</p>
                                         <div class="col-sm-4">
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
@@ -1363,9 +1371,15 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </table>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <p style="font-weight: bold;">Rencana Detail Tata Ruang (RDTR)</p>
+                                </div>
+
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <b style="font-weight: bold;">Rencana Detail Tata Ruang (RDTR)</b>
+                                    </div>
+
+                                    <div class="box-body" >
                                         <div class="col-sm-3" style="padding: 0px; padding-right: 20px;"> <img src="<?php echo base_url() ?>asset/images/peruntukan_zoning.png" style="width: 100%"> </div>
                                         <div class="col-sm-9" style="padding: 0px; ">
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
@@ -1417,9 +1431,13 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </table>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <p style="font-weight: bold;">Pemotongan luas bangunan karena melanggar peraturan / ketentuan dan rencana tata ruang yang berlaku, adalah sbb :</p>
+                                    </div>
+                                    <div class="box-body"  >
                                         <div class="col-sm-6">
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
                                                 <tr>
@@ -1459,9 +1477,15 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </table>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <h4>KETERANGAN UMUM BANGUNAN</h4>
+
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+
+                                        <b class="panel-title">KETERANGAN UMUM BANGUNAN</b>
+                                        <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="box-body">
                                         <div class="col-sm-6">
                                             <p style="font-weight: bold;">&nbsp;</p>
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
@@ -1503,9 +1527,14 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </table>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <h4>SPESIFIKASI ELEMEN BANGUNAN</h4>
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <h3 class="panel-title">SPESIFIKASI ELEMEN BANGUNAN<button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                            </h3>
+                                        
+                                    </div>
+                                    <div class="box-body" >
                                         <div class="col-sm-6">
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
                                                 <tr>
@@ -1647,9 +1676,13 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </table>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <h4>FASILITAS / SARANA PELENGKAP KESELURUHAN PADA AREAL PROPERTI</h4>
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <b class="panel-title">FASILITAS / SARANA PELENGKAP KESELURUHAN PADA AREAL PROPERTI</b>
+                                        <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="box-body">
                                         <div class="col-sm-6">
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
                                                 <tr>
@@ -1802,9 +1835,13 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </table>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <h4>KESIMPULAN NILAI BANGUNAN <span class="tipe_bangunan"></span></h4>
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <b class="panel-title">KESIMPULAN NILAI BANGUNAN <span class="tipe_bangunan"></span></b>
+                                        <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="box-body" style="border: 1px solid #e1e1e1;">
                                         <div class="col-sm-6">
                                             <p style="font-weight: bold;">INFORMASI NJOP BANGUNAN</p>
                                             <table class="table table_border" cellpadding="0" cellspacing="0">
@@ -1853,9 +1890,15 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </div>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="panel-body" style="border: 1px solid #e1e1e1;">
-                                        <h4>CATATAN PENILAI</h4>
+
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <b class="panel-title">CATATAN PENILAI</b>
+                                        <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="box-body">
+                                        
                                         <textarea id="textbox_bangunan_59" name="update[bangunan_59]" class="form-control table_input input_693_<?php echo $role ?>" data-id-field="693" data-keterangan="<?php echo $role ?>"><?php echo $txn_bangunan["catatan_penilai"] ?></textarea>
                                     </div>
                                 </div>
@@ -1863,11 +1906,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                 <div role="tabpanel" class="tab-pane" id="bangunan_btb_<?php echo $role ?>">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">Bangunan</h3>
+                                            <div class="box box-info">
+                                                <div class="box-header">
+                                                    <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>Bangunan</h3>
                                                 </div>
-                                                <div class="panel-body">
+                                                <div class="box-body">
                                                     <table class="table table_border" cellpadding="0" cellspacing="0">
                                                         <tr>
                                                             <td><span>Tipe Bangunan</span></td>
@@ -1929,11 +1972,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">Umur Ekonomis / Manfaat Bangunan</h3>
+                                            <div class="box box-info">
+                                                <div class="box-header">
+                                                    <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>Umur Ekonomis / Manfaat Bangunan</h3>
                                                 </div>
-                                                <div class="panel-body">
+                                                <div class="box-body">
                                                     <table class="table table_border" cellpadding="0" cellspacing="0">
                                                         <tr>
                                                             <td><span>Klasifikasi Bangunan</span></td>
@@ -1986,12 +2029,13 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                         </div>
                                     </div>
 
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LUAS PENGUKURAN FISIK BANGUNAN <span class="tipe_bangunan"></span></h4>
+                                    <div class="box box-info">
+                                        <div class="box-header">
+                                            <b class="panel-title">LUAS PENGUKURAN FISIK BANGUNAN <span class="tipe_bangunan"></span></b>
+                                            <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         </div>
 
-                                        <div class="panel-body"> 
+                                        <div class="box-body"> 
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="table-responsive">
@@ -2056,7 +2100,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                                                             $koordinat_jumlah = $role."__".$y."__".($x+1);
                                                                             ?>
                                                                     <td>
-                                                                        <input type="text" id="textbox_bangunan_3" name="update[bangunan_3]" class="form-control table_input input_637_<?php echo $koordinat_jumlah ?> <?php echo $koordinat_jumlah ?> text-center readonly" value="0" data-id-field="637" data-keterangan="<?php echo $koordinat ?>">
+                                                                        <input type="text" id="textbox_bangunan_3" name="update[bangunan_3]" class="form-control table_input input_637_<?php echo $koordinat_jumlah ?> <?php echo $koordinat_jumlah ?> readonly" value="0" data-id-field="637" data-keterangan="<?php echo $koordinat ?>">
                                                                     </td>
                                                                     <?php } ?>
                                                                     <?php $x++; } ?>
@@ -2179,184 +2223,201 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                         </div>
                                     </div>
 
-                                    <div class="panel panel-default">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div id="div_biaya_langsung"></div>
+                                    <div class="box box-info">
+                                        <div class="box-header">
+                                            <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div id="div_biaya_langsung"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="panel panel-default">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <table class="table table_border_2" width="100%" cellpadding="0" cellspacing="0">
-                                                    <thead>
-                                                        <tr >
-                                                            <th colspan="5" style="background-color: #4C9ED9;color: #fff;text-align: center;" >B. BIAYA TIDAK LANGSUNG</th>
-                                                        </tr>
-                                                    </thead>
-                                                    
-                                                    <tbody>
-                                                        <tr>
-                                                            <td width="30%">
-                                                                <span>PROFESSIONAL FEE + PERIJINAN + KEUNTUNGAN KONTRAKTOR</span>
-                                                            </td>
-                                                            <td width="15%">
-                                                                <input type="text" id="textbox_bangunan_141" name="update[bangunan_141]" class="form-control table_input input_922_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="922" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td width="10%"></td>
-                                                            <td width="30%">
-                                                                <span>PROFESSIONAL FEE + PERIJINAN + KEUNTUNGAN KONTRAKTOR</span>
-                                                            </td>
-                                                            <td width="15%">
-                                                                <input type="text" id="textbox_bangunan_146" name="update[bangunan_146]" class="form-control table_input input_927_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="927" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <span>TOTAL BIAYA TIDAK LANGSUNG  ( B )</span></td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_142" name="update[bangunan_142]" class="form-control table_input input_923_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="923" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td></td>
-                                                            <td>
-                                                                <span>TOTAL BIAYA TIDAK LANGSUNG  ( B )</span>
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_147" name="update[bangunan_147]" class="form-control table_input input_928_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="928" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <span>TOTAL BIAYA PEMBANGUNAN BARU ( A + B )</span>
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_143" name="update[bangunan_143]" class="form-control table_input input_924_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="924" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td></td>
-                                                            <td>
-                                                                <span>TOTAL BIAYA PEMBANGUNAN BARU ( A + B )</span>
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_148" name="update[bangunan_148]" class="form-control table_input input_929_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="929" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><span>PPN 10%</span></td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_144" name="update[bangunan_144]" class="form-control table_input input_925_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="925" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td align="center"><b>SELISIH</b></td>
-                                                            <td>
-                                                                <span>PPN 10%</span>
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_149" name="update[bangunan_149]" class="form-control table_input input_930_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="930" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <span>TOTAL BRB + PPN 10% (BTB MAPPI)</span>
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_145" name="update[bangunan_145]" class="form-control table_input input_926_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="926" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_151" name="update[bangunan_151]" class="form-control table_input input_932_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="932" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td>
-                                                                <span>TOTAL BRB + PPN 10% (BTB MAPPI)</span>
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_150" name="update[bangunan_150]" class="form-control table_input input_931_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="931" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                    <div class="box box-info">
+                                        <div class="box-header">
+                                            <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="table-responsive">
+                                                        <table class="table table_border_2" width="100%" cellpadding="0" cellspacing="0">
+                                                            <thead>
+                                                                <tr >
+                                                                    <th colspan="5" style="background-color: #4C9ED9;color: #fff;text-align: center;" >B. BIAYA TIDAK LANGSUNG</th>
+                                                                </tr>
+                                                            </thead>
+                                                            
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="30%">
+                                                                        <span>PROFESSIONAL FEE + PERIJINAN + KEUNTUNGAN KONTRAKTOR</span>
+                                                                    </td>
+                                                                    <td width="15%">
+                                                                        <input type="text" id="textbox_bangunan_141" name="update[bangunan_141]" class="form-control table_input input_922_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="922" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td width="10%"></td>
+                                                                    <td width="30%">
+                                                                        <span>PROFESSIONAL FEE + PERIJINAN + KEUNTUNGAN KONTRAKTOR</span>
+                                                                    </td>
+                                                                    <td width="15%">
+                                                                        <input type="text" id="textbox_bangunan_146" name="update[bangunan_146]" class="form-control table_input input_927_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="927" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span>TOTAL BIAYA TIDAK LANGSUNG  ( B )</span></td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_142" name="update[bangunan_142]" class="form-control table_input input_923_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="923" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td></td>
+                                                                    <td>
+                                                                        <span>TOTAL BIAYA TIDAK LANGSUNG  ( B )</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_147" name="update[bangunan_147]" class="form-control table_input input_928_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="928" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span>TOTAL BIAYA PEMBANGUNAN BARU ( A + B )</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_143" name="update[bangunan_143]" class="form-control table_input input_924_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="924" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td></td>
+                                                                    <td>
+                                                                        <span>TOTAL BIAYA PEMBANGUNAN BARU ( A + B )</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_148" name="update[bangunan_148]" class="form-control table_input input_929_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="929" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>PPN 10%</span></td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_144" name="update[bangunan_144]" class="form-control table_input input_925_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="925" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td align="center"><b>SELISIH</b></td>
+                                                                    <td>
+                                                                        <span>PPN 10%</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_149" name="update[bangunan_149]" class="form-control table_input input_930_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="930" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span>TOTAL BRB + PPN 10% (BTB MAPPI)</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_145" name="update[bangunan_145]" class="form-control table_input input_926_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="926" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_151" name="update[bangunan_151]" class="form-control table_input input_932_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="932" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td>
+                                                                        <span>TOTAL BRB + PPN 10% (BTB MAPPI)</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_150" name="update[bangunan_150]" class="form-control table_input input_931_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="931" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="table-responsive">
+                                                        <table class="table table_border_2" width="100%" cellpadding="0" cellspacing="0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th colspan="5" style="background-color: #4C9ED9;color: #fff;text-align: center;">PENYUSUTAN BANGUNAN</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th colspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">PENYUSUTAN FISIK</th>
+                                                                    <th rowspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">KEUSANGAN FUNGSIONAL (%)</th>
+                                                                    <th rowspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">KEUSANGAN EKONOMIS (%)</th>
+                                                                    <th rowspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">TOTAL PENYUSUTAN (%)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th style="background-color: #4C9ED9;color: #fff;text-align: center;">KEMUNDURAN FISIK (%)</th>
+                                                                    <th style="background-color: #4C9ED9;color: #fff;text-align: center;">KONDISI TERLIHAT (%)</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_152" name="update[bangunan_152]" class="form-control table_input input_933_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="933" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_153" name="update[bangunan_153]" class="form-control table_input input_934_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['kondisi_terlihat'] ?>" data-id-field="934" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_154" name="update[bangunan_154]" class="form-control table_input input_935_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['keusangan_fungsional'] ?>" data-id-field="935" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_155" name="update[bangunan_155]" class="form-control table_input input_936_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['keusangan_ekonomis'] ?>" data-id-field="936" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" id="textbox_bangunan_156" name="update[bangunan_156]" class="form-control table_input input_937_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['total_penyusutan'] ?>" data-id-field="937" data-keterangan="<?php echo $role ?>">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <table class="table table_border_2">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th colspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">NILAI PASAR BANGUNAN</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span>BRB / RCN  ( / M² )</span></td>
+                                                                    <td><input type="text" id="textbox_bangunan_176" name="update[bangunan_176]" class="form-control table_input input_176_<?php echo $role ?> <?php echo $role ?> text-right readonly" value="" data-id-field="176" data-keterangan="<?php echo $role ?>"></td>
+                                                                <tr>
+                                                                <tr>
+                                                                    <td><span> BRB / RCN</span></td>
+                                                                    <td><input type="text" id="brb" name="" class="form-control table_input text-right readonly" value=""></td>
+                                                                <tr>
+                                                                <tr>
+                                                                    <td><span> NILAI PASAR BANGUNAN  ( / M² )</span></td>
+                                                                    <td><input type="text" id="nilai_pasar_m2" name="" class="form-control table_input text-right readonly" value=""></td>
+                                                                <tr>
+                                                                <tr>
+                                                                    <td><span>NILAI PASAR BANGUNAN</span></td>
+                                                                    <td><input type="text" id="nilai_pasar" name="" class="form-control table_input text-right readonly" value=""></td>
+                                                                <tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <table class="table table_border1">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th colspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">KONDISI BANGUNAN</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="right"><font size="6" id="kondisi_bangunan_persen">%</font></td>
+                                                                    <td><font size="6" id="kondisi_bangunan">_</font></td>
+                                                                <tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <table class="table table_border_2" width="100%" cellpadding="0" cellspacing="0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="5" style="background-color: #4C9ED9;color: #fff;text-align: center;">PENYUSUTAN BANGUNAN</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th colspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">PENYUSUTAN FISIK</th>
-                                                            <th rowspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">KEUSANGAN FUNGSIONAL (%)</th>
-                                                            <th rowspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">KEUSANGAN EKONOMIS (%)</th>
-                                                            <th rowspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">TOTAL PENYUSUTAN (%)</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="background-color: #4C9ED9;color: #fff;text-align: center;">KEMUNDURAN FISIK (%)</th>
-                                                            <th style="background-color: #4C9ED9;color: #fff;text-align: center;">KONDISI TERLIHAT (%)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_152" name="update[bangunan_152]" class="form-control table_input input_933_<?php echo $role ?> <?php echo $role ?>" value="" data-id-field="933" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_153" name="update[bangunan_153]" class="form-control table_input input_934_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['kondisi_terlihat'] ?>" data-id-field="934" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_154" name="update[bangunan_154]" class="form-control table_input input_935_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['keusangan_fungsional'] ?>" data-id-field="935" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_155" name="update[bangunan_155]" class="form-control table_input input_936_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['keusangan_ekonomis'] ?>" data-id-field="936" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                            <td>
-                                                                <input type="text" id="textbox_bangunan_156" name="update[bangunan_156]" class="form-control table_input input_937_<?php echo $role ?> <?php echo $role ?>" value="<?php echo $txn_bangunan['total_penyusutan'] ?>" data-id-field="937" data-keterangan="<?php echo $role ?>">
-                                                            </td>
-                                                        <tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <table class="table table_border_2">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">NILAI PASAR BANGUNAN</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><span>BRB / RCN  ( / M² )</span></td>
-                                                            <td><input type="text" id="textbox_bangunan_176" name="update[bangunan_176]" class="form-control table_input input_176_<?php echo $role ?> <?php echo $role ?> text-right readonly" value="" data-id-field="176" data-keterangan="<?php echo $role ?>"></td>
-                                                        <tr>
-                                                        <tr>
-                                                            <td><span> BRB / RCN</span></td>
-                                                            <td><input type="text" id="brb" name="" class="form-control table_input text-right readonly" value=""></td>
-                                                        <tr>
-                                                        <tr>
-                                                            <td><span> NILAI PASAR BANGUNAN  ( / M² )</span></td>
-                                                            <td><input type="text" id="nilai_pasar_m2" name="" class="form-control table_input text-right readonly" value=""></td>
-                                                        <tr>
-                                                        <tr>
-                                                            <td><span>NILAI PASAR BANGUNAN</span></td>
-                                                            <td><input type="text" id="nilai_pasar" name="" class="form-control table_input text-right readonly" value=""></td>
-                                                        <tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <table class="table table_border1">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" style="background-color: #4C9ED9;color: #fff;text-align: center;">KONDISI BANGUNAN</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td align="right"><font size="6" id="kondisi_bangunan_persen">%</font></td>
-                                                            <td><font size="6" id="kondisi_bangunan">_</font></td>
-                                                        <tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div> 
                                     </div>
                                 </div>
                             </div>
@@ -2824,11 +2885,11 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                             </table>
                         </div>
                         
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">CATATAN PENILAI</h3>
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="panel-title"><button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>CATATAN PENILAI</h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="box-body">
                                 <textarea name="update[sarana_pelengkap_862]" class="form-control table_input input_862_" data-id-field="862" data-keterangan=""><?php echo $txn_sarana_pelengkap["catatan_penilai"] ?></textarea>                                       
                             </div>
                         </div>
@@ -4772,7 +4833,7 @@ if( ! defined("BASEPATH")) exit("No direct script access allowed");
                                             <span>(Max: <?php echo $deviasi_data ?>)</span>
                                         </td>
                                         <td>
-                                            <input type="text" id="deviasi_data" class="form-control text-center" value=0 readonly style="background: #d4ffd4; font-weight: bold; border: 1px solid #4ec44e;">
+                                            <input type="text" id="deviasi_data" class="form-control" value=0 readonly style="background: #d4ffd4; font-weight: bold; border: 1px solid #4ec44e;">
                                         </td>
                                     </tr>
                                 </tbody>

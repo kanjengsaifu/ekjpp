@@ -1,5 +1,15 @@
 
 $(function(){
+    // $('.table-movefield').find('.form-control').each(function(){
+    //     var num = ""==$(this).val()?"-":$(this).val();
+
+    //     if (!isNaN(num)){
+    //         $(this).css({"text-align": "right"});
+    //     }
+    // });
+
+    $('#deviasi_data').css({"text-align": "right"});
+
     (function(){
         var $input = $('');
         var table = '.table-movefield';

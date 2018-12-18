@@ -38,21 +38,23 @@
 			</div>
 			<div class="box-body">
 				<div class="table_div">
-					<table class="table table-striped" cellpadding='0' cellspacing='0' border='0'>
-						<thead>
-							<tr>
-								<th>No</th>
-								<th>File</th>
-								<th>Title</th>
-								<th>Keterangan</th>
-								<th>Order</th>
-								<th>Created</th>
-								<th>Updated</th>
-								<th>Action</th>
-							</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
+					<div class="table-responsive">
+						<table class="table table-striped" cellpadding='0' cellspacing='0' border='0'>
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>File</th>
+									<th>Title</th>
+									<th>Keterangan</th>
+									<th>Order</th>
+									<th>Created</th>
+									<th>Updated</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-12 border_bottom">

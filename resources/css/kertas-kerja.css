@@ -26,9 +26,18 @@
 .tab-pane{
     padding-top: 1rem;
 }
+
+.table-movefield >thead{
+    background: #57a9d2;
+    color:white;
+}
+.table-movefield >tbody> tr:nth-child(even), .table-movefield >tbody> tr:nth-child(even) input, .table-movefield >tbody> tr:nth-child(even) select, .table-movefield >tbody> tr:nth-child(even) textarea{
+  background-color: #f4faff;
+}
 .table-movefield {
     font-size: 13px;
     border: 1px solid #dddddd;
+
 }
 .table-movefield .form-control{
     font-size: 13px;
@@ -107,6 +116,7 @@
 .table-movefield table td .form-control, .table-movefield .td-with-percent .form-control{
     z-index: 3;
     background: transparent;
+    padding-right: 1.5rem;
 }
 .table-movefield table td .percent-sign, .table-movefield .td-with-percent .percent-sign{
     position: absolute;
@@ -214,4 +224,9 @@ h4{
     padding-right: 4px;
     padding-left: 4px;
      background: transparent;
+}
+
+
+.panel-default .btn-box-tool{
+color: white
 }

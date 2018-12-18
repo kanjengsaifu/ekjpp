@@ -161,20 +161,23 @@
 						<div class="tab-content tab-content-1" style="padding: 20px; border: 1px solid #ccc;">
 							<div role="tabpanel" class="tab-pane active" style="padding: 0px;" id="lembar">
 								<h4>Lembar Kendali Klien</h4>
-								<table class="table table-condensed">
-									<thead>
-										<tr>
-											<th>No</th>
-											<th>Step Pekerjaan</th>
-											<th>Jabatan</th>
-											<th>Diubah Oleh</th>
-											<th>Tanggal Dibuat</th>
-											<th>Tanggal Diubah</th>
-											<th>Action</th>
-										</tr>
-									</thead>
-									<tbody id="table_body_lembar_kendali"></tbody>
-								</table>
+								<div class="table-responsive">
+									<table class="table table-condensed">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Step Pekerjaan</th>
+												<th>Jabatan</th>
+												<th>Diubah Oleh</th>
+												<th>Tanggal Dibuat</th>
+												<th>Tanggal Diubah</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody id="table_body_lembar_kendali"></tbody>
+									</table>
+								</div>
+								
 								<input type="hidden" id="lembar_kendali_count"/>
 								<div class="text-right">
 									<button type="button" class="btn btn-primary btn-sm btn-edit-lembar-kendali  tambah_lk" data="">TAMBAH LEMBAR KENDALI</button>

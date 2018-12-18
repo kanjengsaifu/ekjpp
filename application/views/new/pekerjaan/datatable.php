@@ -13,20 +13,22 @@
 <section class="content">
 	<div class="box">
 		<div class="box-body">
-			<table class="table table-striped" id="datatable">
-				<thead>
-					<tr>
-						<th>No</th>
-						<th>Nama</th>
-						<th>Klien</th>
-						<th>Tanggal Penerimaan</th>
-						<th>PIC</th>
-						<th>Status</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
+			<div class="table-responsive">
+				<table class="table table-striped" id="datatable">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Nama</th>
+							<th>Klien</th>
+							<th>Tanggal Penerimaan</th>
+							<th>PIC</th>
+							<th>Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 	

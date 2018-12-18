@@ -310,6 +310,7 @@ class Pekerjaan extends CI_Controller
         if ( !empty($pekerjaan->penilai) ) {
             $data_penilai = get_data_user($pekerjaan->penilai);
         }
+        
         $custom_data    = unserialize($lokasi->custom_data);
     
         if (($custom_data) && array_key_exists("tab_bangunan", $custom_data))
@@ -341,8 +342,8 @@ class Pekerjaan extends CI_Controller
                 $data_kertas_kerja["penandatangan_laporan"] = $data['penandatangan_laporan']['nama_penanda_tangan'];
             }
             if ( $data_penilai ) {
-                $data_kertas_kerja["nama_penilai"] = $data_penilai['nama'];
-                $data_kertas_kerja["no_mappi_penilai"] = $data_penilai['no_mappi'];
+                $data_kertas_kerja["nama_penilai"] = $data_penilai->nama;
+                $data_kertas_kerja["no_mappi_penilai"] = $data_penilai->no_mappi;
             }
             if ( $id_tugas ) {
                 $id_jenis_jasa = $id_tugas->jenis_jasa;
@@ -370,8 +371,8 @@ class Pekerjaan extends CI_Controller
                 $dupdate_kertas_kerja["penandatangan_laporan"] = $data['penandatangan_laporan']['nama_penanda_tangan'];
             }
             if ( empty($txn_kertas_kerja['nama_penilai']) && $data_penilai ) {
-                $dupdate_kertas_kerja["nama_penilai"] = $data_penilai['nama'];
-                $dupdate_kertas_kerja["no_mappi_penilai"] = $data_penilai['no_mappi'];
+                $dupdate_kertas_kerja["nama_penilai"] = $data_penilai->nama;
+                $dupdate_kertas_kerja["no_mappi_penilai"] = $data_penilai->no_mappi;
             }
             if ( empty($txn_kertas_kerja['kode_jenis_jasa']) && $id_tugas ) {
                 $id_jenis_jasa = $id_tugas->jenis_jasa;
@@ -602,6 +603,7 @@ class Pekerjaan extends CI_Controller
         $this->template2->add_js('resources/plugins/datatables/extensions/FixedHeader/js/dataTables.fixedHeader.min.js');
         $this->template2->write('title', 'Beranda');
         $this->template2->add_js($script, 'embed');
+        // var_dump($view_form);
         $this->template2->write_view('content', $this->module.'/'.$view_form, $data, true);
         $this->template2->render();
     }

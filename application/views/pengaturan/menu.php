@@ -13,7 +13,9 @@
 	<!-- Main content -->
 	<section class="content">
 		<div class="box">
-					<?=$table_menu?>
+			<div class="table-responsive">
+				<?=$table_menu?>
+			</div>
 		</div>
 	</section>
 </div>
