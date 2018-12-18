@@ -424,6 +424,7 @@ class Pekerjaan extends CI_Controller
 			$txn_tanah = $q_tanah->row_array();
 		}
 		$data['txn_tanah'] = $txn_tanah;
+		$detail=array();
 		if (empty($id))
 		{
 
@@ -495,6 +496,8 @@ class Pekerjaan extends CI_Controller
 		{
 			$data["title"] 	= "UBAH OBJEK PROPERTI";
 			$objek_edit		= $this->global_model->get_data("mst_lokasi", 1, array("id"), array($id))->row();
+			$detail = $objek_edit;
+			
 
 			$id				= $this->formlib->_generate_input_text("id", "id", base64_encode($id), FALSE, TRUE);
 			$id_pekerjaan	= $this->formlib->_generate_input_text("id_pekerjaan", "id_pekerjaan", base64_encode($id_pekerjaan), FALSE, TRUE);
@@ -614,7 +617,7 @@ class Pekerjaan extends CI_Controller
 		$data["input"]["negara_pembuat_mesin"]	= $negara_pembuat_mesin;
 		$data["input"]["kapasitas_mesin"]	= $kapasitas_mesin;
 		$data["sumber_nomor_sertifikat"] = $sumber_nomor_sertifikat;
-
+		$data["detail"]=$detail;
 
 		$data["_template"]	= $this->template->generate_template("user", $data);
 		

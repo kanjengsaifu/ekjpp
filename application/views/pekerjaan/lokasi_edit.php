@@ -53,6 +53,9 @@
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1><?=$title?></h1>
+		<ol class="breadcrumb">
+			<li><?php echo $_breadcrumb ?></li>
+		</ol>
 	</section>
 	<section class="content">
 		<div class="box box-info">
@@ -103,16 +106,16 @@
 							</div>
 			                <div class="form-group">
 			                   <label>Latitude</label>
-			                   <input type="number" step="any" class="form-control is_integer" name="koordinat_latitude" id="koordinat_latitude" value="<?php echo empty($detail['koordinat_latitude']) ? NULL : $detail['koordinat_latitude']; ?>">
+			                   <input type="number" step="any" class="form-control is_integer" name="latitude" id="latitude" value="<?php echo empty($detail->latitude) ? NULL : $detail->latitude; ?>">
 			                </div>
 			                <div class="form-group">
 			                   <label>Longitude</label>
-			                   <input type="number" step="any" class="form-control is_integer" name="koordinat_longitude" id="koordinat_longitude" value="<?php echo empty($detail['koordinat_longitude']) ? NULL : $detail['koordinat_longitude']; ?>">
+			                   <input type="number" step="any" class="form-control is_integer" name="longitude" id="longitude" value="<?php echo empty($detail->longitude) ? NULL : $detail->longitude; ?>">
 			                </div>
 			                <div class="form-group">
 			                   <label></label>
-			                	<button type="button" name="btn_lokasi" class="btn btn-primary" onclick="open_map()">Input Lokasi</button>
-			                       <button type="button" name="btn_lokasi" class="btn btn-primary" onclick="view_map($('#koordinat_latitude').val(), $('#koordinat_longitude').val())">View Lokasi</button>
+			                	<button type="button" name="btn_lokasi" class="btn btn-primary" onclick="open_map('#latitude', '#longitude')">Input Lokasi</button>
+			                       <button type="button" name="btn_lokasi" class="btn btn-primary" onclick="view_map($('#latitude').val(), $('#longitude').val())">View Lokasi</button>
 			                </div>
 						</div>
 						<div class="col-md-4">
@@ -215,7 +218,7 @@
 								<?=$input["jenis_sertifikat"]?>
 							</div>
 							<div class="form-group">
-								<label>No Sertifikat </label>
+								<label>No Sertifikat *</label>
 								<?=$input["no_sertifikat"]?>
 							</div>
 							</div>
@@ -494,7 +497,7 @@
 <?php echo $_template["_footer"]?>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6Z0Oxaa2Hv37II4swhzH662q0BGIaDaw&libraries=places"></script>
 <script type="text/javascript">var icon_marker = 'house.png';</script>
-<script type="text/javascript" src="<?php echo base_url().'asset/js/form_manajemen_peta.js' ?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'asset/js/form_manajemen_peta.js' ?>?v=1"></script>
 <script type="text/javascript">
 	$(function(){
 		$(":radio.objek_data").click(function(){
@@ -605,8 +608,8 @@ $(".btn-simpan").click(function() {
 	var dh_kecamatan 	= $("#dh_kecamatan").val();
 	var dh_desa			= $("#dh_desa").val();
 	var zip                 = $("#zip").val();
-	var latitude        = $('#koordinat_latitude').val();
-	var longitude    	= $('#koordinat_longitude').val();
+	var latitude        = $('#latitude').val();
+	var longitude    	= $('#longitude').val();
 
 	var total_step = $('[data-step]').length;
 	var next_step = current_step+1;
