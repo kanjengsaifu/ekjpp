@@ -376,8 +376,8 @@ class ajaxpekerjaan extends CI_Controller
 			$id_klien			= $_POST["id_klien"];
 			$nama				= $_POST["nama"];
 			$tanggal_penerimaan	= $_POST["tanggal_penerimaan"];
-			$no_surat_tugas				= $_POST["no_surat_tugas"];
-			$tgl_surat_tugas	= $_POST["tgl_surat_tugas"];
+			// $no_surat_tugas				= $_POST["no_surat_tugas"];
+			// $tgl_surat_tugas	= $_POST["tgl_surat_tugas"];
 			$deskripsi			= $_POST["deskripsi"];
 			$jenis_laporan	= $_POST["jenis_laporan"];
 			$keterangan			= $_POST["keterangan"];
@@ -403,12 +403,12 @@ class ajaxpekerjaan extends CI_Controller
 			if (empty($nama)){
 				$message	.= "Silahkan isi dulu Nama Pekerjaan.<br>";
 			}
-			if (empty($no_surat_tugas)){
-				$message	.= "Silahkan isi dulu No Surat Tugas.<br>";
-			}
-			if (empty($tgl_surat_tugas)){
-				$message	.= "Silahkan isi dulu Tgl Surat Tugas.<br>";
-			}
+			// if (empty($no_surat_tugas)){
+			// 	$message	.= "Silahkan isi dulu No Surat Tugas.<br>";
+			// }
+			// if (empty($tgl_surat_tugas)){
+			// 	$message	.= "Silahkan isi dulu Tgl Surat Tugas.<br>";
+			// }
 			if (empty($jenis_laporan)){
 				$message	.= "Silahkan isi dulu Jenis Laporan.<br>";
 			}
@@ -438,8 +438,8 @@ class ajaxpekerjaan extends CI_Controller
 					"id_klien"				=> $id_klien,
 					"nama"					=> $nama,
 					"tanggal_penerimaan" 	=> $tanggal_penerimaan,
-					"no_surat_tugas"		=> $no_surat_tugas,
-					"tgl_surat_tugas" 	=> $tgl_surat_tugas,
+					// "no_surat_tugas"		=> $no_surat_tugas,
+					// "tgl_surat_tugas" 	=> $tgl_surat_tugas,
 					"deskripsi"				=> $deskripsi,
 					"jenis_laporan" 	=> $jenis_laporan,
 					"keterangan"				=> $keterangan,

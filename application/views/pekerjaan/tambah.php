@@ -39,14 +39,14 @@ echo $_template["_head"];
 								<label>Tanggal Penerimaan Informasi <span class="required">*</span></label>
 								<?=$input["tanggal_penerimaan"]?>
 							</div>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label>Nomor Surat Tugas Penawaran<span class="required">*</span></label>
 								<?=$input["no_surat_tugas"]?>
 							</div>
 							<div class="form-group">
 								<label>Tanggal Surat Tugas <span class="required">*</span></label>
 								<?=$input["tgl_surat_tugas"]?>
-							</div>
+							</div> -->
 							<div class="form-group">
 								<label>Deskripsi</label>
 								<?=$input["deskripsi"]?>
@@ -177,13 +177,13 @@ echo $_template["_head"];
 		hari 				= tgl.substring(0,2);
 		// tanggal_penerimaan 	= thn+'-'+bln+'-'+hari;
 		tanggal_penerimaan 	= $("#tanggal_penerimaan").val();
-		no_surat_tugas		= $("#no_surat_tugas").val();
-		tgl					= $("#tgl_surat_tugas").val(); //13-06-2016
-		thn					= tgl.substring(6,10);
-		bln 				= tgl.substring(3,5);
-		hari 				= tgl.substring(0,2);
+		// no_surat_tugas		= $("#no_surat_tugas").val();
+		// tgl					= $("#tgl_surat_tugas").val(); //13-06-2016
+		// thn					= tgl.substring(6,10);
+		// bln 				= tgl.substring(3,5);
+		// hari 				= tgl.substring(0,2);
 		// tgl_surat_tugas 	= thn+'-'+bln+'-'+hari;
-		tgl_surat_tugas		= $("#tgl_surat_tugas").val();
+		// tgl_surat_tugas		= $("#tgl_surat_tugas").val();
 		deskripsi			= $("#deskripsi").val();
 		jenis_laporan 	= $("#jenis_laporan").val();
 		jenis_jasa 	= $("#jenis_jasa").val();
@@ -232,8 +232,8 @@ echo $_template["_head"];
 				id_klien 			: id_klien,
 				nama 				: nama,
 				tanggal_penerimaan 	: tanggal_penerimaan,
-				no_surat_tugas 		: no_surat_tugas,
-				tgl_surat_tugas 	: tgl_surat_tugas,
+				// no_surat_tugas 		: no_surat_tugas,
+				// tgl_surat_tugas 	: tgl_surat_tugas,
 				deskripsi 			: deskripsi,
 				jenis_laporan 			: jenis_laporan,
 				jenis_jasa 			: jenis_jasa,
