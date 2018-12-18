@@ -2041,6 +2041,7 @@ class Pekerjaan extends CI_Controller
 				$dokumen_final = $dokumen->row()->dokumen_final;
 			}
 
+			$data['dokumen_nama'] = $mst_dokumen->nama;
 			$data["dokumen"] = $dokumen->row();
 			$data["dokumen_final"] = $dokumen_final;
 			$user_login	= $this->auth->get_data_login();
@@ -2061,7 +2062,7 @@ class Pekerjaan extends CI_Controller
 			}
 
 			$data["input"]["file"] 				= $this->formlib->_generate_input_file_image("input[file]", "File", $file, TRUE, TRUE);
-			$data["input"]["keterangan"] 		= $this->formlib->_generate_input_textarea("input[keterangan]", "Keterangan", $file, TRUE, TRUE);
+			$data["input"]["keterangan"] 		= $this->formlib->_generate_input_textarea("input[keterangan]", "Keterangan", $keterangan, TRUE, TRUE);
 
 			$data["_template"]	= $this->template->generate_template("user", $data);
 			$this->load->view("pekerjaan/dokumen_gabung_edit", $data);

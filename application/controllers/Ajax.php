@@ -1719,19 +1719,19 @@ class ajax extends CI_Controller
 			foreach ($list_data->result() as $item_data)
 			{
 				$file		= "#";
+				$file_final = "#";
 				$keterangan	= "-";
 				$nama_group	= "-";
 				$nama_user	= "-";
 				
-				if ($item_data->id == 1)
-				{
+				if ($item_data->id == 1) {
 					$txn_dokumen	= $this->global_model->get_data("mst_dokumen_penawaran", 2, array("id_pekerjaan", "id_dokumen_master"), array($id_pekerjaan, $item_data->id));
 					
-					if ($txn_dokumen->num_rows() == 1)
-					{
+					if ($txn_dokumen->num_rows() == 1) {
 						$user		= $this->global_model->get_data("view_user", 1, array("id"), array($txn_dokumen->row()->id_user))->row();
-						
+
 						$file		= base_url()."printpdf/dokumen_penawaran/".base64_encode($id_pekerjaan);
+						$file_final = !$txn_dokumen->row()->dokumen_final ? "#" : base_url()."asset/file/".$txn_dokumen->row()->dokumen_final;
 						$keterangan	= "-";
 						$nama_group	= $user->nama_group;
 						$nama_user	= $user->nama;
@@ -1739,6 +1739,7 @@ class ajax extends CI_Controller
 					else
 					{
 						$file		= "#";
+						$file_final = "#";
 						$keterangan	= "-";
 						$nama_group	= "-";
 						$nama_user	= "-";
@@ -1753,6 +1754,7 @@ class ajax extends CI_Controller
 						$user		= $this->global_model->get_data("view_user", 1, array("id"), array($txn_dokumen->row()->id_user))->row();
 						
 						$file		= "#";
+						$file_final = !$txn_dokumen->row()->dokumen_final ? "#" : base_url()."asset/file/".$txn_dokumen->row()->dokumen_final;
 						$keterangan	= "-";
 						$nama_group	= $user->nama_group;
 						$nama_user	= $user->nama;
@@ -1760,6 +1762,7 @@ class ajax extends CI_Controller
 					else
 					{
 						$file		= "#";
+						$file_final = "#";
 						$keterangan	= "-";
 						$nama_group	= "-";
 						$nama_user	= "-";
@@ -1774,6 +1777,7 @@ class ajax extends CI_Controller
 						$user		= $this->global_model->get_data("view_user", 1, array("id"), array($txn_dokumen->row()->id_user))->row();
 						
 						$file		= "#";
+						$file_final = !$txn_dokumen->row()->dokumen_final ? "#" : base_url()."asset/file/".$txn_dokumen->row()->dokumen_final;
 						$keterangan	= "-";
 						$nama_group	= $user->nama_group;
 						$nama_user	= $user->nama;
@@ -1781,6 +1785,7 @@ class ajax extends CI_Controller
 					else
 					{
 						$file		= "-";
+						$file_final = "#";
 						$keterangan	= "-";
 						$nama_group	= "-";
 						$nama_user	= "-";
@@ -1795,6 +1800,7 @@ class ajax extends CI_Controller
 						$user		= $this->global_model->get_data("view_user", 1, array("id"), array($txn_dokumen->row()->id_user))->row();
 						
 						$file		= base_url()."printpdf/kwitansi/".base64_encode($id_pekerjaan);
+						$file_final = !$txn_dokumen->row()->dokumen_final ? "#" : base_url()."asset/file/".$txn_dokumen->row()->dokumen_final;
 						$keterangan	= "-";
 						$nama_group	= $user->nama_group;
 						$nama_user	= $user->nama;
@@ -1809,6 +1815,7 @@ class ajax extends CI_Controller
 						$user		= $this->global_model->get_data("view_user", 1, array("id"), array($txn_dokumen->row()->id_user))->row();
 						
 						$file		= base_url()."asset/file/".$txn_dokumen->row()->file;
+						$file_final = !$txn_dokumen->row()->dokumen_final ? "#" : base_url()."asset/file/".$txn_dokumen->row()->dokumen_final;
 						$keterangan	= "-";
 						$nama_group	= $user->nama_group;
 						$nama_user	= $user->nama;
@@ -1835,6 +1842,8 @@ class ajax extends CI_Controller
 					$j = 1;
 					foreach ($invs as $inv) {
 						$file = !$inv->file ? "#" : base_url()."asset/file/".$inv->file;
+						$file_final = !$inv->dokumen_final ? "#" : base_url()."asset/file/".$inv->dokumen_final;
+
 						$id_dokumen_gabung = $inv->id;
 						$data_table[$i]["dokumen"]		= $item_data->nama." - ".$j;
 						//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
@@ -1843,15 +1852,21 @@ class ajax extends CI_Controller
 						$data_table[$i]["nama_user"]	= $nama_user;
 						//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
 						$data_table[$i]["action"]	= "<div class='text-center' data-id_dokumen_gabung=\"".base64_encode($id_dokumen_gabung)."\">";
-						if ($file !='#'){
-							$data_table[$i]["action"]	.="
-							<a target='_blank' href='". $file ."' class='btn btn-sm btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
-							<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
-						}else {
-							$data_table[$i]["action"]	.="
-							<a href='". $file ."' class='btn btn-sm btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
-							<a href='". $file ."' class='btn btn-sm btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
-						}
+						$attr_disabled = $file=="#" ? " disabled":"";
+						$data_table[$i]["action"]	.="
+						<div class=\"btn-group\">
+							<button type='button' class=\"btn btn-success dropdown-toggle btn-sm\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ".$attr_disabled.">
+								Download <span class=\"caret\"></span>
+							</button>
+							<ul class=\"dropdown-menu\">
+							    <li><a href=\"".$file."\" onclick='window.location.reload()' target=\"_blank\">Download Dokumen</a></li>
+							    <li><a href=\"".$file_final."\">Download Final</a></li>
+						  	</ul>
+					  	</div>
+
+						<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>
+						";
+
 						$data_table[$i]["action"]	.="&nbsp;
 						<button class='btn btn-sm btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;
 						<button class='btn btn-sm btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Del</button>";
@@ -1859,14 +1874,18 @@ class ajax extends CI_Controller
 						$j++;
 						$i++;
 					}
-				} //if kwintansi
+				} 
+				//if kwintansi
 				else if ($item_data->id == 7)
 				{
 					$invs = $this->global_model->get_list( 'mst_dokumen_kwitansi', 'id_dokumen_master=7 AND id_pekerjaan='.$id_pekerjaan, 'termin' );
 					$j = 1;
 					foreach ($invs as $inv) {
+						// var_dump($inv);
 						$id_kwitansi = $inv->id;
 						$file = base_url()."printpdf/kwitansi/".($id_pekerjaan)."/".$id_kwitansi;
+						$file_final = !$inv->dokumen_final ? "#" : base_url()."asset/file/".$inv->dokumen_final;
+
 						// $id_dokumen_gabung = $inv->id;
 						$data_table[$i]["dokumen"]		= $item_data->nama." - ".$j;
 						//$data_table[$i]["file"]			= "<div class='text-center'>".$file."</div>";
@@ -1875,15 +1894,20 @@ class ajax extends CI_Controller
 						$data_table[$i]["nama_user"]	= $nama_user;
 						//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
 						$data_table[$i]["action"]	= "<div class='text-center' data-id_kwitansi=\"".base64_encode($id_kwitansi)."\">";
-						if ($file !='#'){
-							$data_table[$i]["action"]	.="
-							<a target='_blank' href='". $file ."' class='btn btn-sm btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
-							<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
-						}else {
-							$data_table[$i]["action"]	.="
-							<a href='". $file ."' class='btn btn-sm btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
-							<a href='". $file ."' class='btn btn-sm btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
-						}
+
+						$attr_disabled = $file=="#" ? " disabled":"";
+						$data_table[$i]["action"]	.="
+						<div class=\"btn-group\">
+							<button type='button' class=\"btn btn-success dropdown-toggle btn-sm\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ".$attr_disabled.">
+								Download <span class=\"caret\"></span>
+							</button>
+							<ul class=\"dropdown-menu\">
+							    <li><a href=\"".$file."\" onclick='window.location.reload()' target=\"_blank\">Download Dokumen</a></li>
+							    <li><a href=\"".$file_final."\">Download Final</a></li>
+						  	</ul>
+					  	</div>
+						<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a>";
+
 						$data_table[$i]["action"]	.="&nbsp;
 						<button class='btn btn-sm btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;
 						<button class='btn btn-sm btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Del</button>";
@@ -1899,17 +1923,22 @@ class ajax extends CI_Controller
 					$data_table[$i]["nama_user"]	= $nama_user;
 					//$data_table[$i]["action"]		= "<div class='text-center'><i class='fa fa-pencil-square-o btn-edit-dokumen ' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'></i><i class='fa fa-trash btn-delete-dokumen ' data='".base_url($item_data->$primary_key)."' aria-hidden='true'></i></div>";
 					$data_table[$i]["action"]	= "<div class='text-center'>";
-					if ($file !='#'){
-						$data_table[$i]["action"]	.="
-						<a target='_blank' href='". $file ."' class='btn btn-sm btn-success btn-download'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp
 
-
+					$attr_disabled = $file=="#" ? " disabled":"";
+					$data_table[$i]["action"]	.="
+						<div class=\"btn-group\">
+							<button type='button' class=\"btn btn-success dropdown-toggle btn-sm\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ".$attr_disabled.">
+								Download <span class=\"caret\"></span>
+							</button>
+							<ul class=\"dropdown-menu\">
+							    <li><a href=\"".$file."\" onclick='window.location.reload()' target=\"_blank\">Download Dokumen</a></li>
+							    <li><a href=\"".$file_final."\">Download Final</a></li>
+						  	</ul>
+					  	</div>
 						<a target='_blank' href='". $file ."' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-search' ></span>View</a> ";
-					}else {
-						$data_table[$i]["action"]	.="
-						<a href='". $file ."' class='btn btn-sm btn-success disabled'><span class='glyphicon glyphicon-download' ></span>Download</a>&nbsp;
-						<a href='". $file ."' class='btn btn-sm btn-primary disabled'><span class='glyphicon glyphicon-search' ></span>View</a>";
-					}
+				
+
+
 					$data_table[$i]["action"]	.="&nbsp;
 					<button class='btn btn-sm btn-warning btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-pencil' ></span>Edit</button>&nbsp;
 					<button class='btn btn-sm btn-danger btn-edit-dokumen' data='".base64_encode($item_data->$primary_key)."' aria-hidden='true'><span class='glyphicon glyphicon-remove' ></span>Del</button>

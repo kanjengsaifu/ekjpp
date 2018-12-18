@@ -40,7 +40,7 @@ echo $_template["_head"];
 								<?=$input["tanggal_penerimaan"]?>
 							</div>
 							<div class="form-group">
-								<label>Nomor Surat Tugas <span class="required">*</span></label>
+								<label>Nomor Surat Tugas Penawaran<span class="required">*</span></label>
 								<?=$input["no_surat_tugas"]?>
 							</div>
 							<div class="form-group">
@@ -138,7 +138,7 @@ echo $_template["_head"];
 	var nama				= "";
 	var tanggal_penerimaan	= "";
 	var deskripsi			= "";
-	var jenis_laporan			= "";
+	var jenis_laporan					= "";
 	var keterangan			= "";
 	var current_url			= window.location.href;
 

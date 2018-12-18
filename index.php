@@ -58,7 +58,7 @@ date_default_timezone_set("Asia/Jakarta");
 
 
 //$my_environment = !isset($_GET['development']) ? 'production' : 'development';
-$ENV = "development";//empty($_GET['ENV']) ? NULL: $_GET['ENV'];
+$ENV = "production";//empty($_GET['ENV']) ? NULL: $_GET['ENV'];
 if ( empty($ENV) ) {
    define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 } else {

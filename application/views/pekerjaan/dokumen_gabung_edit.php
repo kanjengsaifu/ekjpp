@@ -40,7 +40,7 @@
 					?>
 					
 					<div class="form-group">
-						<label>File</label><span class="required">*</span>
+						<label>File <?php echo $dokumen_nama ?></label><span class="required">*</span>
 						<?=$input["file"]?>
 					</div>
 					<div class="form-group">
@@ -49,7 +49,7 @@
 					</div>
 					
 					<div class="form-group">
-						<label>Dokumen Final</label>
+						<label>Dokumen <?php echo $dokumen_nama ?> Final</label>
 						<input type="file" id="dokumen_final_tmp_file" class="form-control">
 						<input type="hidden" id="dokumen_final_file" name="input[dokumen_final]" value="<?php echo !$dokumen_final ? "" : $dokumen_final ?>">
 						<div id="dokumen_final_file_box">

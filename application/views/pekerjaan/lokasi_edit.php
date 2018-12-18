@@ -517,6 +517,13 @@
 				$(".form6").show();
 			}
 		});
+		<?php
+		if ( !empty($id_lokasi) ) {
+			?>
+			$(":radio.objek_data:checked").trigger('click');
+			<?php
+		}
+		?>
 	});
 </script>
 <script>

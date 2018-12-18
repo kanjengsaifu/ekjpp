@@ -1588,7 +1588,7 @@ class ajaxpekerjaan extends CI_Controller
 			";
 
 			$data_table[$i]["colom"]	= "
-				<div class='col-md-12'><h4>DATA OBJEK PROPERTI  - ".$i."</h4></div>
+				<div class='col-md-12'><h4>DATA OBJEK PROPERTI  - ".$i." <a href=\"javascript:void(0);\" class=\"btn-edit-lokasi\" data=\"".base64_encode($item_data->id)."\" style=\"font-size: 14px; font-weight: 400;\" title=\"Edit Lokasi\"><span class=\"fa fa-pencil\"></span></a></h4></div>
 				<div class='col-md-6'>".$colom_1."</div>
 				<div class='col-md-6'>".$colom_2."</div>
 
